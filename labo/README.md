@@ -158,3 +158,73 @@ n'a pas suivi         : 6/8 good  (75 %)
 Aucune différence détectable. Mais avec 8 cas par groupe, **on ne pourrait
 pas détecter une différence réelle même si elle existait.** Ce n'est pas un
 résultat, c'est une absence de mesure.
+
+---
+
+## Expérience 4 — V2 contre V2.5
+
+`v2_vs_v25.js` — reconstruction des deux moteurs depuis
+`docs/oracle_version/`, exécutés sur les 25 dilemmes de
+`docs/sauvegardes.md`, jugés au critère `OracleWasRight`.
+
+```
+node labo/v2_vs_v25.js
+```
+
+### Résultat
+
+| | justes |
+|---|---|
+| **Oracle V2** (jan 2026) | **12/18 — 67 %** |
+| Oracle V2.5 (actuelle) | 9/17 — 53 % |
+
+L'intuition de l'autrice — « la V2 était un peu plus efficace » — est
+confirmée par la reconstruction.
+
+### Trois défauts identifiés dans V2.5
+
+**1. Le verrou Q0 court-circuite un quart des dilemmes.**
+```js
+if (q0_notImportant && !q0_important) {
+  return { analyses: [], caseType: 'pileouface', ... };
+}
+```
+Aucune option n'est analysée. Sur les 25 dilemmes réels, **le verrou se
+déclenche 6 fois**. V2 n'avait pas ce verrou et scorait toujours.
+
+**2. `q0Importance === 'low'` est du code mort.**
+Après le retour anticipé ci-dessus, `q0Importance` ne vaut plus que
+`'high'` ou `'medium'`. Le test `if (q0Importance === 'low')` plus bas ne
+peut donc jamais être vrai : **la branche pile-ou-face nuancée ne
+s'exécute jamais.** V2.5 ne produit un pile ou face que par le verrou.
+
+**3. `rawGain` n'existe pas — c'est une régression.**
+```js
+// V2   (correct)
+analyses.reduce((a,b) => (parseInt(a.option.energyGain)||0) > (parseInt(b.option.energyGain)||0) ? a : b)
+// V2.5 (cassé)
+analyses.reduce((a,b) => a.rawGain > b.rawGain ? a : b)
+```
+`bestGain` renvoie toujours la dernière option saisie, `gainDiff` vaut
+`NaN`. Les deux alimentent la phrase « [X] te coûte moins, [Y] peut
+t'apporter plus » : **l'oracle désigne la mauvaise option.**
+
+### Ce que V2.5 a bien corrigé
+
+- **peur + excitation → −2 au lieu de −5.** L'intuition centrale du
+  projet (la peur mêlée d'envie n'est pas un refus), correctement codée.
+  V2 pénalisait −5 dans tous les cas.
+- **`hasNiveau1Strong` restreint au vert.** En V2, un signal N1 **rouge**
+  suffisait à déclarer « dépassement noté mais valeur forte » et à annuler
+  la pénalité d'énergie — ce qui n'a pas de sens. V2.5 le répare.
+
+Donc V2.5 n'est pas « moins bonne » : elle corrige de vraies choses et en
+casse d'autres. Un V2.6 qui garderait ses deux corrections sans le verrou
+ni les deux bugs serait vraisemblablement meilleure que les deux.
+
+### Limites
+
+⚠️ Reconstruction à partir d'extraits documentés : si l'application réelle
+diffère (listes de mots-clés, fonctions auxiliaires), les scores changent.
+⚠️ 17 et 18 dilemmes jugeables : un seul cas pèse 6 points. L'écart de 14
+points représente 2 à 3 cas. Indicatif, pas concluant.
