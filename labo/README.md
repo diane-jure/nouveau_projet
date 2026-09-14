@@ -101,3 +101,60 @@ de l'historique une par une en serait.
 
 La confirmation par l'utilisatrice reste utile — **mais pour protéger les
 mises en garde, pas pour sauver le verdict.**
+
+---
+
+## Expérience 3 — duel des deux oracles
+
+`duel.js` — l'oracle v2.5 (celui des prototypes précédents) contre le
+moteur de ce dépôt, sur les **25 dilemmes réels de `docs/sauvegardes.md`**,
+jugés avec le critère défini par l'autrice dans `docs/oracle_cerveau.md` :
+
+> `OracleWasRight` = vrai si la recommandation a été suivie et la
+> satisfaction est bonne, OU si elle n'a pas été suivie et la satisfaction
+> est mauvaise ou mitigée.
+
+```
+node labo/duel.js
+```
+
+### Résultat brut (trompeur)
+
+| | justes |
+|---|---|
+| oracle v2.5 | 11/20 — 55 % |
+| moteur de ce dépôt | 15/21 — **71 %** |
+
+### Le même test, honnêtement
+
+Le moteur a été **conçu en regardant 17 de ces 25 dilemmes**. Il est juge
+et partie. L'oracle v2.5, lui, rendait ses verdicts en aveugle, avant de
+connaître l'issue. En ne gardant que les dilemmes que le moteur n'avait
+jamais vus :
+
+| | déjà vus | **inédits** |
+|---|---|---|
+| oracle v2.5 | 6/13 — 46 % | **5/7 — 71 %** |
+| moteur de ce dépôt | 9/13 — 69 % | **6/8 — 75 %** |
+
+**Sur des données fraîches, les deux oracles sont à égalité.** L'écart de
+23 points observé sur les dilemmes connus était du surapprentissage — et
+il a suffi de regarder ces dilemmes pendant la conception pour le créer,
+sans jamais ajuster un poids exprès.
+
+C'est exactement le risque annoncé au sujet d'une instance qui reprendrait
+le barème à froid. La démonstration vaut aussi pour celui qui l'a écrit.
+
+⚠️ 7 et 8 dilemmes jugeables : un seul cas pèse 13 points. Rien ici n'est
+concluant, tout est indicatif.
+
+### Question annexe, sans réponse
+
+```
+a suivi l'oracle      : 6/8 good  (75 %)
+n'a pas suivi         : 6/8 good  (75 %)
+```
+
+Aucune différence détectable. Mais avec 8 cas par groupe, **on ne pourrait
+pas détecter une différence réelle même si elle existait.** Ce n'est pas un
+résultat, c'est une absence de mesure.
