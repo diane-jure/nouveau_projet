@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr" data-etape="titre">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>L'Oracle — outil de décision</title>
+  <meta name="description" content="Quatre questions, un verdict, un journal. Un outil de décision qui pèse le regret plus lourd que l'envie.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1a1c2c">
+
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="./fonts/press-start-2p-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="./fonts/vt323-latin.woff2">
+
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/palette.css">
+  <link rel="stylesheet" href="./css/pixel.css">
+  <link rel="stylesheet" href="./css/app.css">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%231a1c2c'/><rect x='3' y='6' width='10' height='4' fill='%2373eff7'/><rect x='6' y='3' width='4' height='10' fill='%2373eff7'/></svg>">
+</head>
+<body>
+  <header class="hud">
+    <span class="hud__marque">L'ORACLE</span>
+    <span class="hud__etape" id="hud-etape"></span>
+    <span id="hud-avancee"></span>
+    <span class="hud__droite">
+      <button type="button" class="hud__bouton" id="hud-journal">JOURNAL</button>
+      <button type="button" class="hud__bouton" id="hud-son" aria-pressed="true">SON ON</button>
+    </span>
+  </header>
+
+  <main class="scene" id="scene" aria-live="polite"></main>
+
+  <p id="annonce" class="aide" role="status" hidden
+     style="position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);z-index:20;
+            margin:0;padding:.5rem 1rem;background:var(--panneau);
+            border:var(--px) solid var(--cadre);color:var(--texte)"></p>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

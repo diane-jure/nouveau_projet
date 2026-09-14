@@ -207,14 +207,14 @@ export function phraseTirage(option, graine = 0) {
 export const INTERFACE = {
   titre: "L'ORACLE",
   sousTitre: 'quatre questions, un verdict',
-  commencer: 'APPUYER SUR ENTRÉE',
+  commencer: 'APPUYER POUR COMMENCER',
   nouveauDilemme: 'Nouveau dilemme',
   journal: 'Journal',
   reprendre: 'Reprendre le dilemme en cours',
   suite: 'Suite ▸',
   retour: '◂ Retour',
   consulter: "CONSULTER L'ORACLE",
-  lancerPiece: 'LANCER LA PIÈCE',
+  lancerPiece: 'TIRER AU SORT',
   relancer: 'Relancer',
 
   etapes: {

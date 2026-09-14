@@ -1,0 +1,272 @@
+/**
+ * PIXEL — la boite a outils visuelle : fenetres JRPG, menus, boutons,
+ * jauges, curseurs. Aucune couleur en dur : tout passe par les variables
+ * de palette.css. Aucune mise en page d'ecran : c'est le role de app.css.
+ *
+ * Regles du genre : pas un seul angle arrondi, des bordures epaisses en
+ * multiples de --px, et des coins "escaliers" obtenus au clip-path.
+ */
+
+/* Deux fontes : une pour le chrome (titres, menus), une pour le texte
+   long, parce qu'un paragraphe entier en Press Start 2P est illisible. */
+.pixel-chrome,
+.fenetre__titre,
+.menu__item,
+.bouton,
+.hud {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  letter-spacing: 0.02em;
+}
+
+.pixel-texte,
+.dialogue,
+.champ,
+.aide {
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+
+img, canvas, svg { image-rendering: pixelated; }
+
+/* ------------------------------------------------------------------ */
+/*  FENETRE — la boite de dialogue classique, double cadre + coins taillés */
+/* ------------------------------------------------------------------ */
+
+.fenetre {
+  position: relative;
+  background: var(--panneau);
+  border: var(--px) solid var(--cadre);
+  box-shadow:
+    0 0 0 var(--px) var(--fond),
+    0 0 0 calc(var(--px) * 2) var(--cadre-2),
+    0 calc(var(--px) * 2) 0 calc(var(--px) * 2) rgba(0, 0, 0, 0.35);
+  padding: calc(var(--px) * 4);
+  clip-path: polygon(
+    var(--rayon-coupe) 0, calc(100% - var(--rayon-coupe)) 0,
+    100% var(--rayon-coupe), 100% calc(100% - var(--rayon-coupe)),
+    calc(100% - var(--rayon-coupe)) 100%, var(--rayon-coupe) 100%,
+    0 calc(100% - var(--rayon-coupe)), 0 var(--rayon-coupe)
+  );
+  transition: background-color .5s steps(6), border-color .5s steps(6);
+}
+
+.fenetre__titre {
+  font-size: .68rem;
+  color: var(--accent);
+  margin: 0 0 calc(var(--px) * 3);
+  display: flex;
+  align-items: center;
+  gap: var(--px);
+}
+.fenetre__titre::after {
+  content: '';
+  flex: 1;
+  height: var(--px);
+  background: var(--cadre-2);
+}
+
+/* ------------------------------------------------------------------ */
+/*  MENU — navigation clavier, curseur clignotant facon JRPG            */
+/* ------------------------------------------------------------------ */
+
+.menu { display: flex; flex-direction: column; gap: var(--px); }
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--px) * 2);
+  width: 100%;
+  padding: calc(var(--px) * 2.5) calc(var(--px) * 2);
+  background: transparent;
+  border: var(--px) solid transparent;
+  color: var(--texte);
+  font-size: .72rem;
+  line-height: 1.6;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .1s steps(2), color .1s steps(2);
+}
+
+/* Le curseur ▸ n'apparait que sur l'element vise. */
+.menu__item::before {
+  content: '\25B8';
+  color: transparent;
+  flex: none;
+  font-size: .8rem;
+}
+.menu__item:hover,
+.menu__item:focus-visible {
+  outline: none;
+  background: var(--fond);
+  border-color: var(--cadre);
+  color: var(--accent);
+}
+.menu__item:hover::before,
+.menu__item:focus-visible::before {
+  color: var(--accent);
+  animation: clignote .7s steps(2, start) infinite;
+}
+.menu__item[aria-pressed='true'],
+.menu__item[data-choisi='true'] {
+  background: var(--cadre-2);
+  border-color: var(--cadre);
+  color: var(--texte);
+}
+.menu__item[aria-pressed='true']::before,
+.menu__item[data-choisi='true']::before { color: var(--accent); }
+
+@keyframes clignote { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+
+/* ------------------------------------------------------------------ */
+/*  BOUTONS                                                             */
+/* ------------------------------------------------------------------ */
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--px) * 2);
+  padding: calc(var(--px) * 3) calc(var(--px) * 4);
+  font-size: .7rem;
+  color: var(--fond);
+  background: var(--accent);
+  border: none;
+  box-shadow:
+    0 0 0 var(--px) var(--fond),
+    0 0 0 calc(var(--px) * 2) var(--accent),
+    0 var(--px) 0 calc(var(--px) * 2) rgba(0, 0, 0, .4);
+  cursor: pointer;
+  /* Pas de text-transform : Press Start 2P n'a pas de majuscules accentuees
+     (E, A, C...). La casse est ecrite telle quelle dans phrases.js. */
+  transition: transform .08s steps(2), background-color .15s steps(3);
+}
+.bouton:hover, .bouton:focus-visible { outline: none; background: var(--accent-2); }
+.bouton:active { transform: translateY(var(--px)); }
+.bouton:disabled { background: var(--texte-eteint); cursor: not-allowed; opacity: .55; }
+
+.bouton--fantome {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 0 var(--px) var(--accent);
+}
+.bouton--fantome:hover, .bouton--fantome:focus-visible {
+  background: var(--accent); color: var(--fond);
+}
+.bouton--danger { background: var(--c-rouge); color: var(--c-blanc); box-shadow: 0 0 0 var(--px) var(--c-rouge); }
+
+/* ------------------------------------------------------------------ */
+/*  CHAMPS DE SAISIE — cadre pixelise, pas un input de formulaire web   */
+/* ------------------------------------------------------------------ */
+
+.champ {
+  width: 100%;
+  padding: calc(var(--px) * 2);
+  color: var(--texte);
+  background: var(--fond);
+  border: var(--px) solid var(--cadre-2);
+  outline: none;
+}
+.champ:focus { border-color: var(--accent); }
+.champ::placeholder { color: var(--texte-eteint); }
+textarea.champ { resize: vertical; min-height: 5rem; }
+
+/* ------------------------------------------------------------------ */
+/*  JAUGES — barres de score, positives a droite, negatives a gauche   */
+/* ------------------------------------------------------------------ */
+
+.jauge { display: grid; grid-template-columns: 5.5rem 1fr 3rem; align-items: center; gap: calc(var(--px) * 2); }
+.jauge__nom { font-size: .58rem; color: var(--texte-doux); }
+.jauge__piste {
+  position: relative;
+  height: calc(var(--px) * 4);
+  background: var(--fond);
+  border: var(--px) solid var(--texte-eteint);
+  overflow: hidden;
+}
+/* le zero au milieu */
+.jauge__piste::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: var(--px); background: var(--texte-eteint); transform: translateX(-50%);
+}
+.jauge__barre {
+  position: absolute; top: 0; bottom: 0;
+  background: var(--positif);
+  transition: width .4s steps(8);
+}
+.jauge__barre[data-signe='-'] { background: var(--negatif); }
+.jauge__valeur { font-size: .6rem; text-align: right; color: var(--texte); }
+
+/* ------------------------------------------------------------------ */
+/*  DIALOGUE — la boite ou l'oracle parle, avec sa frappe machine       */
+/* ------------------------------------------------------------------ */
+
+.dialogue { display: flex; flex-direction: column; gap: calc(var(--px) * 3); min-height: 7rem; }
+.dialogue__ligne { margin: 0; color: var(--texte); }
+.dialogue__ligne[data-ton='verdict'] {
+  font-family: 'Press Start 2P', monospace;
+  font-size: .95rem;
+  line-height: 1.7;
+  color: var(--accent);
+}
+.dialogue__ligne[data-ton='mise-en-garde'] { color: var(--alerte); }
+.dialogue__ligne[data-ton='suite'] { color: var(--texte-doux); }
+.dialogue__curseur { color: var(--accent); animation: clignote .7s steps(2, start) infinite; }
+
+/* ------------------------------------------------------------------ */
+/*  PIECE — le pile ou face                                            */
+/* ------------------------------------------------------------------ */
+
+.piece {
+  width: calc(var(--px) * 14); height: calc(var(--px) * 14);
+  margin: 0 auto;
+  background: var(--c-or);
+  box-shadow: inset 0 0 0 var(--px) var(--c-orange), 0 0 0 var(--px) var(--c-nuit);
+  clip-path: polygon(
+    30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%
+  );
+}
+.piece[data-tourne='true'] { animation: tourne .12s steps(2) infinite; }
+@keyframes tourne {
+  0%   { transform: scaleX(1) }
+  50%  { transform: scaleX(.15) }
+  100% { transform: scaleX(1) }
+}
+
+/* ------------------------------------------------------------------ */
+/*  BARRE D'AVANCEE — six blocs qui s'allument, un par etape           */
+/* ------------------------------------------------------------------ */
+
+.avancee { display: flex; gap: var(--px); align-items: center; }
+.avancee__bloc {
+  width: calc(var(--px) * 3); height: calc(var(--px) * 3);
+  background: var(--c-fer);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.4);
+  transition: background-color .4s steps(4);
+}
+.avancee__bloc[data-actif='true']  { background: var(--accent); }
+.avancee__bloc[data-passe='true']  { background: var(--accent-2); }
+
+/* ------------------------------------------------------------------ */
+/*  DIVERS                                                             */
+/* ------------------------------------------------------------------ */
+
+.aide { color: var(--texte-doux); font-size: 1.15rem; margin: calc(var(--px)) 0 0; }
+.etiquette {
+  display: inline-block;
+  padding: calc(var(--px) / 2) var(--px);
+  font-family: 'Press Start 2P', monospace;
+  font-size: .5rem;
+  color: var(--fond);
+  background: var(--accent);
+}
+.etiquette--sourdine { background: var(--texte-eteint); }
+
+/* Respect des preferences systeme : on coupe les animations si demande. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

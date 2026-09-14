@@ -1,0 +1,214 @@
+/**
+ * APP — la mise en page des ecrans. Pas de couleurs brutes, pas de
+ * composants : seulement l'agencement.
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background: var(--fond); transition: background-color .6s steps(8); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--fond);
+  color: var(--texte);
+  display: flex;
+  flex-direction: column;
+  transition: background-color .6s steps(8);
+  overflow-x: hidden;
+}
+
+/* Voile CRT tres discret : une ligne sombre toutes les 3px. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: repeating-linear-gradient(
+    to bottom, rgba(0,0,0,.13) 0 1px, transparent 1px 3px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* ------------------------------------------------------------------ */
+/*  HUD — barre du haut : titre, avancee, reglages                     */
+/* ------------------------------------------------------------------ */
+
+.hud {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--px) * 3);
+  flex-wrap: wrap;
+  padding: calc(var(--px) * 2) calc(var(--px) * 4);
+  background: var(--fond);
+  border-bottom: var(--px) solid var(--cadre-2);
+  font-size: .55rem;
+  transition: background-color .6s steps(8), border-color .6s steps(8);
+}
+.hud__marque { color: var(--accent); letter-spacing: .1em; }
+.hud__etape { color: var(--texte-doux); }
+.hud__droite { margin-left: auto; display: flex; align-items: center; gap: calc(var(--px) * 2); }
+.hud__bouton {
+  padding: var(--px) calc(var(--px) * 1.5);
+  font-family: inherit;
+  font-size: .55rem;
+  color: var(--texte-doux);
+  background: transparent;
+  border: var(--px) solid transparent;
+  cursor: pointer;
+}
+.hud__bouton:hover, .hud__bouton:focus-visible {
+  outline: none; color: var(--accent); border-color: var(--cadre-2);
+}
+
+/* ------------------------------------------------------------------ */
+/*  SCENE — le conteneur central                                       */
+/* ------------------------------------------------------------------ */
+
+.scene {
+  flex: 1;
+  width: 100%;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: calc(var(--px) * 6) calc(var(--px) * 4) calc(var(--px) * 12);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--px) * 5);
+}
+
+.scene__entete { text-align: center; }
+.scene__question {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--accent);
+  margin: 0 0 calc(var(--px) * 2);
+}
+.scene__aide { color: var(--texte-doux); font-size: 1.2rem; margin: 0; }
+
+.scene__pied {
+  display: flex;
+  gap: calc(var(--px) * 3);
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: calc(var(--px) * 3);
+}
+
+/* ------------------------------------------------------------------ */
+/*  ECRAN TITRE                                                        */
+/* ------------------------------------------------------------------ */
+
+.titre { text-align: center; margin: auto 0; display: grid; gap: calc(var(--px) * 6); justify-items: center; }
+.titre__logo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1.6rem, 9vw, 3.4rem);
+  line-height: 1.2;
+  margin: 0;
+  color: var(--accent);
+  text-shadow:
+    var(--px) var(--px) 0 var(--cadre-2),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 rgba(0,0,0,.5);
+}
+.titre__sous { color: var(--texte-doux); font-size: 1.3rem; margin: 0; }
+.titre__demarrer { animation: clignote 1.1s steps(2, start) infinite; color: var(--accent-2); font-size: .7rem; }
+.titre__stats { display: flex; gap: calc(var(--px) * 4); flex-wrap: wrap; justify-content: center; font-size: .55rem; color: var(--texte-doux); }
+.titre__stat b { color: var(--accent); font-weight: normal; }
+
+/* ------------------------------------------------------------------ */
+/*  GRILLE DES OPTIONS — une colonne par option                        */
+/* ------------------------------------------------------------------ */
+
+.chemins { display: grid; gap: calc(var(--px) * 4); grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+
+.chemin__entete { display: flex; align-items: center; gap: calc(var(--px) * 2); margin-bottom: calc(var(--px) * 2); }
+.chemin__lettre {
+  flex: none;
+  width: calc(var(--px) * 7); height: calc(var(--px) * 7);
+  display: grid; place-items: center;
+  font-family: 'Press Start 2P', monospace; font-size: .8rem;
+  color: var(--fond); background: var(--accent);
+  clip-path: polygon(25% 0,75% 0,100% 25%,100% 75%,75% 100%,25% 100%,0 75%,0 25%);
+}
+.chemin__nom { font-family: 'VT323', monospace; font-size: 1.5rem; line-height: 1.2; color: var(--texte); }
+
+.chemin__engagement {
+  display: flex; align-items: flex-start; gap: var(--px);
+  margin-top: calc(var(--px) * 2);
+  font-family: 'VT323', monospace; font-size: 1.15rem; color: var(--texte-doux);
+  cursor: pointer;
+}
+.chemin__engagement input { accent-color: var(--accent); margin-top: .35rem; flex: none; }
+
+/* ------------------------------------------------------------------ */
+/*  VERDICT                                                            */
+/* ------------------------------------------------------------------ */
+
+.verdict { display: grid; gap: calc(var(--px) * 4); }
+.verdict__enjeu { text-align: center; font-size: .55rem; color: var(--texte-doux); }
+.verdict__scores { display: grid; gap: calc(var(--px) * 3); }
+
+.score { display: grid; gap: calc(var(--px) * 2); }
+.score__entete { display: flex; align-items: baseline; gap: calc(var(--px) * 2); flex-wrap: wrap; }
+.score__nom { font-family: 'VT323', monospace; font-size: 1.5rem; color: var(--texte); }
+.score__total { margin-left: auto; font-family: 'Press Start 2P', monospace; font-size: .8rem; color: var(--accent); }
+.score[data-rang='0'] .score__nom { color: var(--accent); }
+.score__bonus { display: flex; gap: var(--px); flex-wrap: wrap; }
+
+.repli { border: none; padding: 0; margin: 0; }
+.repli > summary {
+  cursor: pointer; list-style: none;
+  font-family: 'Press Start 2P', monospace; font-size: .55rem;
+  color: var(--texte-doux); padding: calc(var(--px) * 2) 0;
+}
+.repli > summary::-webkit-details-marker { display: none; }
+.repli > summary::before { content: '\25B8\00a0'; color: var(--accent); }
+.repli[open] > summary::before { content: '\25BE\00a0'; }
+
+/* ------------------------------------------------------------------ */
+/*  JOURNAL                                                            */
+/* ------------------------------------------------------------------ */
+
+.journal { display: grid; gap: calc(var(--px) * 3); }
+.journal__entree {
+  display: grid; gap: var(--px);
+  padding: calc(var(--px) * 3);
+  background: var(--panneau);
+  border-left: calc(var(--px) * 2) solid var(--teinte-sat, var(--texte-eteint));
+}
+.journal__date { font-family: 'Press Start 2P', monospace; font-size: .5rem; color: var(--texte-doux); }
+.journal__titre { font-family: 'VT323', monospace; font-size: 1.4rem; color: var(--texte); }
+.journal__ligne { font-family: 'VT323', monospace; font-size: 1.15rem; color: var(--texte-doux); }
+.journal__ligne b { color: var(--texte); font-weight: normal; }
+.journal__actions { display: flex; gap: var(--px); flex-wrap: wrap; margin-top: var(--px); }
+
+/* ------------------------------------------------------------------ */
+/*  TELEPHONE                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 32rem) {
+  :root { --px: 3px; }
+  /* Gouttiere fixe : les boutons portent un halo de 2*--px, il doit tenir. */
+  .scene { padding: calc(var(--px) * 4) 16px calc(var(--px) * 10); }
+
+  /* Sur telephone les boutons s'empilent au lieu de se comprimer. */
+  .scene__pied { flex-direction: column; align-items: stretch; }
+  .scene__pied .bouton { width: 100%; }
+  .titre { gap: calc(var(--px) * 5); }
+  .titre .scene__pied { width: 100%; }
+  .scene__question { font-size: .85rem; }
+  .menu__item { font-size: .68rem; }
+  .hud { font-size: .5rem; padding: calc(var(--px) * 2); }
+  .hud__etape { display: none; }
+  .chemins { grid-template-columns: 1fr; }
+  .jauge { grid-template-columns: 4.5rem 1fr 2.5rem; }
+}
+
+/* Toujours un repere visible au clavier. */
+:focus-visible { outline: var(--px) solid var(--accent); outline-offset: var(--px); }

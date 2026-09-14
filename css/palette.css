@@ -1,0 +1,128 @@
+/**
+ * PALETTE — les couleurs, et rien d'autre.
+ *
+ * Base : SWEETIE-16, une palette 16 couleurs classique du pixel art.
+ * Aucune couleur n'est ecrite en dur ailleurs que dans ce fichier.
+ *
+ * LE CODE COULEUR CHANGE SELON L'AVANCEE : chaque etape du dilemme
+ * redefinit --accent, --panneau et --fond. L'ecran vire progressivement
+ * du bleu nuit (le seuil) au rouge (le ventre), a l'or (ce qu'on gagne),
+ * au vert (ce qu'on perd), puis au violet du verdict.
+ * Un seul attribut pilote tout : <html data-etape="...">
+ */
+
+:root {
+  /* --- SWEETIE-16, les 16 teintes brutes --- */
+  --c-nuit:      #1a1c2c;
+  --c-prune:     #5d275d;
+  --c-rouge:     #b13e53;
+  --c-orange:    #ef7d57;
+  --c-or:        #ffcd75;
+  --c-pousse:    #a7f070;
+  --c-vert:      #38b764;
+  --c-teal:      #257179;
+  --c-marine:    #29366f;
+  --c-bleu:      #3b5dc9;
+  --c-ciel:      #41a6f6;
+  --c-cyan:      #73eff7;
+  --c-blanc:     #f4f4f4;
+  --c-brume:     #94b0c2;
+  --c-ardoise:   #566c86;
+  --c-fer:       #333c57;
+
+  /* --- Roles semantiques, communs a toutes les etapes --- */
+  --texte:       var(--c-blanc);
+  --texte-doux:  var(--c-brume);
+  --texte-eteint:var(--c-ardoise);
+  --positif:     var(--c-pousse);
+  --negatif:     var(--c-rouge);
+  --neutre:      var(--c-brume);
+  --alerte:      var(--c-or);
+
+  /* --- Theme par defaut (ecran titre) --- */
+  --fond:        var(--c-nuit);
+  --panneau:     var(--c-fer);
+  --cadre:       var(--c-cyan);
+  --cadre-2:     var(--c-marine);
+  --accent:      var(--c-cyan);
+  --accent-2:    var(--c-ciel);
+
+  /* --- Mesures du pixel art --- */
+  --px: 4px;
+  --rayon-coupe: 8px;
+}
+
+/* Le seuil : Q0. Bleu nuit, on n'a encore rien decide. */
+[data-etape='seuil'] {
+  --fond: var(--c-nuit);
+  --panneau: var(--c-marine);
+  --cadre: var(--c-cyan);
+  --cadre-2: var(--c-bleu);
+  --accent: var(--c-cyan);
+  --accent-2: var(--c-bleu);
+}
+
+/* Les chemins : on nomme les options. Bleu franc. */
+[data-etape='options'] {
+  --fond: #141d3a;
+  --panneau: var(--c-marine);
+  --cadre: var(--c-ciel);
+  --cadre-2: var(--c-bleu);
+  --accent: var(--c-ciel);
+  --accent-2: var(--c-cyan);
+}
+
+/* Le ventre : Q1, la premiere sensation. Rouge / prune. */
+[data-etape='sensation'] {
+  --fond: #26142b;
+  --panneau: var(--c-prune);
+  --cadre: var(--c-orange);
+  --cadre-2: var(--c-rouge);
+  --accent: var(--c-orange);
+  --accent-2: var(--c-rouge);
+}
+
+/* La lumiere : Q2, ce qu'on gagne. Or et teal. */
+[data-etape='gain'] {
+  --fond: #10232b;
+  --panneau: var(--c-teal);
+  --cadre: var(--c-or);
+  --cadre-2: var(--c-orange);
+  --accent: var(--c-or);
+  --accent-2: var(--c-orange);
+}
+
+/* L'ombre : Q3, ce qu'on perd. Vert profond. */
+[data-etape='regret'] {
+  --fond: #0f2119;
+  --panneau: #1c4a33;
+  --cadre: var(--c-pousse);
+  --cadre-2: var(--c-vert);
+  --accent: var(--c-pousse);
+  --accent-2: var(--c-vert);
+}
+
+/* Le verdict : violet et or. L'oracle parle. */
+[data-etape='oracle'] {
+  --fond: #1d1226;
+  --panneau: var(--c-prune);
+  --cadre: var(--c-or);
+  --cadre-2: var(--c-rouge);
+  --accent: var(--c-or);
+  --accent-2: var(--c-cyan);
+}
+
+/* Le journal : gris, on relit. */
+[data-etape='journal'] {
+  --fond: #161a28;
+  --panneau: var(--c-fer);
+  --cadre: var(--c-brume);
+  --cadre-2: var(--c-ardoise);
+  --accent: var(--c-brume);
+  --accent-2: var(--c-ciel);
+}
+
+/* Couleurs de satisfaction, utilisees dans le journal. */
+[data-satisfaction='good'] { --teinte-sat: var(--c-pousse); }
+[data-satisfaction='meh']  { --teinte-sat: var(--c-or); }
+[data-satisfaction='bad']  { --teinte-sat: var(--c-rouge); }
