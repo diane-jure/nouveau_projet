@@ -1,0 +1,16 @@
+# Site 100% statique : rien a construire, on publie la racine telle quelle.
+[build]
+  publish = "."
+  command = ""
+
+# SPA : toutes les routes retombent sur index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"

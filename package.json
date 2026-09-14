@@ -1,0 +1,12 @@
+{
+  "name": "oracle",
+  "version": "0.1.0",
+  "description": "Outil de decision - 4 questions, un verdict, un journal.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/",
+    "rapport": "node test/rapport.js",
+    "dev": "python3 -m http.server 5173"
+  }
+}
