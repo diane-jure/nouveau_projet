@@ -312,17 +312,6 @@ export const piece = (tourne) => ({
   animation: tourne ? 'pivote 0.14s steps(2) infinite' : 'none',
 });
 
-/** Barre de statistique d'une voie. */
-export const pisteStat = {
-  position: 'relative', height: ESPACE.m, flex: 1,
-  background: C.relief, border: `${M.px / 2}px solid ${C.contour}`,
-};
-export const barreStat = (part, positif) => ({
-  position: 'absolute', top: 0, bottom: 0, left: 0,
-  width: `${Math.min(100, Math.abs(part) * 100)}%`,
-  background: positif ? C.positifClair : C.negatif,
-});
-
 /* --- Journal --- */
 
 export const voile = {
@@ -370,7 +359,87 @@ export const encadreSauvegarde = {
   border: `${M.px / 2}px solid ${C.contour}`,
 };
 
-/** Styles globaux injectés une fois (polices, reset, animation). */
+/* ------------------------------------------------------------------ */
+/*  MATIÈRE — texture, tramage, ornements                              */
+/*                                                                     */
+/*  Le pixel art ne connaît pas le dégradé continu : il trame. Et les  */
+/*  références (Mistria, point de croix) ont toutes du grain.          */
+/* ------------------------------------------------------------------ */
+
+/** Damier 2 px : le tramage classique entre deux teintes. */
+export const trame = (a, b, taille = 2) => ({
+  backgroundImage:
+    `repeating-conic-gradient(${a} 0% 25%, ${b} 0% 50%)`,
+  backgroundSize: `${taille * 2}px ${taille * 2}px`,
+});
+
+/** Grain de papier : deux trames croisées très discrètes. */
+export const grain = (couleur = 'rgba(46,33,64,0.05)') => ({
+  backgroundImage:
+    `repeating-linear-gradient(0deg, ${couleur} 0 1px, transparent 1px 3px),` +
+    `repeating-linear-gradient(90deg, ${couleur} 0 1px, transparent 1px 3px)`,
+});
+
+/** Tissage façon point de croix, pour les fonds de médaillon. */
+export const tissage = (couleur) => ({
+  backgroundImage:
+    `repeating-linear-gradient(45deg, ${couleur} 0 2px, transparent 2px 6px),` +
+    `repeating-linear-gradient(-45deg, ${couleur} 0 2px, transparent 2px 6px)`,
+});
+
+/** Les classes définies dans CSS_GLOBAL — App les utilise par leur nom. */
+export const CL = {
+  panneau: 'qf-panneau',       // cadre à ferrures dans les quatre coins
+  losange: 'qf-losange',       // médaillon en losange
+  apparait: 'qf-apparait',     // entrée en escalier
+  frappe: 'qf-frappe',         // curseur de frappe machine
+  scintille: 'qf-scintille',   // récompense
+  flotte: 'qf-flotte',         // sigil qui respire
+  bat: 'qf-bat',               // cœurs
+  remplit: 'qf-remplit',       // barres de stat
+};
+
+/* ------------------------------------------------------------------ */
+/*  STATISTIQUES D'UNE VOIE — le motif « fiche de personnage »         */
+/* ------------------------------------------------------------------ */
+
+export const ligneStat = {
+  display: 'flex', alignItems: 'center', gap: ESPACE.s,
+};
+export const pisteStat = {
+  position: 'relative', flex: 1, height: ESPACE.m,
+  background: C.relief,
+  border: `${M.px / 2}px solid ${C.contour}`,
+  overflow: 'hidden',
+};
+export const barreStat = (part, couleur) => ({
+  position: 'absolute', inset: 0, right: 'auto',
+  width: `${Math.max(0, Math.min(100, part * 100))}%`,
+  ...trame(couleur, C.page, 1),
+});
+export const valeurStat = {
+  ...T.minus, minWidth: ESPACE.l, textAlign: 'right', color: C.texte,
+};
+export const badgeScore = (indexVoie) => ({
+  ...T.bouton,
+  position: 'absolute', top: -ESPACE.s, left: -ESPACE.s, zIndex: 2,
+  display: 'flex', alignItems: 'center', gap: ESPACE.xs,
+  padding: `${ESPACE.xs}px ${ESPACE.s}px`,
+  background: COULEURS_VOIE[indexVoie % COULEURS_VOIE.length].fonce,
+  color: C.page,
+  border: `${M.px / 2}px solid ${C.contour}`,
+});
+
+/** Fond quadrillé du médaillon, comme la fiche de personnage. */
+export const fondMedaillon = (indexVoie) => ({
+  ...tissage(COULEURS_VOIE[indexVoie % COULEURS_VOIE.length].fonce),
+  background: COULEURS_VOIE[indexVoie % COULEURS_VOIE.length].clair,
+});
+
+/* ------------------------------------------------------------------ */
+/*  CSS GLOBAL — polices, classes, animations                          */
+/* ------------------------------------------------------------------ */
+
 export const CSS_GLOBAL = `
   @font-face { font-family:'Pixelify Sans'; font-weight:400; font-display:swap;
     src:url('./fonts/pixelify-400-latin.woff2') format('woff2'); }
@@ -378,9 +447,75 @@ export const CSS_GLOBAL = `
     src:url('./fonts/pixelify-600-latin.woff2') format('woff2'); }
   @font-face { font-family:'Pixelify Sans'; font-weight:700; font-display:swap;
     src:url('./fonts/pixelify-700-latin.woff2') format('woff2'); }
+
   * { box-sizing:border-box; }
-  body { margin:0; background:${C.fond}; }
-  input::placeholder { color:${C.texteEteint}; }
+  body {
+    margin:0; background:${C.fond};
+    background-image:
+      repeating-linear-gradient(0deg, rgba(46,33,64,.045) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(46,33,64,.045) 0 1px, transparent 1px 3px);
+  }
+  input::placeholder, textarea::placeholder { color:${C.texteEteint}; }
+  input:focus, textarea:focus { outline:${M.px / 2}px solid ${C.accent}; outline-offset:0; }
+  button { font:inherit; }
   button:active { transform: translate(${M.px}px, ${M.px}px); }
+
+  /* --- Ferrures aux quatre coins : le cadre devient un objet --- */
+  .${CL.panneau} {
+    background-image:
+      linear-gradient(${C.cadreOmbre}, ${C.cadreOmbre}),
+      linear-gradient(${C.cadreOmbre}, ${C.cadreOmbre}),
+      linear-gradient(${C.cadreOmbre}, ${C.cadreOmbre}),
+      linear-gradient(${C.cadreOmbre}, ${C.cadreOmbre}),
+      repeating-linear-gradient(0deg, rgba(46,33,64,.035) 0 1px, transparent 1px 3px);
+    background-repeat: no-repeat;
+    background-size: ${M.px * 4}px ${M.px * 4}px, ${M.px * 4}px ${M.px * 4}px,
+                     ${M.px * 4}px ${M.px * 4}px, ${M.px * 4}px ${M.px * 4}px, auto;
+    background-position: top left, top right, bottom left, bottom right, top left;
+  }
+
+  /* --- Médaillon en losange --- */
+  .${CL.losange} {
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  }
+
+  /* --- Apparition d'un encadré : en escalier, jamais en fondu --- */
+  .${CL.apparait} { animation: qf-apparait .28s steps(4) both; }
+  @keyframes qf-apparait {
+    from { transform: translateY(${M.px * 4}px) scaleY(.8); opacity:0 }
+    to   { transform: none; opacity:1 }
+  }
+
+  /* --- Curseur de frappe machine --- */
+  .${CL.frappe}::after {
+    content:'\\25BE'; color:${C.titreFonce}; margin-left:${ESPACE.xs}px;
+    animation: qf-clignote .7s steps(2,start) infinite;
+  }
+  @keyframes qf-clignote { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+
+  /* --- Récompense : ça scintille --- */
+  .${CL.scintille} { animation: qf-scintille 1.1s steps(3) infinite; }
+  @keyframes qf-scintille {
+    0%,100% { filter:none }
+    50%     { filter:brightness(1.25) }
+  }
+
+  /* --- Le sigil respire --- */
+  .${CL.flotte} { animation: qf-flotte 2.2s steps(3) infinite alternate; }
+  @keyframes qf-flotte { from{transform:translateY(0)} to{transform:translateY(-${M.px}px)} }
+
+  /* --- Les cœurs battent quand l'énergie change --- */
+  .${CL.bat} { animation: qf-bat .4s steps(2) 2; }
+  @keyframes qf-bat { 0%,100%{transform:scale(1)} 50%{transform:scale(1.18)} }
+
+  /* --- Les barres de stat se remplissent par crans --- */
+  .${CL.remplit} { animation: qf-remplit .5s steps(6) both; }
+  @keyframes qf-remplit { from { width:0 } }
+
+  /* --- La pièce tourne --- */
   @keyframes pivote { 0%{transform:scaleX(1)} 50%{transform:scaleX(.15)} 100%{transform:scaleX(1)} }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important }
+  }
 `;

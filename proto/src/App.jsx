@@ -9,19 +9,19 @@
  * précédent, et seul le dernier porte le bouton « revenir ».
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { consulter, tirerAuSort } from './oracle_brain.js';
 import { Icone, Sigil, Coeurs } from './icons.jsx';
 import * as S from './theme.js';
 
 const VERSION = 'v0.1';
-const ETAPES = ['dilemme', 'oracle', 'ajouer', 'decision', 'decide', 'feedback', 'accompli'];
+const MAX_COUT = 5;
 
 const voieVierge = () => ({ nom: '', cout: 0, gain: 0, q1: '', q2: '', q3: '' });
 const rempli = (t) => (t || '').trim() !== '';
 
 /* ------------------------------------------------------------------ */
-/*  BRIQUES                                                            */
+/*  CROCHETS                                                           */
 /* ------------------------------------------------------------------ */
 
 function useEstTelephone() {
@@ -36,9 +36,31 @@ function useEstTelephone() {
   return petit;
 }
 
+/** Frappe machine : le texte s'écrit lettre à lettre. */
+function useFrappe(texte, vitesse = 28) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    setN(0);
+    if (!texte) return;
+    const t = setInterval(() => {
+      setN((v) => {
+        if (v >= texte.length) { clearInterval(t); return v; }
+        return v + 1;
+      });
+    }, vitesse);
+    return () => clearInterval(t);
+  }, [texte, vitesse]);
+  return { visible: (texte || '').slice(0, n), fini: n >= (texte || '').length };
+}
+
+/* ------------------------------------------------------------------ */
+/*  BRIQUES                                                            */
+/* ------------------------------------------------------------------ */
+
 function Panneau({ titre, icone, couleur, onRetour, children }) {
   return (
-    <section style={couleur ? S.panneau(couleur) : S.panneau()}>
+    <section className={`${S.CL.panneau} ${S.CL.apparait}`}
+      style={couleur ? S.panneau(couleur) : S.panneau()}>
       {titre && (
         <header style={couleur ? S.bandeau(couleur) : S.bandeau()}>
           {onRetour && (
@@ -58,7 +80,7 @@ function Panneau({ titre, icone, couleur, onRetour, children }) {
 function Bouton({ children, onClick, actif = true, couleur, icone }) {
   return (
     <button style={S.bouton(actif, couleur)} onClick={actif ? onClick : undefined} disabled={!actif}>
-      {icone && <Icone nom={icone} contour={S.C.texte} taille={14} style={{ display: 'inline-block' }} />}
+      {icone && <Icone nom={icone} contour={S.C.texte} taille={14} />}
       {children}
     </button>
   );
@@ -74,32 +96,51 @@ function Question({ label, placeholder, valeur, onChange, actif }) {
   );
 }
 
-function Compteur({ label, valeur, onChange, positif }) {
+/**
+ * Une ligne de statistique : icône, moins, barre pleine, plus, valeur.
+ * C'est le motif de la fiche de personnage — la barre EST le compteur.
+ */
+function Stat({ icone, label, valeur, max, couleur, onChange }) {
   return (
-    <div style={S.compteur(positif)}>
+    <div style={S.ligneStat}>
+      <Icone nom={icone} contour={S.C.texteDoux} taille={14} />
       <span style={S.libelle()}>{label}</span>
-      <button style={S.compteurBouton} onClick={() => onChange(Math.max(0, valeur - 1))}>
-        <Icone nom="bas" contour={S.C.texte} taille={10} />
-      </button>
-      <span style={S.compteurValeur(positif)}>{positif && valeur > 0 ? `+${valeur}` : valeur}</span>
-      <button style={S.compteurBouton} onClick={() => onChange(Math.min(5, valeur + 1))}>
-        <Icone nom="haut" contour={S.C.texte} taille={10} />
-      </button>
+      {onChange && (
+        <button style={S.compteurBouton} onClick={() => onChange(Math.max(0, valeur - 1))}
+          aria-label={`${label} moins`}>
+          <Icone nom="bas" contour={S.C.texte} taille={9} />
+        </button>
+      )}
+      <span style={S.pisteStat}>
+        <span className={S.CL.remplit} style={S.barreStat(valeur / max, couleur)} />
+      </span>
+      {onChange && (
+        <button style={S.compteurBouton} onClick={() => onChange(Math.min(max, valeur + 1))}
+          aria-label={`${label} plus`}>
+          <Icone nom="haut" contour={S.C.texte} taille={9} />
+        </button>
+      )}
+      <span style={S.valeurStat}>{valeur}</span>
     </div>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  CARTE D'UNE VOIE                                                   */
-/*  Structure « fiche de personnage » : médaillon + nom + stats.       */
+/*  CARTE D'UNE VOIE — fiche de personnage                             */
 /* ------------------------------------------------------------------ */
 
-function CarteVoie({ voie, index, surTelephone, modifier, retirer, retirable }) {
+function CarteVoie({ voie, index, surTelephone, score, modifier, retirer, retirable }) {
   const q2Actif = rempli(voie.q1);
   const q3Actif = q2Actif && rempli(voie.q2);
 
   return (
-    <article style={S.carteVoie(index)}>
+    <article style={{ ...S.carteVoie(index), position: 'relative' }}>
+      {score !== undefined && (
+        <span style={S.badgeScore(index)} className={S.CL.scintille}>
+          <Icone nom="etoile" contour={S.C.page} taille={10} />{score}
+        </span>
+      )}
+
       <div style={{ display: 'flex', alignItems: 'center', gap: S.ESPACE.s }}>
         <span style={S.puceVoie(index)} />
         <input style={S.champ()} value={voie.nom} placeholder={`Voie ${index + 1}`}
@@ -112,21 +153,26 @@ function CarteVoie({ voie, index, surTelephone, modifier, retirer, retirable }) 
       </div>
 
       <div style={S.corpsCarte(surTelephone)}>
-        <div style={S.medaillon(index, surTelephone)}>
-          <Sigil index={index} contour={S.C.contour} remplissage={S.C.page}
-            taille={surTelephone ? S.TAILLE_SIGIL.telephone : S.TAILLE_SIGIL.bureau} />
+        <div style={{ ...S.medaillon(index, surTelephone), ...S.fondMedaillon(index) }}>
+          <span className={`${S.CL.losange} ${S.CL.flotte}`}
+            style={{ display: 'grid', placeItems: 'center' }}>
+            <Sigil index={index} contour={S.C.contour} remplissage={S.C.page}
+              taille={surTelephone ? S.TAILLE_SIGIL.telephone : S.TAILLE_SIGIL.bureau} />
+          </span>
         </div>
 
         <div style={S.colonneCarte}>
           <Question label="Première sensation ?" placeholder="ton instinct..."
             valeur={voie.q1} actif onChange={(v) => modifier({ q1: v })} />
 
-          <Compteur label="COÛT" valeur={voie.cout} onChange={(v) => modifier({ cout: v })} />
+          <Stat icone="coeur" label="COÛT" valeur={voie.cout} max={MAX_COUT}
+            couleur={S.C.negatif} onChange={(v) => modifier({ cout: v })} />
 
           <Question label="Si ça se passe bien ?" placeholder="ça t'apporte..."
             valeur={voie.q2} actif={q2Actif} onChange={(v) => modifier({ q2: v })} />
 
-          <Compteur label="GAIN" valeur={voie.gain} positif onChange={(v) => modifier({ gain: v })} />
+          <Stat icone="etoile" label="GAIN" valeur={voie.gain} max={MAX_COUT}
+            couleur={S.C.positifClair} onChange={(v) => modifier({ gain: v })} />
 
           <Question label="Si tu l'as pas fait demain ?" placeholder="tu ressens..."
             valeur={voie.q3} actif={q3Actif} onChange={(v) => modifier({ q3: v })} />
@@ -137,7 +183,7 @@ function CarteVoie({ voie, index, surTelephone, modifier, retirer, retirable }) 
 }
 
 /* ------------------------------------------------------------------ */
-/*  JOURNAL                                                            */
+/*  JOURNAL — cartes à médaillon, cœurs et citation                    */
 /* ------------------------------------------------------------------ */
 
 function Journal({ aventures, onFermer }) {
@@ -146,7 +192,8 @@ function Journal({ aventures, onFermer }) {
 
   return (
     <div style={S.voile} onClick={onFermer}>
-      <div style={S.panneauJournal} onClick={(e) => e.stopPropagation()}>
+      <div className={`${S.CL.panneau} ${S.CL.apparait}`} style={S.panneauJournal}
+        onClick={(e) => e.stopPropagation()}>
         <header style={S.bandeau(S.C.accent)}>
           <button style={S.boutonIcone(false)} onClick={onFermer} aria-label="Fermer">
             <Icone nom="ferme" contour={S.C.texte} taille={12} />
@@ -161,20 +208,26 @@ function Journal({ aventures, onFermer }) {
 
         {lot.length === 0 && <p style={S.verdictPhrase}>Rien par ici pour l'instant.</p>}
 
-        {lot.map((a) => (
+        {lot.map((a, i) => (
           <article key={a.id} style={S.entreeJournal(a.satisfaction)}>
-            <span style={S.libelle()}>{a.date}</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: S.ESPACE.s }}>
-              <span style={S.puceVoie(0)} />
-              <strong>{a.voies.join('  ·  ')}</strong>
+            <div style={S.corpsCarte(false)}>
+              <div style={{ ...S.medaillon(i, false), ...S.fondMedaillon(i), width: 64, height: 64 }}>
+                <span className={S.CL.losange} style={{ display: 'grid', placeItems: 'center' }}>
+                  <Sigil index={i} contour={S.C.contour} remplissage={S.C.page} taille={40} />
+                </span>
+              </div>
+              <div style={S.colonneCarte}>
+                <span style={S.libelle()}>{a.date}</span>
+                <strong>{a.voies.join('  ·  ')}</strong>
+                <span style={S.libelle()}>
+                  {a.etat <= 2 ? `L'Oracle dit : ${a.oracle}` : `Décision : ${a.decision}`}
+                </span>
+                {a.satisfaction && (
+                  <Coeurs valeur={{ oui: 5, bof: 3, non: 1 }[a.satisfaction]}
+                    plein={S.C.coeurPlein} vide={S.C.coeurVide} taille={14} />
+                )}
+              </div>
             </div>
-            <span style={S.libelle()}>
-              {a.etat <= 2 ? `L'Oracle dit : ${a.oracle}` : `Décision : ${a.decision}`}
-            </span>
-            {a.satisfaction && (
-              <Coeurs valeur={{ oui: 5, bof: 3, non: 1 }[a.satisfaction]}
-                plein={S.C.coeurPlein} vide={S.C.coeurVide} taille={14} />
-            )}
             {a.feedback && <p style={S.citation}>« {a.feedback} »</p>}
           </article>
         ))}
@@ -188,18 +241,26 @@ function Journal({ aventures, onFermer }) {
 /* ------------------------------------------------------------------ */
 
 const AVENTURES_EXEMPLE = [
-  { id: 1, date: '13/09/2026', etat: 4, voies: ['Alice ça glisse', '2 coups d\'avance'],
+  { id: 1, date: '13/09/2026', etat: 4, voies: ['Alice ça glisse', "2 coups d'avance"],
     oracle: 'Pile ou face', decision: 'Alice ça glisse', satisfaction: 'oui',
     feedback: "J'ai enfin fait quelque chose de ce hook que je traînais depuis des mois." },
   { id: 2, date: '11/09/2026', etat: 2, voies: ['Aller au concert', 'Rester bosser'],
     oracle: 'Aller au concert', decision: null, satisfaction: null, feedback: null },
 ];
 
+const PHRASES = {
+  clair: "Ton instinct est clair. Fais-toi confiance.",
+  dilemme: "Les deux se valent. Celle-ci te coûte moins — commence par là.",
+  aucune: "Aucune de ces routes ne t'appelle. La vraie question n'est peut-être pas encore posée.",
+  pileouface: "La pièce a parlé. Vas-y sans y repenser.",
+};
+
 export default function App() {
   const surTelephone = useEstTelephone();
 
   const [etape, setEtape] = useState(0);
   const [energie, setEnergie] = useState(3);
+  const [coeursBattent, setCoeursBattent] = useState(false);
   const [voies, setVoies] = useState([voieVierge(), voieVierge()]);
   const [q0, setQ0] = useState('');
   const [verdict, setVerdict] = useState(null);
@@ -210,8 +271,11 @@ export default function App() {
   const [satisfaction, setSatisfaction] = useState('');
   const [journalOuvert, setJournalOuvert] = useState(false);
   const [sauvegarde, setSauvegarde] = useState(false);
+  const styleInjecte = useRef(false);
 
   useEffect(() => {
+    if (styleInjecte.current) return;
+    styleInjecte.current = true;
     const s = document.createElement('style');
     s.textContent = S.CSS_GLOBAL;
     document.head.appendChild(s);
@@ -224,13 +288,16 @@ export default function App() {
   const modifierVoie = (i, patch) =>
     setVoies((vs) => vs.map((v, j) => (j === i ? { ...v, ...patch } : v)));
 
+  const changerEnergie = () => {
+    setEnergie((e) => (e % 5) + 1);
+    setCoeursBattent(true);
+    setTimeout(() => setCoeursBattent(false), 800);
+  };
+
   const signaler = () => { setSauvegarde(true); setTimeout(() => setSauvegarde(false), 1800); };
   const avancer = (n) => { setEtape(n); signaler(); };
 
-  const consulterOracle = () => {
-    setVerdict(consulter(nommees, energie, q0));
-    avancer(1);
-  };
+  const consulterOracle = () => { setVerdict(consulter(nommees, energie, q0)); avancer(1); };
 
   const lancerPiece = () => {
     setPieceTourne(true);
@@ -238,19 +305,23 @@ export default function App() {
   };
 
   const choixOracle = verdict ? (verdict.choix ?? tirage) : null;
+  const verdictRevele = verdict && (verdict.cas !== 'pileouface' || tirage);
+  const frappe = useFrappe(verdictRevele ? PHRASES[verdict.cas] : '');
+  const scoreDe = (nom) =>
+    verdict?.analyses.find((a) => a.voie.nom === nom)?.score;
 
   return (
     <div style={S.ecran}>
       <div style={S.flux}>
 
         {/* ---- Encadré entête ---- */}
-        <header style={S.entete}>
+        <header className={S.CL.panneau} style={S.entete}>
           <div>
             <h1 style={S.enteteTitre}>Quest Finder {VERSION}</h1>
             <p style={S.enteteSousTitre}>Choisis ton aventure !</p>
           </div>
           <button style={S.boutonIcone(AVENTURES_EXEMPLE.some((a) => a.etat <= 2))}
-            onClick={() => setJournalOuvert(true)}>
+            onClick={() => setJournalOuvert(true)} aria-label="Journal">
             <Icone nom="journal" contour={S.C.texte} remplissage={S.C.page} taille={18} />
           </button>
         </header>
@@ -259,15 +330,17 @@ export default function App() {
         <Panneau titre="Ton dilemme" icone="etoile">
           <div style={{ display: 'flex', alignItems: 'center', gap: S.ESPACE.s, marginBottom: S.ESPACE.m }}>
             <span style={S.libelle()}>ÉNERGIE</span>
-            <button style={S.boutonIcone(false)} onClick={() => setEnergie((e) => (e % 5) + 1)}>
-              <Coeurs valeur={energie} plein={S.C.coeurPlein} vide={S.C.coeurVide} />
+            <button style={S.boutonIcone(false)} onClick={changerEnergie} aria-label="Changer l'énergie">
+              <span className={coeursBattent ? S.CL.bat : undefined}>
+                <Coeurs valeur={energie} plein={S.C.coeurPlein} vide={S.C.coeurVide} />
+              </span>
             </button>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: S.ESPACE.m }}>
             {voies.map((v, i) => (
               <CarteVoie key={i} voie={v} index={i} surTelephone={surTelephone}
-                retirable={voies.length > 2}
+                score={scoreDe(v.nom)} retirable={voies.length > 2}
                 modifier={(p) => modifierVoie(i, p)}
                 retirer={() => setVoies((vs) => vs.filter((_, j) => j !== i))} />
             ))}
@@ -311,7 +384,7 @@ export default function App() {
         {etape >= 1 && verdict && (
           <Panneau titre="L'Oracle a parlé" icone="etoile" couleur={S.C.oracle}
             onRetour={etape === 1 ? () => setEtape(0) : undefined}>
-            {verdict.cas === 'pileouface' && !tirage ? (
+            {!verdictRevele ? (
               <>
                 <p style={S.verdictPhrase}>Les deux chemins se valent. Laisse la pièce trancher.</p>
                 <button style={S.piece(pieceTourne)} onClick={lancerPiece}>
@@ -320,16 +393,15 @@ export default function App() {
               </>
             ) : (
               <>
-                <p style={S.verdictNom}>→ {choixOracle ?? "Aucune des deux"} ←</p>
-                <p style={S.verdictPhrase}>
-                  {verdict.cas === 'clair' && 'Ton instinct est clair. Fais-toi confiance.'}
-                  {verdict.cas === 'dilemme' && "Les deux se valent. Celle-ci te coûte moins — commence par là."}
-                  {verdict.cas === 'aucune' && "Aucune de ces routes ne t'appelle. La vraie question n'est peut-être pas encore posée."}
-                  {verdict.cas === 'pileouface' && 'La pièce a parlé. Vas-y sans y repenser.'}
+                <p style={S.verdictNom} className={S.CL.scintille}>
+                  → {choixOracle ?? 'Aucune des deux'} ←
+                </p>
+                <p style={S.verdictPhrase} className={frappe.fini ? undefined : S.CL.frappe}>
+                  {frappe.visible}
                 </p>
               </>
             )}
-            {etape === 1 && (verdict.cas !== 'pileouface' || tirage) && (
+            {etape === 1 && verdictRevele && frappe.fini && (
               <div style={{ marginTop: S.ESPACE.m }}>
                 <Bouton couleur={S.C.oracle} onClick={() => avancer(2)}>Merci Oracle !</Bouton>
               </div>
@@ -411,10 +483,12 @@ export default function App() {
         {/* ---- Encadré : quête accomplie ---- */}
         {etape >= 6 && (
           <Panneau titre="Quête accomplie !" icone="etoile" couleur={S.C.oracle}>
-            <p style={S.verdictNom}>{decision}</p>
+            <p style={S.verdictNom} className={S.CL.scintille}>{decision}</p>
             <div style={{ display: 'grid', placeItems: 'center', marginBottom: S.ESPACE.m }}>
-              <Coeurs valeur={{ oui: 5, bof: 3, non: 1 }[satisfaction] ?? 0}
-                plein={S.C.coeurPlein} vide={S.C.coeurVide} taille={22} />
+              <span className={S.CL.bat}>
+                <Coeurs valeur={{ oui: 5, bof: 3, non: 1 }[satisfaction] ?? 0}
+                  plein={S.C.coeurPlein} vide={S.C.coeurVide} taille={22} />
+              </span>
             </div>
             {rempli(feedback) && <p style={S.citation}>« {feedback} »</p>}
             <p style={{ ...S.verdictPhrase, marginTop: S.ESPACE.m }}>
@@ -436,7 +510,7 @@ export default function App() {
       )}
 
       {sauvegarde && (
-        <div style={S.encadreSauvegarde}>
+        <div style={S.encadreSauvegarde} className={S.CL.apparait}>
           <Icone nom="disquette" contour={S.C.contour} remplissage={S.C.page} taille={14} />
           Sauvegardé !
         </div>
