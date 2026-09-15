@@ -1,7 +1,12 @@
-# Site 100% statique : rien a construire, on publie la racine telle quelle.
+# L'application est en React : il faut la compiler.
+# Netlify lance npm install tout seul quand il voit package.json,
+# puis execute cette commande, qui produit bundle.js a la racine.
 [build]
   publish = "."
-  command = ""
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 # SPA : toutes les routes retombent sur index.html
 [[redirects]]
