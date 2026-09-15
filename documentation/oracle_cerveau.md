@@ -1,4 +1,12 @@
 > 🧠
+
+
+
+
+
+# detection vocabulaire
+Attention envie =/= pas envie
+
 # interprétation 
 
 #### q1
@@ -6,6 +14,70 @@
 #### q2
 #### q0:
 'non' catégorique = pile ou face
+
+
+
+## Les quatre questions
+
+**Q1 — trois compteurs séparés**, deux niveaux chacun (petit 2 / fort 4) :
+
+```
+ÉLAN      ce qui tire vers l'avant
+PEUR      l'alarme du corps
+INERTIE   ce qui repousse, sans peur
+
+envie = ÉLAN − INERTIE   → entre dans l'addition
+peur                     → n'entre PAS dans l'addition, sert aux règles
+```
+
+Justifié par tes données : **15 % de tes réponses mêlent élan et peur.** Un seul axe les annulerait.
+
+**Q2** — une seule échelle, positive, minimum 0. Pas de cohabitation observée, un compteur suffit.
+
+**Q3** —
+INTENSITÉ      soulagement · osef · un peu frustrée · regret net
+IRRÉVERSIBILITÉ   je peux toujours  ←→  occasion ratée
+REPETITION
+
+**Q0 (la portée)** — **ne donne aucun point**. C'est arithmétique : elle est globale, donc des points fixes s'annulent entre les options. Elle agit en **règles** (plutôt qu'en poids, à mon avis révisé).
+
+## Les facteurs
+
+- **Énergie** : coût net = coût − gain. Si déficit **et** pas de vert fort → pénalité. Si vert fort → on note le dépassement mais **on ne pénalise pas** (la règle du lac). C'est ta V2.5, je n'ai rien de mieux.
+- **Coût comparé** → départage
+- **Gain** → **départage uniquement**, jamais prioritaire sur tes mots
+
+## Bonus / malus — ±1 plat, jamais ajustés individuellement
+
+- **valeurs** (ta liste validée en amont) : +1 par mot, plafonné, et **taggées pour le journal**
+- **hameçons** : −1
+- **engagement** : détecté aux **verbes relationnels** (« j'ai dit », « m'attend », « compte sur moi ») → +1
+- **culpabilité** : détectée aux **impersonnels** (« il faut que », « normal de », « tout le monde ») → −1
+- **Les deux peuvent se déclencher ensemble** — net zéro, et la phrase pose la question. Le cas ambigu devient une information, pas un bug.
+
+## Verdict
+
+- égalité → **pas plus de granularité** (ça ne réglerait rien : parfois tes deux réponses sont identiques), mais **départage par le gain**
+- **pièce** = « ça ne comptera pas, arrête de calculer »
+- **cartes** = « ça compte, et je n'ai pas assez d'éléments » — plus solennel
+
+## Deux principes
+
+> **Une règle se teste. Un poids se défend.**  
+> Donc : beaucoup de règles, peu de poids.
+
+> **Suite de régression rejouée à chaque changement.**  
+> C'est ce qui aurait attrapé les trois régressions de la V2.5.
+
+---
+
+**deux règles qui contredisent Q0** :
+
+|||
+|---|---|
+|**répétition**|« ça ne comptera pas » est faux pour les choses qui reviennent|
+|**peur + regret**|la peur ne disqualifie pas quand ça compte|
+
 
 # recommendation
 Voie A,B,C,D
@@ -15,10 +87,11 @@ Pile ou face Y
 clear / weak / energy (mais en vrai j'utilise peu cette fonctionnalité)%%
 Créer un code par recommendation, pour permettre à l'App d'extraire ensuite une phrase random dans un second fichier oracle_words
 
-# feedback
+# dénouement
 #### Followed Oracle
 null pour pile ou face
-true si recommandation ni l'un ni l'autre = decision aucun des deux / autre
+true si recommandation ni l'un ni l'autre = decision rien  / autre
+
 #### OracleWasRight:
 true si
 - recommandation = choix & satisfaction Oui (3/3)

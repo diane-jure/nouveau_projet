@@ -7,7 +7,7 @@ Bouton ← revenir visible uniquement sur le dernier encadré actif
 
 # Encadré entête
 Quest Finder (numéro de version)
-Choisis ton aventure !
+Trouve ta voie !
 Icône journal à droite (en surbrillance si aventures en cours dans supabase)
 
 # Div flow (largeur max 600px)
@@ -132,3 +132,9 @@ icone disquette, "Sauvegardé !"
 # Bandeau (si dilemme state dans Local Storage)
 - grise le flow en fond
 icone, Une aventure en préparation !
+
+------
+L'intérieure.
+Illustration centrale
+En haut, barre d'état
+En bas, barre de navigation (grosses icones)

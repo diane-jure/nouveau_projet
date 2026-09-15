@@ -7,6 +7,12 @@ A extraire des versions précédentes
 La Q0 Oui / Non / Maybe a une faille:
 faire une sortie avec mes amies je dirais pas forcément 'dans 10 jours ça compte', pourtant ça peut créer un souvenir pour toujours. Similairement m'occuper de mon hygiène, dans 10 jours ça compte pas forcément mais en même temps c'est important.
 
+fatigue ≠ flemme (« ton corps est à plat mais ton cœur veut y être »)
+les hameçons (« "Il faut" n'est pas une envie, c'est un fantôme qui parle à ta place »)
+l'option "raisonnable" qui écrase (« ce choix te résigne »)
+
+3 au pire
+
 # Sources externes
 
 ## ACT (Acceptance and Commitment Therapy)

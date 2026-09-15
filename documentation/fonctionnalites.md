@@ -1,17 +1,20 @@
 > 📠 
-> Appli en React, hebergé sur Netlify, données sur Supabase.
+> Appli en React
 
+Hebergé sur Netlify, données sur Supabase.
 Oracle moteur en local
-
 Saves protégées par un mot de passe règle RLS sur supabase
-
 
 # Lexique
 Dilemme: cartes d'options avant le verdict de l'Oracle
 Voie (=path): chacune des options
-Recommandation: voie choisie par l'Oracle
+Recommandation: voie choisie par l'Oracle(ou verdict ? choisir)
 Décision: voie prise par l'user
 Aventure (=quest): dilemme complété
+Portée: dans 10 jours, ça compte ? Q0 ou Q4 dans les archives.
+PV: energy/spoons dans les archives.
+Coût (=cost): perte d'energie en PV pour prendre cette voie
+Récompense (reward): gemmes 
 
 States:
 1 texte en écriture (Dilemma)
@@ -20,9 +23,34 @@ States:
 
 2 l’oracle a parlé ET demande t’as fait quoi
 
-3 la décision est prise ET demande c’était comment (Decision)
+3 la décision est prise  (Decision)
+
+3 la décision est prise ET demande c’était comment
 
 4 le feedback a été donné (Feedback)
+
+
+
+## 🧠 Les décisions de conception
+
+**Saisie** — texte libre toujours, jamais de QCM. L'oracle te cite.
+
+**Q1** — trois compteurs : `élan`, `peur`, `inertie`. `envie = élan − inertie` entre dans la somme ; **la peur n'y entre pas**, elle ne déclenche que des règles. _(15 % de tes réponses mêlent élan et peur.)_
+
+**Q3** — deux axes : **intensité** (soulagement → regret) × **irréversibilité** (je peux toujours ↔ occasion ratée). Inversion du signe par défaut, **une seule exception : la pression sociale**.
+
+**La portée** (ex-Q0) — posée en dernier, agit en **règles**, jamais en points _(elle est globale, donc des points s'annuleraient)_.
+
+**Répétition** — une règle qui **contredit** « ça ne comptera pas ». **Réversibilité** — un cran, pas un pondérateur.
+
+**Engagement** — verbes relationnels +1, impersonnels −1, **les deux peuvent se déclencher** : net zéro, et la phrase pose la question.
+
+**Deux monnaies** —  PV (énergie et cout) **trésor** (pas de l'énergie). Le trésor sert au **départage**, pas au score.
+
+**Pièce** = ça ne comptera pas · **cartes** = ça compte mais je ne peux pas trancher.
+
+> **Une règle se teste. Un poids se défend.** → beaucoup de règles, peu de poids.
+> 
 
 # Fragments de code
 ## ORACLE V2.5(.1)

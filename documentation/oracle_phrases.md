@@ -31,7 +31,8 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 # VERDICT
 
-## CAS 1 — Clarté nette / Une option vibre clairement
+## UNE VOIE (P)
+### CAS 1 — Clarté nette / Une option vibre clairement
 
 > "Ton instinct est clair — [chosenPath] te fait vibrer. [autre option] te tire vers le bas. Fais-toi confiance."
 
@@ -45,7 +46,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 2 — Dilemme / Conflit corps vs cœur (énergie)
+### CAS 2 — Dilemme / Conflit corps vs cœur (énergie)
 
 > "Ton corps est à plat mais ton cœur veut y être. La fatigue de demain est réelle — vaut-elle ce qui se joue aujourd'hui ?"
 
@@ -63,7 +64,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 3 — Pile ou face / Coût vs gain équilibrés
+### CAS 3 — Pile ou face / Coût vs gain équilibrés
 
 > "Les deux chemins se valent. [chosenPath] te coûte moins. [autre option] peut t'apporter plus. À toi de voir ce qui compte aujourd'hui."
 
@@ -77,7 +78,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 4 — Ni l'un ni l'autre / Aucune option n'appelle
+### CAS 4 — Ni l'un ni l'autre / Aucune option n'appelle
 
 > "Aucune de ces routes ne t'appelle vraiment. C'est peut-être le signe que la vraie question n'est pas encore posée."
 
@@ -87,7 +88,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 5 — Hameçons détectés (culpabilité, obligation)
+### CAS 5 — Hameçons détectés (culpabilité, obligation)
 
 > "Ce que tu décris n'est pas une envie. C'est une dette que tu t'es imposée."
 
@@ -99,7 +100,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 6 — Soulagement comme signal
+### CAS 6 — Soulagement comme signal
 
 > "Ton corps a répondu avant toi. Ce soulagement que tu ressentirais — c'est lui qui dit la vérité."
 
@@ -107,7 +108,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 7 — Regret massif comme signal
+### CAS 7 — Regret massif comme signal
 
 > "Dans dix jours, [chosenPath] sera peut-être oubliée. Mais ce regret que tu porterais si tu n'y vas pas — lui, il restera."
 
@@ -115,7 +116,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 8 — Décision importante (enjeux forts)
+### CAS 8 — Décision importante (enjeux forts)
 
 > "Ce n'est pas une décision ordinaire. Deux forces s'affrontent en toi — et elles ont toutes les deux raison d'exister. [Recommandation malgré tout.]"
 
@@ -123,7 +124,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 9 — Quand l'option "raisonnable" écrase
+### CAS 9 — Quand l'option "raisonnable" écrase
 
 > "Ce choix te résigne. Ce n'est pas la même chose que choisir."
 
@@ -133,7 +134,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 10 — Après la décision (doute post-choix)
+### CAS 10 — Après la décision (doute post-choix)
 
 > "Tu as choisi avec ce que tu savais à ce moment-là. C'est tout ce qu'on peut faire."
 
@@ -143,15 +144,27 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 11 — Peur de la bonne décision
+### CAS 11 — Peur de la bonne décision
 
 > "[chosenPath] te fait peur. Et son absence te ferait mal."
 
 ---
 
+## RANDOM (Y)
+
+### CAS 1: Pile ou face
+
+
+### CAS 2: tirage de cartes
+
+## AUCUN (X)
+
+### CAS en fonction des arguments
+
+
 # DÉNOUEMENT
 
-## CAS 1 — Bonne satisfaction, a suivi l'oracle
+## Bon, suivi l'oracle (Gy)
 
 - "Tu as écouté ton cœur et ça a payé. Continue à te faire confiance."
 - "L'Oracle et toi étiez sur la même longueur d'onde. Bien joué."
@@ -159,7 +172,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 2 — Bonne satisfaction, a suivi sa propre voie
+### Bon, propre voie (Gn)
 
 - "Tu as suivi ta propre voie et c'était la bonne. Ton instinct te connaît."
 - "Tu savais ce dont tu avais besoin. L'Oracle apprend de toi aussi."
@@ -167,7 +180,13 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 3 — Satisfaction mitigée
+### Bof suivi l'oracle (My)
+
+- "Parfois les choix ne sont ni bons ni mauvais — ils sont. L'important c'est d'avoir choisi."
+- "Choisir c'est renoncer. Le "bof" fait partie du jeu."
+- "Pas de regret, pas d'euphorie. C'est une donnée pour la prochaine fois."
+ 
+### Bof propre voie (Mn)
 
 - "Parfois les choix ne sont ni bons ni mauvais — ils sont. L'important c'est d'avoir choisi."
 - "Choisir c'est renoncer. Le "bof" fait partie du jeu."
@@ -175,7 +194,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 4 — Mauvaise satisfaction, a suivi l'oracle
+### Mauvais, suivi l'oracle (By)
 
 - "Même les bons choix peuvent mal tourner. Ce n'est pas ta faute."
 - "L'Oracle n'est pas infaillible. La prochaine fois on fera mieux ensemble."
@@ -183,7 +202,7 @@ L'Oracle parle comme **un.e ami.e sage qui te connaît bien**, pas comme un coac
 
 ---
 
-## CAS 5 — Mauvaise satisfaction, a suivi sa propre voie
+### Mauvais, propre voie (Bn)
 
 - "Tu as appris quelque chose. La prochaine fois, tu sauras."
 - "L'expérience est le meilleur professeur. Cette aventure t'a appris quelque chose."
