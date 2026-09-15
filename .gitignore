@@ -1,3 +1,6 @@
-bundle.js
-node_modules
 node_modules/
+bundle.js
+.DS_Store
+.netlify/
+*.log
+.captures/
