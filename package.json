@@ -1,12 +1,9 @@
 {
-  "name": "oracle",
-  "version": "0.1.0",
-  "description": "Outil de decision - 4 questions, un verdict, un journal.",
+  "name": "quest-finder-proto",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test test/*.test.js",
-    "rapport": "node test/rapport.js",
-    "dev": "python3 -m http.server 5173"
+    "build": "esbuild src/main.jsx --bundle --loader:.jsx=jsx --outfile=bundle.js --define:process.env.NODE_ENV='\"production\"'",
+    "dev": "npm run build && python3 -m http.server 5190"
   }
 }

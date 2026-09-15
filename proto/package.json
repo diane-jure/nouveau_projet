@@ -1,9 +1,0 @@
-{
-  "name": "quest-finder-proto",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "esbuild src/main.jsx --bundle --loader:.jsx=jsx --outfile=bundle.js --define:process.env.NODE_ENV='\"production\"'",
-    "dev": "npm run build && python3 -m http.server 5190"
-  }
-}
