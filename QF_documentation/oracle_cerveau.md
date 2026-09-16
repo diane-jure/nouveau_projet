@@ -12,6 +12,7 @@
 - tester si certains pathPoints sont négatifs, et lesquels
 - tester si heartoverbody & bodyWisdom se superposent
 - tester quels mots ne devraient pas passe avec include
+- analyse sémantique des collisions entre familles de everyField (un mot à la fois desire et spark) : décider au cas par cas, après les premiers tests
 - Corrélation des scores avec satisfaction
 - Distribution des totaux (médiane) et position du zéro
 
@@ -57,6 +58,8 @@ Ignorer les accents
 Inclut +5 caractères avant et après
 includes()
 Si plusieurs regex superposés: l'expression la plus longue gagne
+
+Un mot peut appartenir à plusieurs familles s'il s'agit de booléens (reversible, irreversible, recurrence) : ce sont des drapeaux, pas des compteurs, donc pas de double comptage. La règle « un mot, une famille » ne vaut que pour les familles qui donnent des points.
 
 pour Q3points les valeurs des sparks & hooks sont inversées - sauf famille injonction
 
