@@ -12,7 +12,7 @@ Des docs que j'ai :
 - Apprentissage — nourrir la curiosité
 - Soleil et nature — besoin quasi-vital
 - Justice — ne peut pas laisser passer l'injustice
-Voici la liste complète de tes centres d'intérêt, tels qu'ils sont apparus dans nos échanges :
+
 
 **Corps / mouvement**
 - Yoga
