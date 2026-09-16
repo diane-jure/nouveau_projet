@@ -3,6 +3,37 @@
 Code **hors application**, écrit pour trancher une question de conception.
 Rien ici n'est destiné à être livré tel quel.
 
+## Comment lancer
+
+Il faut un **terminal** et **Node** (v18 ou plus). Toutes les commandes se
+lancent depuis **la racine du dépôt**, jamais depuis `labo/`.
+
+> ⚠️ `github.dev` — l'éditeur qui s'ouvre quand on tape `.` sur un dépôt
+> GitHub — n'a **pas de terminal**. On peut y lire et y écrire, pas y
+> exécuter. Pour faire tourner le labo il faut un **Codespace** :
+> sur la page du dépôt, bouton vert `Code` → onglet `Codespaces` →
+> `Create codespace`. Node y est déjà installé.
+
+```bash
+node labo/v4/tests.js          # l'Oracle V4 sur les 25 dilemmes réels
+node labo/v4/genere_word_bank.js   # régénère le lexique depuis le MD
+```
+
+Le second est à relancer **après chaque modification** de
+`QF_documentation/oracle_detecte.md` : sans lui, les tests tournent encore
+sur l'ancien vocabulaire.
+
+## Oracle V4
+
+Quatre fichiers, dans l'ordre où ils s'appellent :
+
+| fichier | rôle |
+|---|---|
+| `genere_word_bank.js` | lit le MD, écrit `word_bank.js`. Le MD est la source |
+| `detecte.js` | normalise, cherche en `includes()`, applique les modificateurs |
+| `cerveau.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
+| `tests.js` | répond aux questions de la liste « Tests en labo » |
+
 ## Lire le texte libre sans LLM
 
 `lecture.js` — lexique français + règles (négation, intensité, sentiments
