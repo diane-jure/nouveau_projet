@@ -157,4 +157,108 @@ Preston & Colman : en dessous de 5 crans on perd de l'information, au-dessus de 
 
 ---
 
-_Manques encore ouverts (à ne pas combler par invention) : `avoidanceFear` sans contre-exemple aussi net que Lyon ; `heartOverBody` / `selfCare` sans exemple personnel daté ; le mécanisme "loot qui masque un coût immédiat" ; hameçons "Manque" et "Attente d'une tierce personne" sans exemple daté ; `engagement` côté pickGreat._
+### **Émotion / ressenti**
+
+* aimer
+* déteste
+* attirée
+* besoin
+* idéal
+* comfortable
+* fatigant
+* agréable
+* chaleureux
+
+### **Motivation / désir**
+
+* vivre bien
+* sortir
+* lien culturel
+* mode de vie
+* expérimenter
+* découvrir
+* profiter
+
+### **Doute **
+
+* lequel choisir
+* compromis
+* défauts
+* à surveiller
+
+### **Regret / anticipation**
+
+* mal supporter
+* fatigue
+* inconfort
+
+**LEXIQUE ÉMOTIONNEL DE DIANE**
+
+---
+
+**ENVIE / MOTIVATION POSITIVE**
+- mega fière / fière
+- s'amuse de fou / kiffe
+- excité.e / hâte
+- à fond
+- curieux.se
+- ça me dit
+- envie grave
+- ça me ferait plaisir
+
+**RÉSISTANCE / DÉMOTIVATION**
+- pff / pfffff / pfff
+- flemme
+- bof / mouais
+- pas envie
+- chiant
+- ça me soûle
+- angoisse
+- peur de...
+- why not (neutre-résistant)
+- mmh / mmmh (hésitant)
+
+**REGRET / CULPABILITÉ**
+- honteuse / honte
+- dégoûtée
+- fâchée (contre moi)
+- coupable / un poil coupable
+- deg / trop deg / maybe deg
+- dommage / un peu dommage
+- nul.le
+
+**SOULAGEMENT / SATISFACTION**
+- soulagée / soulagement énorme
+- contente
+- en paix
+- fière de moi
+
+**RELATIVISATION**
+- au pire c'est pas grave
+- change rien
+- osef / je m'en fous
+- ça change pas grand chose
+- bah... (minimisation)
+- aucune importance
+- c'est juste... (minimiser)
+
+**PRESSION / OBLIGATION**
+- il faut que / faut que
+- je devrais
+- obligation
+- gênée
+- tout le monde...
+
+**RATIONALISATION**
+- maybe si... (conditionnelle hypothétique improbable)
+- ça pourrait... (potentiel vague)
+- peut-être oui si... (justification après coup)
+- risque que... (anticiper négatif)
+- au quotidien (dramatise pattern)
+
+**AMBIVALENCE**
+- oui mais non
+- both / neither
+- ça dépend
+- d'un côté... de l'autre...
+
