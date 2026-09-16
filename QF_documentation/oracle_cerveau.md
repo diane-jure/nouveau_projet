@@ -6,10 +6,12 @@
 - Score min et max de chaque variable
 - - Explication des scores
 - tester si les écarts entre les plus gros et moyen pathscore devient absurde (si les boost ou reduces s'enchainent)
+- Zone morte entre avoidanceFear et protectiveFear : isHigh d'un côté, <= 0 de l'autre. Un q3Regret à 1 ou 2 ne déclenche ni l'un ni l'autre: vérifier quand ça se passe et si c'est un problème
 - Score min et max de chaque q
 - Score min et max des pathScore
 - tester si certains pathPoints sont négatifs, et lesquels
-- tester si heartoverbody & selfcare se superposent
+- tester si heartoverbody & bodyWisdom se superposent
+- tester quels mots ne devraient pas passe avec include
 - Corrélation des scores avec satisfaction
 - Distribution des totaux (médiane) et position du zéro
 
@@ -48,12 +50,16 @@ isHigh(x) => x >= THRESHOLD
 ```
 
 ## detection
+
+
 Ignorer la casse (maybe les prénoms: détecter une majuscule ?)
 Ignorer les accents
 Inclut +5 caractères avant et après
+includes()
 Si plusieurs regex superposés: l'expression la plus longue gagne
-Dans Q3 les valeurs des sparks & hooks sont
-inversées - sauf injonction
+
+pour Q3points les valeurs des sparks & hooks sont inversées - sauf famille injonction
+
 Détection inclut titre du path
 
 #### Q1
@@ -62,7 +68,8 @@ indifference (weak / strong)
 fear (weak / strong) 
 
 #### Q2
-benefits (weak / strong)
+achievements (strong)
+
 #### Q3
 regret (weak / strong)
 relief (strong)
@@ -70,6 +77,7 @@ trivial (weak)
 reversible (true/false)
 irreversible (true/false)
 recurrence (true/false)
+
 #### Q0
 scope (yes,maybe,no)
 
@@ -77,17 +85,18 @@ scope (yes,maybe,no)
 **sparks**
 [liste des sparks] (strong)
 **hooks**
+damage
 [liste des hooks] (strong)
 **modifiers**
 but
-less
 more
+less
+not
 
 ## autres
 
-allFear
-allRegret
-
+q1Fear
+q3Regret
 
 avoidanceFear
 protectiveFear
@@ -121,16 +130,13 @@ loot(1-10)
 sum of desire points minus sum of indifference points and bonus/malus
 
 #### Q2 points
-sum of benefits points and bonus/malus
+sum of achievements points and bonus/malus
 
-#### Q3
+#### Q3 points
 
 relief (strong) ; negative points
 trivial (weak) ; negative points
 regret (weak,strong);  positive points
-
-irreversible
-recurrence
 
 Q3 points = sum of relief trivial regret points and REVERSE bonus/malus
 
@@ -146,8 +152,10 @@ Les bonus/malus sont des points mais créent aussi des tags pour les Recommandat
 #### pondérateurs
 
 but: reduce beginning of field
-less: reduce mots adjacents 
-more: boost mots adjacents 
+not: inverse mot adjacent
+less: reduce mot adjacent
+more: boost mot adjacent
+
 
 #### resources
 
@@ -160,25 +168,25 @@ sum of Q1pts + Q2pts + Q3pts
 ## calculate pathScore
 
 create var:
-allFear
-allRelief
-allRegret (weak,strong);  positive value
+q1Fear
+q3Relief
+q3Regret (weak,strong);  positive value
 
 #### règles
 ```
 // Fear vs Regret
-if (totalFear.isHigh && totalRegret.isHigh)
+if (q1Fear.isHigh && q3Regret.isHigh)
   → avoidanceFear: boost sur pathPoints
 
-if (totalFear.isHigh && totalRegret <= 0)
+if (q1Fear.isHigh && q3Regret <= 0)
   → protectiveFear: reduce sur pathPoints
 
 // Body
 if (damage && (Q1points.isHigh || regret.isHigh || irreversible))
   → heartOverBody: boost sur pathPoints
 
-if (damage && (!Q1.isHigh || relief.isHigh || reversible))
-  → selfCare: reduce sur pathPoints
+if (damage && (!Q1.isHigh || q3relief.isHigh || reversible))
+  → bodyWisdom: reduce sur pathPoints
 
 // Ir/Reversible
 if (irreversible) → boost sur pathPoints
@@ -254,5 +262,5 @@ true si
 - verdict = decision & satisfaction Oui (=3)
 - donc false pour meh et no
 
-- recommandation =/= choice & satisfaction non ou meh (=<3)
+- recommandation =/= choice & satisfaction non ou meh (=<2)
 - donc false uniquement pour yes
