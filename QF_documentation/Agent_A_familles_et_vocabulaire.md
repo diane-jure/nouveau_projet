@@ -185,3 +185,36 @@ collision de nommage.
 10. **« Ambivalence »** (oui mais non, both/neither, ça dépend, d'un côté... de l'autre...) et **« Rationalisation »** (maybe si..., ça pourrait..., peut-être oui si..., risque que...) : pas gardées comme familles à part — reversées respectivement dans Q0 `maybe` et dans Q1 `desire` (weak) / Q0 `maybe`, faute de rattachement transversal clair. Signalé pour vérification si l'autrice préfère les isoler.
 11. **Buckets non psychologiques d'`oracle_detection.md`** (« passions », « obligationspositives », le bucket marqué « ???? ») : ce sont des listes de sujets/domaines (musique, admin, travail...), pas des familles drive/hook — non repris dans les tables ci-dessus.
 12. **Grosse liste alphabétique brute d'`oracle_detection.md`** (~860 mots, dupliquée deux fois dans le fichier) : les mots à signal psychologique clair ont été réinjectés dans les tables ci-dessus ; le reliquat très générique (achat, argent, boulot, musique, voyage...) n'a pas été assigné mot à mot, faute de famille pertinente sans introduire de bruit.
+
+---
+
+## (E) Contrôle d'exhaustivité (audit demandé par l'autrice — rien n'a été reclassé, juste listé)
+
+### E1. Familles/mots perdus entre les sources et ce document
+
+**Deux familles entières disparues pendant la révision v1→v2, à réintégrer :**
+- **Dégoût/Rejet viscéral (option)** — "dégoûtant(e)", "répugnant(e)" (+ "beurk", voir ci-dessous). Source : `oracle_V3-avorton.md`, RED N1.
+- **Tuer le temps** — "passer le temps", "tuer le temps", "en attendant", "pour m'occuper", "pour occuper", "histoire de", "faute de mieux", "rien d'autre à faire", "par défaut". Source : `oracle_v2.md`, `oracle_v2.5.1.js`, `oracle_V3-avorton.md`.
+
+**Mots isolés manquants (vérifiés contre le code des versions) :**
+"hate" (sans accent), "fache" (sans accent/e), "peur de m'ennuyer", "ennuyer" (seul), "soûle"/"saoule" (seuls), "beurk", "pas folle", "mmmmh", "pas sûre s'il y a d'autres occasions" (phrase entière, pas juste des fragments), "relaxée", "genee" (sans accent).
+
+**Clusters d'`oracle_coeur.md` jamais intégrés :**
+- "Décisionnels/hésitation" (quasi entière) : j'ose pas, j'ai envie mais, j'y vais ?, je fais quoi, est-ce que je dois, ça vaut le coup, ça sert à rien, trop compliqué, trop dur, pas maintenant, plus tard, laisser tomber, renoncer, abandonner, continuer, insister, tenter quand même.
+- "Auto-jugement" (quasi entière) : ridicule, faible, bête, naïf/naïve, pathétique, pas malin, pas digne, j'abuse, j'exagère, je me respecte pas.
+- "Émotionnels/ressentis immédiats" (partielle) : ça pique, glacé, tendu, crispé, inconfortable, oppressant, étouffant, seul, isolé, amer, énervé, saoulé, blasé, sec, fragile, vulnérable.
+- Mots isolés oubliés dans des familles déjà nommées : "plaisir", "agréable", "cool", "léger" (Plaisir/desire) ; "tester", "voir", "découvrir", "essayer" (Curiosité) ; "flipper" (Peur/fear).
+
+Couverture confirmée complète : `oracle_QCM.md` (pas de vocabulaire en dur) et les sections structurées d'`oracle_detection.md` (Q0-Q3, everyField, pondérateurs).
+
+### E2. Vocabulaire trouvé dans `labo/saves/sauvegardes.csv` (25 dilemmes réels — jamais fouillé jusqu'ici pour le vocabulaire, seulement par Agent B pour les exemples de verdicts)
+
+**Récurrent (≥2 occurrences dans le CSV — vrai vocabulaire employé, pas un accident) :**
+"cool" (7×, absent partout — confirme le manque déjà repéré dans FEU VERT #1 Plaisir), "deg" seul (sans préfixe), "gagner"/"gagne", "demain" (non classé, y compris pas dans recurrence), "profiter", "sortir"/"sortie", "rencontre(s)", "danser", "sérénité" (absente même de `relief` où elle aurait sa place), "réfléchir" (mot que l'autrice cite elle-même comme signal d'émotion forte), "passion" (le nom, les activités existent mais pas le mot), "seul"/"seule" (état).
+
+**Isolés mais notables (1 occurrence, souvent liés à un cas déjà central du corpus) :**
+"peur de m'ennuyer" (confirme en situation réelle le manque déjà trouvé dans le code), "rendez-vous"/"rdv"/"honorer" (le dilemme-clé du débat `engagement` cité par B et C — pourtant absent littéralement), "poser un lapin", "bonheur", "recharge"/"se recharger", "reporter"/"reporté", "trancher" (déjà cité dans `oracle_parle.md`/le rapport C), "emballée"/"pas emballée", "validé"/"valider", "confort"/"confortable", "chill", "détente"/"détendre", "limites"/"poser ses limites" (lié au pattern "ne pas oser dire les choses"), "éviter", "charge mentale", "enfin", "stabilité", "partager"/"partage", "motivation" (le nom, pas juste l'adjectif "motivé").
+
+**Priorité basse (orthographe/argot ponctuel) :** "tjs", "j'sais pas", "parano", "dead", "stressant", "agir"/"agi", "capable", "action", "argent", "reconnecter", "intelligente" (probablement trop personnel/jugement pour être un signal généralisable).
+
+Aucune reclassification faite — à trancher par l'autrice.
