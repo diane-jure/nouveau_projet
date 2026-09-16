@@ -218,3 +218,54 @@ Couverture confirmée complète : `oracle_QCM.md` (pas de vocabulaire en dur) et
 **Priorité basse (orthographe/argot ponctuel) :** "tjs", "j'sais pas", "parano", "dead", "stressant", "agir"/"agi", "capable", "action", "argent", "reconnecter", "intelligente" (probablement trop personnel/jugement pour être un signal généralisable).
 
 Aucune reclassification faite — à trancher par l'autrice.
+
+---
+
+## (F) INDEX BRUT — vocabulaire personnel de l'autrice (non classé, pour son usage manuel)
+
+> ⚠️ Contrairement aux tables (A)-(E) ci-dessus, cette section n'est **pas classée par
+> famille** — c'est un index brut de tout le vocabulaire personnel de l'autrice
+> (ses propres mots, pas les listes synthétiques des versions du moteur), à utiliser
+> comme matière première pour son propre travail de classification manuel. Recherche
+> des titres de voies du CSV encore en cours (demande complémentaire envoyée après
+> celle-ci) — à ajouter ici dès reçue.
+
+### Source 1 — `labo/saves/sauvegardes.md` (25 dilemmes réels, Q1/Q2/Q3 par voie + commentaires)
+
+fun, ça me fait peur, un tube, j'aurais enfin fait, hook (que j'ai), je l'aurais toujours en tête, j'ai l'impression que, difficile, cool, dur, instru, j'sais pas, bof, danser, osef, un peu, flemme, j'aimerais bien, y retourner, bonheur, endroit préféré, découvrir, frustrée, un autre jour, peur, je crée des trucs, rien, j'ai pas envie, validé, soulagée, stress, l'occasion, je m'amuse, j'avance, moyen, pas hyper emballée, je vois pas le temps passer, rapidement, régler, vérifier, relance, heureusement, très rapidement, anxiete, joie, partage, chant, maybe, regret, repos, rires, jeu, why not, sérénite, activité, bouger, me forcer, ça m'a fait du bien, j'me sens coupable, angoisse, rencontres, fierté, amusement, leçon, essayer, envie, regretter, culpabilité, je gagne du temps, libéré, débarassé, avancer, gagner, occasions, enthousiasme, chanter, malades, opportunité, cools, mes affaires, demain, grave, recup, neutre, satisfaction, stabilité, excitation, trop cool, projets, déception, pas ma décision seule, ça m'apaise, recharge, légèrement, aucune idée, dispositions, hôte, douleur, tracer, stressée, mmh, mmmh, vélo, rome, reporté, chill, détente, ratée, geeker, beaucoup, outil, utile, efficace, reprendre, motivation, clarté, rebelote, bordel, deg, propeté, progresse, sérénité, avenir, fatigue, réfléchir, calme, repères, charge mentale, tourner en rond, active, trajet, honteuse, consolider, peur du regret, anxiété, panique, meilleur, magnifique, trop loin, décision importante, confort, canapé, paix, yoga, FOMO, sortir, agréable, souvenirs, ciné, me trahir, argent, en action, option C, en finir, limites, trace écrite, agi, court terme, peser, piste, contacts, procrastiné, intelligente, respecter, rendez-vous, un truc, poser un lapin, créer, dessins, me reconnecter, passion, honorer, rdv, débloquera, longtemps, l'univers, apprentissage, inactive, oui mais non, je fais rien, fière, gagne, autres occasions, oublié, toute seule, en forme, dead, capable, sortie, quartier, aime sortir, raté, rassurée, folie, inconnu, drogue, rigoler, ptet, meuf, plaît, dommage, gênée, se revoir, invitation, à l'improviste, importance, énergie disponible
+
+### Source 2 — `oracle_coeur.md` (deuxième moitié, "🟢 FEU VERT" à la fin)
+
+**FEU VERT/FEU ROUGE :** kiff, plaisir, envie, fun, agréable, cool, bien, joyeux, léger, curieux, curiosité, tester, voir, découvrir, tenter, essayer, motivé, énergie, élan, chaud, partant, vivant, dynamique, clair, simple, évident, logique, fluide, naturel, fier, fière, respect, digne, assumé, ok avec moi-même, peur, angoisse, stress, panique, flipper, inquiétude, pression, obligé, devoir, attendu, forcer, contraint, mal à l'aise, gênant, chelou, bizarre, froid, lourd, besoin, manque, vide, dépendance, accro, attaché, fatigué, crevé, épuisé, vidé, saturé
+
+**Pondérateurs :** très, trop, à fond, énormément, grav, encore, toujours, à chaque fois, souvent, j'imagine, je me vois, si jamais, et après, au pire, pas grave, on verra, réversible, un peu, moyen, bof, pas tant que ça, je sais pas, flou, confus, perdu, à bout, trop mal, au fond du trou
+
+**Émotionnels/ressentis immédiats :** mal, pas bien, ça pique, lourd, froid, glacé, tendu, crispé, bizarre, chelou, inconfortable, gênant, oppressant, étouffant, vide, seul, isolé, nul, triste, déçu, amer, frustré, énervé, saoulé, blasé, sec, dur, fragile, vulnérable
+
+**Corporels :** boule au ventre, nœud, gorge serrée, souffle court, mal au ventre, mal au cœur, corps tendu, corps lourd, fatigue, douleur, boiter, bloqué
+
+**Décisionnels/hésitation :** j'hésite, je sais pas, j'ose pas, j'ai pas envie, j'ai envie mais, j'y vais ?, je fais quoi, est-ce que je dois, ça vaut le coup, ça sert à rien, trop compliqué, trop dur, pas maintenant, plus tard, laisser tomber, renoncer, abandonner, continuer, insister, tenter quand même
+
+**Relationnels :** malaise, silence, blanc, distance, froid, regard, ambiance, tension, non-dit, flou, impassible, absent, répondre, pas répondre, ignoré, ghost, attendre, espérer
+
+**Regret/post-choix :** j'aurais pas dû, j'aurais dû, j'aurais mieux fait, mauvaise idée, erreur, connerie, dommage, trop tard, ça me reste, ça me travaille, j'y pense encore, je rumine, je m'en veux, honte, culpabilité, malaise après coup
+
+**Auto-jugement :** ridicule, faible, bête, naïf/naïve, pathétique, pas malin, pas digne, pas fier/fière, j'abuse, j'exagère, je me respecte pas
+
+**Apaisement/résolution :** soulagé, ça va mieux, calme, posé, ok, tranquille, apaisé, ça passe, c'est fait, au moins c'est clair, j'ai dit ce que j'avais à dire, j'ai essayé, j'assume, j'avance
+
+**Extraction "Émotions/Motivations/Regrets/Satisfaction" (conversation 1) :** anxiété, inquiétude, peur de déranger, fatigue, douleur, solitude, culpabilité, frustration, insécurité, soulagement, apaisement, guérison, récupération, bien faire, être prise au sérieux, retrouver de la mobilité, comprendre, s'organiser, être autonome, améliorer la communication, être alignée avec toi-même, prendre soin de toi, procrastination, difficulté à décider, difficulté à planifier, impression d'être un poids, ne pas oser dire les choses, ne pas être écoutée, manque de cadre, manque de méthode, énergie mal utilisée, soutien moral, être rassurée, clarté, confiance, encadrement concret, fraîcheur, détente, être comprise, se sentir légitime
+
+**Extraction (conversation 2) :** surprise, étonnement, lucidité, regret, curiosité, engagement, scepticisme, méfiance, comprendre, agir, améliorer la situation sociale, précision, rigueur, contrôle, personnalisation, solitude, tension, hyperactivité motrice, hyperactivité mentale, incapacité à se détendre, incapacité à se reposer, épuisement, besoin de connexion, réconfort, vide intérieur, présence, attention, peur du vide, perfectionnisme, angoisse, légitimité, suractivité, agitation, bienveillance, authenticité, apaisement, repos, relaxation, peur du regret, regrets énormes, impulsive, ne pas settle for less, j'aurais dû, j'ai pris une mauvaise décision, malaise, petits malaises, je ne me sens pas à l'aise, tête-à-tête difficile, gênée, jugée, amitié, neutre, isolée, ça m'isole, enfermées dans leur chambre je ne supporte pas, trop difficile à vivre, particulière, peur de déranger, m'empêche souvent, je m'inquiète de ne pas correspondre, très stressant, épuisant, tout s'accumule, je n'ai jamais réussi à m'y habituer, j'aime avoir du monde, after improvisés, rentrer tard, mettre de la musique, faire du bruit, salon ouvert, personnes festives
+
+**LEXIQUE ÉMOTIONNEL DE DIANE :** mega fière, fière, s'amuse de fou, kiffe, excité.e, hâte, à fond, curieux.se, ça me dit, envie grave, ça me ferait plaisir, pff, pfffff, pfff, flemme, bof, mouais, pas envie, chiant, ça me soûle, angoisse, peur de..., why not, mmh, mmmh, honteuse, honte, dégoûtée, fâchée (contre moi), coupable, un poil coupable, deg, trop deg, maybe deg, dommage, un peu dommage, nul.le, soulagée, soulagement énorme, contente, en paix, fière de moi, au pire c'est pas grave, change rien, osef, je m'en fous, ça change pas grand chose, bah, aucune importance, c'est juste, il faut que, faut que, je devrais, obligation, gênée, tout le monde, maybe si, ça pourrait, peut-être oui si, risque que, au quotidien, oui mais non, both, neither, ça dépend, d'un côté... de l'autre...
+
+**Dernière extraction :** aimer, déteste, attirée, besoin, idéal, comfortable, fatigant, agréable, chaleureux, vivre bien, sortir, lien culturel, mode de vie, expérimenter, découvrir, profiter, lequel choisir, compromis, défauts, à surveiller, mal supporter, fatigue, inconfort
+
+### Source 3 (bonus) — citations verbatim de l'autrice retrouvées dans `Agent_C_oracle_coeur_revise.md`
+
+Ce sont ses phrases exactes, pas des reformulations :
+
+"sacrifice de ton instinct pour les autres", "rationalisation progressive", "honte sociale qui t'empêche de changer d'avis", "sur-anticipation des besoins des autres", "ça me fait peur" (accompagne les choix notés bons), "Sois raisonnable", "Anormal", "soulagement si tu fais pas = red flag majeur", "il faut / je devrais = toujours suspect", "écouter le corps plutôt que la rationalisation", "maybe si...", "peur de mal faire", "absence de permission", "terreur de l'irréversible", "La peur forte ne prédit pas le bon choix — elle prédit un dilemme difficile", "fatigue ≠ flemme", "ton corps est à plat mais ton cœur veut y être", "dans 10 jours ça compte", "un souvenir pour toujours", "mon hygiène", "persévération", "3 au pire", "l'oracle n'a pas assez d'éléments pour trancher", "Corps fatigué ≠ Pas envie", "demain sans", "coût et récupération sont séparés", "une voie à 5 qui rend 4 coûte toujours 5 à payer", "certaines décisions sont trop grosses pour un verdict"
+
+Liste d'activités personnelles (catégorie "Projets perso / dev" et loisirs) : Souvenirs (app), authenticité, liberté, autonomie, créativité, dessin, aquarelle, pastel, acrylique, photo, graffiti, musique, reprises, synthé, loop station, chant, écriture, poèmes, Naikan, connexion profonde, voir ses amis, chorale, scène, karaoké, apprentissage, arabe, permis bateau, atelier réparation vélo, soleil, nature, plage, courir, nager, justice, administratif, corps, mouvement, yoga, pole dance, escalade, cirque, introspectif, somatique, TRE, jeux, stratégie, échecs, jeux vidéo, manuel, réparations
