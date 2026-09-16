@@ -1,3 +1,13 @@
+### La remarque sur irreversible + reversible
+
+Elle était mal formulée, désolée. Ce que je voulais dire :
+
+On avait convenu que si les deux familles de mots se déclenchent, le bon comportement c'est **ni boost ni reduce**. Dans ton doc, les deux règles partent, donc ×2 puis ×0,5 — et ça fait ×1. Tu obtiens le bon résultat **sans avoir écrit la règle**.
+
+Le hic, c'est que ça ne marche que parce que `REDUCE` vaut exactement `1 / BOOST`. Le jour où tu testes `BOOST = 3` en laissant `REDUCE = 0.5`, ça donne ×1,5 — et la voie ambiguë se met à être avantagée, sans que rien ne l'annonce.
+
+Donc : soit tu écris la règle, soit tu écris que `REDUCE` doit toujours être l'inverse de `BOOST`. C'est tout.
+
 
 
 
@@ -394,3 +404,5 @@ Dis-moi ce qui t'intéresse le plus. 🙂
 DANS LE FICHIER STYLES SE TROUVENT 100% des styles, thèmes, couleurs, tailles, marges, width, polices, icones, dans le fichier styles.jsx
 
 Aucune info de style dans app.jsx
+
+test

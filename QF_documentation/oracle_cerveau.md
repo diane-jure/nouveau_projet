@@ -6,10 +6,12 @@
 - Score min et max de chaque variable
 - - Explication des scores
 - tester si les écarts entre les plus gros et moyen pathscore devient absurde (si les boost ou reduces s'enchainent)
+- Zone morte entre avoidanceFear et protectiveFear : isHigh d'un côté, <= 0 de l'autre. Un q3Regret à 1 ou 2 ne déclenche ni l'un ni l'autre: vérifier quand ça se passe et si c'est un problème
 - Score min et max de chaque q
 - Score min et max des pathScore
 - tester si certains pathPoints sont négatifs, et lesquels
-- tester si heartoverbody & selfcare se superposent
+- tester si heartoverbody & bodyWisdom se superposent
+- tester quels mots ne devraient pas passe avec include
 - Corrélation des scores avec satisfaction
 - Distribution des totaux (médiane) et position du zéro
 
@@ -26,6 +28,9 @@ PV (HP) — Niveau général d'énergie de l'user à l'ouverture de l'app
 Dépense (drain) — Perte de PV pour prendre cette voie
 Butin (loot) — Gemmes promises pour une voie
 Tirage au sort(shuffle): pile ou face || tirage de carte
+
+pathPoints: somme des points du vocabulaire détecté
+pathScore: score après opération des facteurs multiplicateurs
 
 
 ## Constantes
@@ -44,14 +49,27 @@ const REDUCE     = 0.5  // divide
 isHigh(x) => x >= THRESHOLD
 ```
 
-## variables à détecter
+## detection
+
+
+Ignorer la casse (maybe les prénoms: détecter une majuscule ?)
+Ignorer les accents
+Inclut +5 caractères avant et après
+includes()
+Si plusieurs regex superposés: l'expression la plus longue gagne
+
+pour Q3points les valeurs des sparks & hooks sont inversées - sauf famille injonction
+
+Détection inclut titre du path
+
 #### Q1
 desire (weak / strong) 
 indifference (weak / strong)
 fear (weak / strong) 
-motivation = desire points minus indifference points
+
 #### Q2
-benefits (weak / strong)
+achievements (strong)
+
 #### Q3
 regret (weak / strong)
 relief (strong)
@@ -59,30 +77,26 @@ trivial (weak)
 reversible (true/false)
 irreversible (true/false)
 recurrence (true/false)
+
 #### Q0
 scope (yes,maybe,no)
 
-### resources
-
-HP(1-5)
-drain(1-5)
-loot(1-10)
-
 #### allFields
-**drives**
-[liste des drives] (strong)
+**sparks**
+[liste des sparks] (strong)
 **hooks**
+damage
 [liste des hooks] (strong)
 **modifiers**
 but
-less
 more
+less
+not
 
 ## autres
 
-allFear
-allRegret
-motivation
+q1Fear
+q3Regret
 
 avoidanceFear
 protectiveFear
@@ -95,11 +109,20 @@ poorPath
 
 followedOracle
 oracleWasRight
+pathPoints
+pathScore
+
+
+### resources
+
+HP(1-5)
+drain(1-5)
+loot(1-10)
 
 
 # Verdict
 
-## calculate Path Points
+## count PathPoints
 
 ### qDependant
 
@@ -107,36 +130,32 @@ oracleWasRight
 sum of desire points minus sum of indifference points and bonus/malus
 
 #### Q2 points
-sum of benefits points and bonus/malus
+sum of achievements points and bonus/malus
 
-#### Q3
+#### Q3 points
 
 relief (strong) ; negative points
 trivial (weak) ; negative points
 regret (weak,strong);  positive points
-
-irreversible
-recurrence
 
 Q3 points = sum of relief trivial regret points and REVERSE bonus/malus
 
 ### everyField
 Les bonus/malus sont des points mais créent aussi des tags pour les Recommandations
 
-#### drives (strong)
-engagement
-bodyFeelsGood
+#### sparks (strong)
+
 
 #### hooks (strong)
-bodyFeelsBad
-injonction
-culpabilité
+
 
 #### pondérateurs
 
 but: reduce beginning of field
-less: reduce mots adjacents 
-more: boost mots adjacents 
+not: inverse mot adjacent
+less: reduce mot adjacent
+more: boost mot adjacent
+
 
 #### resources
 
@@ -149,37 +168,39 @@ sum of Q1pts + Q2pts + Q3pts
 ## calculate pathScore
 
 create var:
-allFear
-allRelief
-allRegret (weak,strong);  positive value
+q1Fear
+q3Relief
+q3Regret (weak,strong);  positive value
 
-#### rules
+#### règles
 ```
 // Fear vs Regret
-if (totalFear.isHigh && totalRegret.isHigh)
-  → avoidanceFear: boost sur pathScore
+if (q1Fear.isHigh && q3Regret.isHigh)
+  → avoidanceFear: boost sur pathPoints
 
-if (totalFear.isHigh && totalRegret <= 0)
-  → protectiveFear: reduce sur pathScore
+if (q1Fear.isHigh && q3Regret <= 0)
+  → protectiveFear: reduce sur pathPoints
 
 // Body
-if (bodyFeelsBad && (Q1points.isHigh || regret.isHigh || irreversible))
-  → heartOverBody: boost sur pathScore
+if (damage && (Q1points.isHigh || regret.isHigh || irreversible))
+  → heartOverBody: boost sur pathPoints
 
-if (bodyFeelsBad && (!Q1.isHigh || relief.isHigh || reversible))
-  → selfCare: reduce sur pathScore
+if (damage && (!Q1.isHigh || q3relief.isHigh || reversible))
+  → bodyWisdom: reduce sur pathPoints
 
 // Ir/Reversible
-if (irreversible) → boost sur pathScore
-if (reversible)   → reduce sur pathScore
+if (irreversible) → boost sur pathPoints
+if (reversible)   → reduce sur pathPoints
 
 // Scope
 if (recurrence) → scope = yes
 
-if (scope === 'yes')   → boost Q3points
+if (scope === 'yes')   → boost Q3Points
 
-if (scope === 'no')    → reduce Q3points
+if (scope === 'no')    → reduce Q3Points
 if (scope=== 'no' && ALL PATHS(trivial)    →  shuffleCoin
+
+si HP<=2 mot flemme change de sens
 
 ```
 
@@ -197,6 +218,7 @@ score entre -z et x → fairPath
 comparer toutes les voies (jusqu'à 4)
 
 greatPath vs poorPath and/or Fair= pickGreat
+
 if pickGreat & several greatPath & scope = YES alors shuffleCards (between every greatPath)
 
 if pickGreat & several greatPath & scope = NO alors shuffleCoin (between every greatPath)
@@ -207,7 +229,6 @@ if pickFair & several fairPath & scope = YES alors shuffleCards (between every f
 
 if pickFair & several fairPath & scope = NO alors shuffleCoin (between every fairPath)
 
-
 if scope = no & several greatPath alors shuffleCoin (between every greatPath)
 
 si all = fairPath alors shuffleCoin 
@@ -216,8 +237,14 @@ si all = poorPath alors pickNone
 
 
 ### Recommandations
+Les var des q123 sont des tags
+Les règles qui s'appliquent sont des tags
 
-- Les tags (drives/hooks) influencent le choix de phrase
+Note: peur de faire chose importante = procrastination
+
+Chaque tag devrait porter **le mot qui l'a déclenché**. Deux bénéfices : l'oracle peut te citer, ce qui est tout ton style ; et ça s'auto-contrôle
+
+- Les tags (sparks/hooks) influencent le choix de phrase
 - La phrase de tirage (shuffle) peut souligner les qualités des différentes voies
 - Les noms des autres voies peuvent apparaître dans les phrases
 
@@ -235,5 +262,5 @@ true si
 - verdict = decision & satisfaction Oui (=3)
 - donc false pour meh et no
 
-- recommandation =/= choice & satisfaction non ou meh (=<3)
+- recommandation =/= choice & satisfaction non ou meh (=<2)
 - donc false uniquement pour yes
