@@ -142,7 +142,36 @@ très, trop, vachement, de fou *(mot qui précède)*, à fond, énormément, gra
 
 ---
 
-## (C) Ambiguïtés / contradictions (reformulées, sans niveaux de points)
+## (C) TABLE topics — sujets/domaines (réintégrés sur demande de l'autrice, hors drives/hooks)
+
+Ces listes ne sont pas des familles émotionnelles (pas de valence drive/hook), donc pas
+de weak/strong forcé. Catégorie distincte, transversale, à côté de `qDependant` et
+`allFields`.
+
+**Hobbies** *(du bucket "passions")*
+jeux, jouer, musique, chanter, échecs, plage, courir, pole dance, dessiner, écrire
+
+**Duties** *(du bucket "obligationspositives" — obligations vécues positivement, distinct du hook `Obligation`)*
+admin, lettre, travail, taff
+
+**[à nommer par l'autrice]** *(du bucket marqué « ???? », resté sans nom dans le fichier original)*
+besoin, fierté, soin, libre, liber, paix
+
+Fil conducteur possible repéré par Agent A (à valider, pas imposé) : ces 5 mots touchent
+tous à un besoin personnel fondamental satisfait (sécurité/tranquillité/dignité) plutôt
+qu'à une émotion ponctuelle — un nom du type **CoreNeeds** ou **Wellbeing** collerait à ce
+fil. Nom **SelfCare** volontairement évité : déjà pris dans `oracle_cerveau.md` pour un
+tag de calcul existant (`selfCare: reduce sur pathScore`), le réutiliser créerait une
+collision de nommage.
+
+> Note pour la réconciliation d'`oracle_cerveau.md` (hors périmètre lexical d'Agent A) :
+> l'autrice souhaite que ces catégories de `topics` soient aussi détectées dans le
+> **titre** de chaque voie/option, pas seulement dans les réponses Q1-Q3 — question de
+> logique de détection/calcul, à traiter lors de la réconciliation finale.
+
+---
+
+## (D) Ambiguïtés / contradictions (reformulées, sans niveaux de points)
 
 1. **« il faut »** apparaît à la fois dans `Obligation` (négatif) et dans l'exemple de `desire` strong « dur mais allez allez il faut y aller » (positif) — la polarité dépend du contexte (présence d'un marqueur d'effort/volonté), pas détectable par le mot seul.
 2. **« coupable »** : `oracle_detection.md` le classe littéralement dans `fear strong` (Q1), alors que le vocabulaire fusionné des versions du moteur le classe dans `Guilt` (transversal). Les deux placements sont défendables selon la source ; il est resté dans Q1 fear (fidèle au fichier actuel) tout en le gardant aussi dans `Guilt`.
