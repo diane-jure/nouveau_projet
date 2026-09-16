@@ -1,1 +1,208 @@
-fun  ,  ça me fait peur   ,  un tube  ,  j'aurais enfin fait  ,  hook (que j'ai)  ,  je l'aurais toujours en tête  ,  j'ai l'impression que  ,  difficile  ,  cool  ,  dur  ,  instru  ,  j'sais pas  ,  bof  ,  danser  ,  osef  ,  un peu  ,  flemme,  ,  'aimerais bien  ,  y retourner  ,  bonheur  ,  endroit préféré  ,  découvrir  ,  frustrée  ,  un autre jour  ,  peur  ,  je crée des trucs  ,  rien  ,  j'ai pas envie  ,  validé  ,  soulagée  ,  stress  ,  l'occasion,\   ,   use  ,  j'avance  ,  moyen  ,  pas hyper emballée  ,  je vois pas le temps passer  ,  rapidement  ,  régler  ,  vérifier  ,  relance  ,  heureusement  ,  très rapidement  ,  anxiete  ,  joie  ,  partage  ,  chant  ,  maybe  ,  regret  ,  repos  ,  rires  ,  jeu  ,  why not  ,  sérénite  ,  activité  ,  bouger  ,  me forcer  ,  ça m'a fait du bien  ,  j'me sens coupable  ,  angoisse  ,  rencontres  ,  fierté  ,  amusement  ,  leçon  ,  essayer  ,  envie  ,  regretter  ,  culpabilité  ,  je gagne du temps  ,  libéré  ,  débarassé  ,  avancer  ,  gagner  ,  occasions  ,  enthousiasme  ,  chanter  ,  malades  ,  opportunité  ,  cools  ,  mes affaires  ,  demain  ,  grave  ,  recup  ,  neutre  ,  satisfaction  ,  stabilité  ,  excitation  ,  trop cool  ,  projets  ,  déception  ,  pas ma décision seule  ,  ça m'apaise  ,  recharge  ,  légèrement  ,  aucune idée  ,  dispositions  ,  hôte  ,  douleur  ,  tracer  ,  stressée  ,  mmh  ,  mmmh  ,  vélo  ,  rome  ,  reporté  ,  chill  ,  détente  ,  ratée  ,  geeker  ,  beaucoup  ,  outil  ,  utile  ,  efficace  ,  reprendre  ,  motivation  ,  clarté  ,  rebelote  ,  bordel  ,  deg  ,  propeté  ,  progresse  ,  sérénité  ,  avenir  ,  fatigue  ,  réfléchir  ,  calme  ,  repères  ,  charge mentale  ,  tourner en rond  ,  active  ,  trajet  ,  honteuse  ,  consolider  ,  peur du regret  ,  anxiété  ,  panique  ,  meilleur  ,  magnifique  ,  trop loin  ,  décision importante  ,  confort  ,  canapé  ,  paix  ,  yoga  ,  FOMO  ,  sortir  ,  agréable  ,  souvenirs  ,  ciné  ,  me trahir  ,  argent  ,  en action  ,  option C  ,  en finir  ,  limites  ,  trace écrite  ,  agi  ,  court terme  ,  peser  ,  piste  ,  contacts  ,  procrastiné  ,  intelligente  ,  respecter  ,  rendez-vous  ,  un truc  ,  poser un lapin  ,  créer  ,  dessins  ,  me reconnecter  ,  passion  ,  honorer  ,  rdv  ,  débloquera  ,  longtemps  ,  l'univers  ,  apprentissage  ,  inactive  ,  oui mais non  ,  je fais rien  ,  fière  ,  gagne  ,  autres occasions  ,  oublié  ,  toute seule  ,  en forme  ,  dead  ,  capable  ,  sortie  ,  quartier  ,  aime sortir  ,  raté  ,  rassurée  ,  folie  ,  inconnu  ,  drogue  ,  rigoler  ,  ptet  ,  meuf  ,  plaît  ,  dommage  ,  gênée  ,  se revoir  ,  invitation  ,  à l'improviste  ,  importance  ,  énergie disponible
+fun
+ça me fait peur
+un tube
+j'aurais enfin fait
+hook (que j'ai)
+je l'aurais toujours en tête
+j'ai l'impression que
+difficile
+cool
+dur
+instru
+j'sais pas
+bof
+danser
+osef
+un peu
+flemme
+'aimerais bien
+y retourner
+bonheur
+endroit préféré
+découvrir
+frustrée
+un autre jour
+peur
+je crée des trucs
+rien
+j'ai pas envie
+validé
+soulagée
+stress
+l'occasion
+\
+use
+j'avance
+moyen
+pas hyper emballée
+je vois pas le temps passer
+rapidement
+régler
+vérifier
+relance
+heureusement
+très rapidement
+anxiete
+joie
+partage
+chant
+maybe
+regret
+repos
+rires
+jeu
+why not
+sérénite
+activité
+bouger
+me forcer
+ça m'a fait du bien
+j'me sens coupable
+angoisse
+rencontres
+fierté
+amusement
+leçon
+essayer
+envie
+regretter
+culpabilité
+je gagne du temps
+libéré
+débarassé
+avancer
+gagner
+occasions
+enthousiasme
+chanter
+malades
+opportunité
+cools
+mes affaires
+demain
+grave
+recup
+neutre
+satisfaction
+stabilité
+excitation
+trop cool
+projets
+déception
+pas ma décision seule
+ça m'apaise
+recharge
+légèrement
+aucune idée
+dispositions
+hôte
+douleur
+tracer
+stressée
+mmh
+mmmh
+vélo
+rome
+reporté
+chill
+détente
+ratée
+geeker
+beaucoup
+outil
+utile
+efficace
+reprendre
+motivation
+clarté
+rebelote
+bordel
+deg
+propeté
+progresse
+sérénité
+avenir
+fatigue
+réfléchir
+calme
+repères
+charge mentale
+tourner en rond
+active
+trajet
+honteuse
+consolider
+peur du regret
+anxiété
+panique
+meilleur
+magnifique
+trop loin
+décision importante
+confort
+canapé
+paix
+yoga
+FOMO
+sortir
+agréable
+souvenirs
+ciné
+me trahir
+argent
+en action
+option C
+en finir
+limites
+trace écrite
+agi
+court terme
+peser
+piste
+contacts
+procrastiné
+intelligente
+respecter
+rendez-vous
+un truc
+poser un lapin
+créer
+dessins
+me reconnecter
+passion
+honorer
+rdv
+débloquera
+longtemps
+l'univers
+apprentissage
+inactive
+oui mais non
+je fais rien
+fière
+gagne
+autres occasions
+oublié
+toute seule
+en forme
+dead
+capable
+sortie
+quartier
+aime sortir
+raté
+rassurée
+folie
+inconnu
+drogue
+rigoler
+ptet
+meuf
+plaît
+dommage
+gênée
+se revoir
+invitation
+à l'improviste
+importance
+énergie disponible
