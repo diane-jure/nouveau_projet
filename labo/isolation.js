@@ -1,14 +1,16 @@
 /**
- * V2 contre V2.5 — reconstruction des deux moteurs depuis docs/oracle_version/,
- * exécutés sur les 25 dilemmes réels de docs/sauvegardes.md.
+ * Expérience 5 — les bugs de V2.5, ou sa logique ?
  *
- * ⚠️ Reconstruction à partir des extraits documentés. Les fonctions de phrase
- * (_getClearPhrase, etc.) n'affectent pas le verdict et sont ignorées ; la
- * logique de choix, elle, est reproduite fidèlement.
+ * L'expérience 4 mesure un écart de 14 points entre V2 et V2.5 sans dire d'où
+ * il vient. Ici chaque variante ne change QU'UNE chose à la fois : le verrou
+ * Q0, le code mort `importance === 'low'`, l'arbitrage coût/gain de V2, la
+ * règle `fortN1`. Si l'écart survit à tout, il n'est pas structurel.
  *
- * Correspondances avec les colonnes des sauvegardes :
- *   spoons     → Energie        cost → Coût        energyGain → Gain
- *   q4 (de V2) → la réponse Q0  (Q4 par voie est devenue Q0 globale)
+ *   node labo/isolation.js
+ *
+ * ⚠️ Même réserve qu'ailleurs : 17 à 22 dilemmes jugeables, un cas pèse
+ * 5 points. Le résultat solide n'est pas le pourcentage, c'est le 3/6 contre
+ * 5/6 de la dernière section — il dit où se trouve la valeur du moteur.
  */
 
 import { readFileSync } from 'node:fs';
@@ -86,7 +88,7 @@ function oracleV2(options, spoons, q0texte) {
 }
 
 /* ----------------------------- ORACLE V2.5 ----------------------------- */
-function oracleV25(options, spoons, q0texte) {
+function oracleV25(options, spoons, q0texte, V = {}) {
   const q0 = (q0texte || '').toLowerCase();
   const pasImportant = M(q0, ["on s'en fout", 'osef', "j'en sais rien", 'aucune idée', "j'aurais oublié",
     'ça change rien', 'peu importe', 'pas vraiment', 'non', 'pas du tout', "j'y penserais même pas",
@@ -97,7 +99,7 @@ function oracleV25(options, spoons, q0texte) {
     'peut-être', 'ça dépend', 'ça pourrait', 'possiblement']);
 
   // LE VERROU : court-circuit total, aucune option n'est analysée.
-  if (pasImportant && !important) return { choix: 'Pile ou face', verrou: true, analyses: [] };
+  if (V.verrou !== false && pasImportant && !important) return { choix: 'Pile ou face', verrou: true, analyses: [] };
 
   const analyses = options.filter((o) => o.name?.trim()).map((opt) => {
     const q1 = (opt.q1 || '').toLowerCase(), q2 = (opt.q2 || '').toLowerCase(), q3 = (opt.q3 || '').toLowerCase();
@@ -163,7 +165,7 @@ function oracleV25(options, spoons, q0texte) {
     const cost = parseInt(opt.cost) || 0, gain = parseInt(opt.energyGain) || 0;
     const netCost = cost - gain, deficit = netCost - spoons;
     const ratio = spoons > 0 ? netCost / spoons : 999;
-    const fortN1 = s.n1.includes('green');                       // V2.5 : vert seulement
+    const fortN1 = V.fortN1_v2 ? s.n1.length > 0 : s.n1.includes('green');
     if (!fortN1 && deficit > 0) score -= ratio >= 2 ? 3 : ratio >= 1.5 ? 2 : 1;
 
     return { option: opt, score: Math.round(score * 10) / 10, s, cost: netCost, deficit };
@@ -173,13 +175,20 @@ function oracleV25(options, spoons, q0texte) {
   const best = analyses[0], worst = analyses[analyses.length - 1];
   const diff = best ? best.score - (worst?.score || 0) : 0;
   const allWeak = analyses.every((a) => a.score < 0);
-  const importance = important ? 'high' : 'medium';
+  const importance = V.importanceReparee ? ((pasImportant && !important) ? 'low' : important ? 'high' : 'medium') : (important ? 'high' : 'medium');
 
   let choix = best?.option?.name ?? 'Aucune';
   if (diff >= 5 && !allWeak) { /* clear */ }
   else if (!allWeak) {
     const conflit = best && best.deficit > 2 && best.s.n1.length > 0;
-    if (!conflit && importance === 'low') choix = 'Pile ou face';
+    if (!conflit) {
+      if (V.arbitrage_v2) {
+        const cheapest = analyses.reduce((a, b) => (a.cost < b.cost ? a : b));
+        const bestGain = analyses.reduce((a, b) => ((parseInt(a.option.energyGain) || 0) > (parseInt(b.option.energyGain) || 0) ? a : b));
+        if (cheapest.option.name !== bestGain.option.name && (parseInt(bestGain.option.energyGain) || 0) > 0) choix = 'Pile ou face';
+        else choix = cheapest.option.name;
+      } else if (importance === 'low') choix = 'Pile ou face';
+    }
   } else choix = 'Aucun des deux';
   return { choix, analyses, diff, allWeak, verrou: false };
 }
@@ -221,28 +230,146 @@ function aEuRaison(code, decision, satisfaction) {
   return suivi ? satisfaction === 'good' : (satisfaction === 'bad' || satisfaction === 'meh');
 }
 
-const score = { v2: [0, 0], v25: [0, 0] };
-let verrous = 0;
-const lignesR = [];
+
+/* ============== BANC ESSAI : les bugs, ou la logique ? ============== */
+
+const VARIANTES = [
+  ["V2 (janvier)                      ", (d) => oracleV2(d.options, d.spoons, d.q0)],
+  ["V2.5 telle que PENSEE (verrou vif) ", (d) => oracleV25(d.options, d.spoons, d.q0, {})],
+  ["V2.5 telle que DEPLOYEE (bug Q0)   ", (d) => oracleV25(d.options, d.spoons, d.q0, { verrou: false })],
+  ["  + bug #4 repare (importance low) ", (d) => oracleV25(d.options, d.spoons, d.q0, { verrou: false, importanceReparee: true })],
+  ["  + arbitrage cout/gain de V2      ", (d) => oracleV25(d.options, d.spoons, d.q0, { verrou: false, arbitrage_v2: true })],
+  ["  + fortN1 de V2 (tout signal)     ", (d) => oracleV25(d.options, d.spoons, d.q0, { verrou: false, fortN1_v2: true })],
+  ["V2.5 + TOUTE la logique de V2      ", (d) => oracleV25(d.options, d.spoons, d.q0, { verrou: false, importanceReparee: true, arbitrage_v2: true, fortN1_v2: true })],
+];
+
+const res = VARIANTES.map(() => [0, 0]);
+const indecis = VARIANTES.map(() => 0);
+const detail = [];
 
 for (const d of jeux) {
-  const r2 = oracleV2(d.options, d.spoons, d.q0);
-  const r25 = oracleV25(d.options, d.spoons, d.q0);
-  if (r25.verrou) verrous++;
-  const c2 = codeDe(r2.choix, d.options), c25 = codeDe(r25.choix, d.options);
-  const a2 = aEuRaison(c2, d.decision, d.satisfaction), a25 = aEuRaison(c25, d.decision, d.satisfaction);
-  if (a2 !== null) { score.v2[1]++; if (a2) score.v2[0]++; }
-  if (a25 !== null) { score.v25[1]++; if (a25) score.v25[0]++; }
-  const m = (r) => (r === null ? ' · ' : r ? ' ✓ ' : ' ✗ ');
-  lignesR.push('  ' + d.date.padEnd(12) + `én:${String(d.spoons).padEnd(2)} ` +
-    `V2:${c2}${m(a2)}  V2.5:${c25}${m(a25)}${r25.verrou ? '🔒' : '  '} ` +
-    `fait:${(d.decision || '–').padEnd(3)} ${(d.satisfaction || '').padEnd(5)}`);
+  const cells = [];
+  VARIANTES.forEach(([, f], i) => {
+    const r = f(d);
+    const c = codeDe(r.choix, d.options);
+    const a = aEuRaison(c, d.decision, d.satisfaction);
+    if (c === "Y") indecis[i]++;
+    if (a !== null) { res[i][1]++; if (a) res[i][0]++; }
+    cells.push(c + (a === null ? "\u00b7" : a ? "\u2713" : "\u2717"));
+  });
+  detail.push("  " + d.date.padEnd(11) + cells.map((c) => c.padEnd(4)).join("") +
+    ` fait:${(d.decision || "-").padEnd(3)} ${(d.satisfaction || "").padEnd(5)}`);
 }
 
 const pc = (a, b) => (b ? Math.round((a / b) * 100) : 0);
-console.log('\n  V2 (jan 2026) contre V2.5 (actuelle) — 25 dilemmes réels\n');
-console.log(lignesR.join('\n'));
-console.log('\n  ' + '─'.repeat(58));
-console.log(`  Oracle V2   : ${score.v2[0]}/${score.v2[1]}  (${pc(score.v2[0], score.v2[1])}%)`);
-console.log(`  Oracle V2.5 : ${score.v25[0]}/${score.v25[1]}  (${pc(score.v25[0], score.v25[1])}%)`);
-console.log(`\n  🔒 = verrou Q0 de V2.5 : aucune option analysée  (${verrous} fois sur ${jeux.length})\n`);
+console.log("\n  Les bugs, ou la logique ? Chaque variante ne change QU UNE chose.\n");
+console.log("  date       " + VARIANTES.map((_, i) => String(i + 1).padEnd(4)).join(""));
+console.log(detail.join("\n"));
+console.log("\n  " + "\u2500".repeat(68));
+VARIANTES.forEach(([nom], i) => {
+  const [a, b] = res[i];
+  console.log(`  ${i + 1}. ${nom} ${String(a).padStart(2)}/${String(b).padEnd(2)}  ${String(pc(a, b)).padStart(3)}%   (${indecis[i]} pile ou face)`);
+});
+console.log("");
+
+/* ===== Comparaison a perimetre egal : uniquement les cas ou LES DEUX tranchent ===== */
+const comm = { v2: [0, 0], v25: [0, 0] };
+const seulV25 = [0, 0];
+for (const d of jeux) {
+  const r2 = oracleV2(d.options, d.spoons, d.q0);
+  const r25 = oracleV25(d.options, d.spoons, d.q0, { verrou: false });
+  const c2 = codeDe(r2.choix, d.options), c25 = codeDe(r25.choix, d.options);
+  const a2 = aEuRaison(c2, d.decision, d.satisfaction), a25 = aEuRaison(c25, d.decision, d.satisfaction);
+  if (a2 !== null && a25 !== null) {
+    comm.v2[1]++; if (a2) comm.v2[0]++;
+    comm.v25[1]++; if (a25) comm.v25[0]++;
+  } else if (a2 === null && a25 !== null && c2 === "Y") {
+    seulV25[1]++; if (a25) seulV25[0]++;
+  }
+}
+console.log("  A perimetre egal (les deux tranchent) :");
+console.log(`    V2   : ${comm.v2[0]}/${comm.v2[1]}  (${pc(comm.v2[0], comm.v2[1])}%)`);
+console.log(`    V2.5 : ${comm.v25[0]}/${comm.v25[1]}  (${pc(comm.v25[0], comm.v25[1])}%)`);
+console.log(`  Cas ou V2 disait pile-ou-face et V2.5 tranche : ${seulV25[0]}/${seulV25[1]} bons\n`);
+
+/* ===== Les dilemmes ou V2 et V2.5 divergent vraiment ===== */
+console.log("  Les cas de desaccord reel (les deux tranchent, verdicts differents) :\n");
+for (const d of jeux) {
+  const r2 = oracleV2(d.options, d.spoons, d.q0);
+  const r25 = oracleV25(d.options, d.spoons, d.q0, { verrou: false });
+  const c2 = codeDe(r2.choix, d.options), c25 = codeDe(r25.choix, d.options);
+  const a2 = aEuRaison(c2, d.decision, d.satisfaction), a25 = aEuRaison(c25, d.decision, d.satisfaction);
+  if (a2 === null || a25 === null || c2 === c25) continue;
+  const gagnant = a2 === a25 ? "egalite" : a2 ? "V2" : "V2.5";
+  console.log(`  ${d.date}  ${d.options.map((o) => o.lettre + "=" + o.name).join("  |  ")}`);
+  console.log(`              V2 dit ${c2}${a2 ? " OK" : " rate"}   V2.5 dit ${c25}${a25 ? " OK" : " rate"}` +
+    `   elle a fait ${d.decision} -> ${d.satisfaction}   [${gagnant}]`);
+  const sc = (r, n) => `${n}: ` + r.analyses.map((a) => a.option.lettre + " " + a.score).join("  ");
+  console.log(`              ${sc(r2, "scores V2  ")}`);
+  console.log(`              ${sc(r25, "scores V2.5")}\n`);
+}
+
+/* ===== Hypothese : les seuils absolus (allWeak, diff>=5) sont decalibres ===== */
+const amp = { v2: [], v25: [] };
+let awV2 = 0, awV25 = 0, n = 0;
+for (const d of jeux) {
+  const r2 = oracleV2(d.options, d.spoons, d.q0);
+  const r25 = oracleV25(d.options, d.spoons, d.q0, { verrou: false });
+  if (!r2.analyses.length || !r25.analyses.length) continue;
+  n++;
+  r2.analyses.forEach((a) => amp.v2.push(a.score));
+  r25.analyses.forEach((a) => amp.v25.push(a.score));
+  if (r2.allWeak) awV2++;
+  if (r25.allWeak) awV25++;
+}
+const moy = (t) => (t.reduce((a, b) => a + b, 0) / t.length).toFixed(2);
+const moyAbs = (t) => (t.reduce((a, b) => a + Math.abs(b), 0) / t.length).toFixed(2);
+const ecart = (t) => { const m = +moy(t); return Math.sqrt(t.reduce((a, b) => a + (b - m) ** 2, 0) / t.length).toFixed(2); };
+console.log("  Amplitude des scores produits par chaque lexique :\n");
+console.log(`    V2   : moyenne ${moy(amp.v2)}   |score| moyen ${moyAbs(amp.v2)}   ecart-type ${ecart(amp.v2)}`);
+console.log(`    V2.5 : moyenne ${moy(amp.v25)}   |score| moyen ${moyAbs(amp.v25)}   ecart-type ${ecart(amp.v25)}`);
+console.log(`\n    allWeak (toutes les voies < 0) declenche : V2 ${awV2}/${n} fois, V2.5 ${awV25}/${n} fois\n`);
+
+/* ===== Test : V2.5 avec allWeak relatif (la mediane) au lieu de zero ===== */
+function v25SeuilRelatif(d) {
+  const r = oracleV25(d.options, d.spoons, d.q0, { verrou: false });
+  if (!r.analyses.length) return r;
+  const tous = r.analyses.map((a) => a.score);
+  const med = [...amp.v25].sort((a, b) => a - b)[Math.floor(amp.v25.length / 2)];
+  const allWeak = tous.every((s) => s < med);
+  const best = r.analyses[0], worst = r.analyses[r.analyses.length - 1];
+  const diff = best.score - worst.score;
+  let choix = best.option.name;
+  if (allWeak) choix = "Aucun des deux";
+  else if (diff < 5) {
+    const conflit = best.deficit > 2 && best.s.n1.length > 0;
+    if (!conflit) { /* garde best */ }
+  }
+  return { ...r, choix, allWeak };
+}
+const sr = [0, 0];
+for (const d of jeux) {
+  const r = v25SeuilRelatif(d);
+  const a = aEuRaison(codeDe(r.choix, d.options), d.decision, d.satisfaction);
+  if (a !== null) { sr[1]++; if (a) sr[0]++; }
+}
+console.log(`  V2.5 avec allWeak recalibre sur la mediane : ${sr[0]}/${sr[1]} (${pc(sr[0], sr[1])}%)\n`);
+
+/* ===== D ou viennent les bonnes reponses de V2 ? ===== */
+let parScore = [0, 0], parArbitrage = [0, 0], parAucun = [0, 0];
+let d5v2 = 0, d5v25 = 0, nn = 0;
+for (const d of jeux) {
+  const r2 = oracleV2(d.options, d.spoons, d.q0);
+  const r25 = oracleV25(d.options, d.spoons, d.q0, { verrou: false });
+  if (r2.analyses.length) { nn++; if (r2.diff >= 5) d5v2++; }
+  if (r25.analyses.length && r25.diff >= 5) d5v25++;
+  const a = aEuRaison(codeDe(r2.choix, d.options), d.decision, d.satisfaction);
+  if (a === null) continue;
+  const bucket = r2.allWeak ? parAucun : r2.diff >= 5 ? parScore : parArbitrage;
+  bucket[1]++; if (a) bucket[0]++;
+}
+console.log("  Origine des verdicts de V2 (le moteur a 67%) :\n");
+console.log(`    verdict tranche par le SCORE (diff>=5)        : ${parScore[0]}/${parScore[1]}`);
+console.log(`    verdict tranche par l ARBITRAGE cout/gain     : ${parArbitrage[0]}/${parArbitrage[1]}`);
+console.log(`    verdict "ni l un ni l autre" (allWeak)        : ${parAucun[0]}/${parAucun[1]}`);
+console.log(`\n    diff>=5 (ecart juge net) : V2 ${d5v2}/${nn} fois, V2.5 ${d5v25}/${nn} fois\n`);

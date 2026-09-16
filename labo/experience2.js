@@ -7,9 +7,9 @@
  */
 
 import { LECTEURS } from './lecture.js';
-import { consulter } from '../js/oracle.js';
-import { HISTORIQUE } from '../data/historique.js';
-import { SEUILS } from '../js/scales.js';
+import { consulter } from '../v.QCM/js/oracle.js';
+import { HISTORIQUE } from '../v.QCM/data/historique.js';
+import { SEUILS } from '../v.QCM/js/scales.js';
 
 const Q = ['q1', 'q2', 'q3'];
 

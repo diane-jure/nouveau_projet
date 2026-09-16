@@ -16,10 +16,10 @@
 
 import { readFileSync } from 'node:fs';
 import { LECTEURS } from './lecture.js';
-import { consulter } from '../js/oracle.js';
+import { consulter } from '../v.QCM/js/oracle.js';
 
 /* --- Lecture du tableau --- */
-const lignes = readFileSync('docs/sauvegardes.md', 'utf-8')
+const lignes = readFileSync('labo/saves/sauvegardes.md', 'utf-8')
   .split('\n').filter((l) => l.trim().startsWith('|'));
 const E = lignes[0].replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
 const I = Object.fromEntries(E.map((n, i) => [n, i]));
@@ -138,7 +138,7 @@ console.log('\n  ✓ = a eu raison   ✗ = a eu tort   · = non jugeable (pile o
 /*  les seuls dilemmes qu'il n'a JAMAIS vus — un vrai hold-out.         */
 /* ------------------------------------------------------------------ */
 
-const { HISTORIQUE } = await import('../data/historique.js');
+const { HISTORIQUE } = await import('../v.QCM/data/historique.js');
 const vus = new Set(HISTORIQUE.map((d) => d.date));          // 'AAAA-MM-JJ'
 const dateDe = (id) => (id ?? '').slice(0, 10);
 
