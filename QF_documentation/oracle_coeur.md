@@ -12,6 +12,56 @@ Des docs que j'ai :
 - Apprentissage — nourrir la curiosité
 - Soleil et nature — besoin quasi-vital
 - Justice — ne peut pas laisser passer l'injustice
+Voici la liste complète de tes centres d'intérêt, tels qu'ils sont apparus dans nos échanges :
+
+**Corps / mouvement**
+- Yoga
+- Pole dance
+- Escalade
+- Cirque (équilibre sur les mains)
+- Course à pied
+- Natation
+
+**Musique**
+- Reprises sur ordinateur
+- Synthé
+- Loop station
+- Chant (chorale, scène, karaoké)
+
+**Créatif / visuel**
+- Dessin (aquarelle, pastel, acrylique)
+- Photo
+- Graffiti
+
+**Écriture**
+- Poèmes
+- Écriture personnelle (Naikan)
+
+**Introspectif / somatique**
+- Naikan
+- TRE
+
+**Projets perso / dev**
+- Quest Finder (app)
+- Souvenirs (app)
+
+**Jeux / stratégie**
+- Échecs
+- Jeux vidéo
+
+**Manuel**
+- Réparations dans l'appart
+- Atelier de réparation vélo
+
+**Apprentissage**
+- Arabe
+- Permis bateau
+
+**Vie quotidienne**
+- Cuisine
+- Administratif
+- Aller à la plage
+- Voir ses amis
 
 **Pièges récurrents**
 
