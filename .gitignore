@@ -1,0 +1,6 @@
+# Fichiers générés — jamais commités, toujours reconstructibles.
+bundle.js
+node_modules/
+
+# Captures d'écran du prototype visuel (14/09).
+.captures/
