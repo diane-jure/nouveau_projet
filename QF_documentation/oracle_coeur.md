@@ -1,9 +1,53 @@
 > 💜 Explique pourquoi ces règles
 
 A extraire des versions précédentes
+Des docs que j'ai :
+
+**Motivations authentiques**
+
+- Authenticité — être entière, pas de masque
+- Liberté / autonomie — choisir, pas subir
+- Créativité — dessiner, créer, explorer
+- Connexion profonde — liens vrais, pas superficiels
+- Apprentissage — nourrir la curiosité
+- Soleil et nature — besoin quasi-vital
+- Justice — ne peut pas laisser passer l'injustice
+
+**Pièges récurrents**
+
+- Ignorer instinct au profit de la rationalisation (T1)
+- Se plier au "choix de la raison" imposé par les autres
+- Toutes les raisons sont des dettes, pas des envies — et elle ne le voit pas
+- Peur de décevoir — anticipe la réaction avant qu'elle existe
+- Deadline imaginaire prise pour réelle
+- Le "maybe si…" — hypothèse improbable comme justification
+- Fascination ≠ envie du moment
+- Procrastination / freeze devant les décisions importantes
+- Se résigner en croyant choisir
+- Relativiser ses propres besoins ("au pire c'est pas grave")
+
+
+Tu tombes dans des patterns de décision récurrents - sacrifice de ton instinct pour les autres, rationalisation progressive honte sociale qui t'empêche de changer d'avis, sur-anticipation des besoins des autres. QF est né du besoin d'avoir un outil qui t'aide à entendre ta propre voix avant que les autres la couvrent.
+
+- Coût énergétique réel (spoons)
+- Météo
+- État physique
+- Présence de personnes drainantes
+- Soulagement si tu fais pas = red flag majeur
+- "Il faut" / "je devrais" = toujours suspect
+
+- Rationalisation après coup
+- Relativisation excessive ("au pire c'est pas grave")
+- Culpabilité qui remplace le désir, pousse à agir contre soi
+  
+  Écouter le corps plutôt que la rationalisation
+  
+  le "maybe si..." hypothétique (justifier par un scénario improbable), et le freeze devant les deadlines (pas de la paresse — peur de mal faire, absence de permission, terreur de l'irréversible).
+
 
 **écouter l'instinct** via des questions simples
 **La peur forte ne prédit pas le bon choix — elle prédit un dilemme difficile.** = flag grandedecision
+
 
 La Q0 Oui / Non / Maybe a une faille:
 faire une sortie avec mes amies je dirais pas forcément 'dans 10 jours ça compte', pourtant ça peut créer un souvenir pour toujours. Similairement m'occuper de mon hygiène, dans 10 jours ça compte pas forcément mais en même temps c'est important.

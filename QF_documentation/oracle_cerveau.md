@@ -4,9 +4,12 @@
 
 ## Tests en labo
 - Score min et max de chaque variable
-- Score min et max de chaque Q
-- Score min et max des totaux
-- Explication des scores
+- - Explication des scores
+- tester si les écarts entre les plus gros et moyen pathscore devient absurde (si les boost ou reduces s'enchainent)
+- Score min et max de chaque q
+- Score min et max des pathScore
+- tester si certains pathPoints sont négatifs, et lesquels
+- tester si heartoverbody & selfcare se superposent
 - Corrélation des scores avec satisfaction
 - Distribution des totaux (médiane) et position du zéro
 
@@ -38,8 +41,7 @@ const REDUCE     = 0.5  // divide
  
 ```js
 // Classification d'une valeur
-isHighValue(x) => x >= THRESHOLD
-isLowValue(x)  => x <= THRESHOLD
+isHigh(x) => x >= THRESHOLD
 ```
 
 ## variables à détecter
@@ -54,11 +56,17 @@ benefits (weak / strong)
 regret (weak / strong)
 relief (strong)
 trivial (weak) 
-irreversible (true/false)
 reversible (true/false)
+irreversible (true/false)
 recurrence (true/false)
 #### Q0
 scope (yes,maybe,no)
+
+### resources
+
+HP(1-5)
+drain(1-5)
+loot(1-10)
 
 #### allFields
 **drives**
@@ -107,9 +115,8 @@ relief (strong) ; negative points
 trivial (weak) ; negative points
 regret (weak,strong);  positive points
 
-irreversible (true)
-reversible (true)
-recurrence (true)
+irreversible
+recurrence
 
 Q3 points = sum of relief trivial regret points and REVERSE bonus/malus
 
@@ -131,10 +138,10 @@ but: reduce beginning of field
 less: reduce mots adjacents 
 more: boost mots adjacents 
 
-### resources
+#### resources
 
-drain: if > HP then negative points
-loot: positive points
+drain: if > HP then minus (drain) points
+loot: add (loot) points
 
 ### calculate pathPoints
 sum of Q1pts + Q2pts + Q3pts
@@ -149,17 +156,17 @@ allRegret (weak,strong);  positive value
 #### rules
 ```
 // Fear vs Regret
-if (totalFear.isHighValue && totalRegret.isHighValue)
+if (totalFear.isHigh && totalRegret.isHigh)
   → avoidanceFear: boost sur pathScore
 
-if (totalFear.isHighValue && totalRegret <= 0)
+if (totalFear.isHigh && totalRegret <= 0)
   → protectiveFear: reduce sur pathScore
 
 // Body
-if (bodyFeelsBad && (Q1points.isHighValue || regret.isHighValue || irreversible))
+if (bodyFeelsBad && (Q1points.isHigh || regret.isHigh || irreversible))
   → heartOverBody: boost sur pathScore
 
-if (bodyFeelsBad && (!motivation.islowValue || relief.isHighValue || reversible))
+if (bodyFeelsBad && (!Q1.isHigh || relief.isHigh || reversible))
   → selfCare: reduce sur pathScore
 
 // Ir/Reversible
@@ -198,7 +205,7 @@ fairPath vs poorPath = pickFair
 
 if pickFair & several fairPath & scope = YES alors shuffleCards (between every fairPath)
 
-if pickFair & several fairPath & scope = YES alors shuffleCards (between every fairPath)
+if pickFair & several fairPath & scope = NO alors shuffleCoin (between every fairPath)
 
 
 if scope = no & several greatPath alors shuffleCoin (between every greatPath)
