@@ -103,7 +103,7 @@ export const WORD_BANK = {
   },
   "hooks": {
     "damage": {
-      strong: ["douleur", "mal", "fatigu épuis", { mot: "flemme", si: "HP=<2" }, "trop mal", "au fond du trou", "dead", "malade", "charge mentale"],
+      strong: ["douleur", "mal", "fatigu", "épuis", { mot: "flemme", si: "HP=<2" }, "trop mal", "au fond du trou", "dead", "malade", "charge mentale"],
     },
     "injunctions": {
       strong: ["il faut", "je dois", "je devrais", "normal de", "on est censé", "raisonnable", "vont penser", "vont se dire", "jugée", "vex", "bless", "décevoir", "oblig", "si je le fais pas", "contrain", "forc", "résign", "raisonnable", "me forc", "suis forc"],

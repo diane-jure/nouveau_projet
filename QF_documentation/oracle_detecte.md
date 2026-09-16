@@ -97,7 +97,7 @@ vraiment moi, ok avec moi-même, digne, respect, dans mon élément, passion, ac
 ### hooks
 
 **damage**
-douleur, mal, fatigu épuis, flemme (si HP=<2), trop mal, , au fond du trou, dead, malade, charge mentale
+douleur, mal, fatigu, épuis, flemme (si HP=<2), trop mal, au fond du trou, dead, malade, charge mentale
 
 **injunctions**
 il faut, je dois, je devrais, normal de, on est censé, raisonnable, vont penser, vont se dire, jugée, vex, bless, décevoir, oblig, si je le fais pas, contrain, forc, résign, raisonnable, me forc, suis forc

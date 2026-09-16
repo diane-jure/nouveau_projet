@@ -11,10 +11,11 @@
  *   répétitions   3 lettres identiques ou plus → une seule
  *                 « fleeemme » = « flemme », « mmmmmmmh » = « mh »
  *
- * La recherche est un includes(), pas une regex : une racine trouve tout ce
- * qui la contient, où que ce soit. C'est un choix assumé — le test
- * « quels mots ne devraient pas passer avec include » est là pour en
- * mesurer le prix.
+ * La recherche est une regex ancrée en DÉBUT DE MOT, la fin libre : la
+ * racine « terrif » trouve terrifie, terrifiée, terrifiant — mais plus
+ * « voir » dans « avoir », ni « art » dans « parties », ni « très » dans
+ * « stress ». Le test 9 avait mesuré 15 faux positifs avec includes() ;
+ * l'ancrage les supprime tous.
  *
  * À chaque position, l'expression la plus longue gagne et consomme le texte.
  * « pas envie » l'emporte donc sur « envie », et « envie » reste disponible
@@ -63,6 +64,25 @@ const conditionTenue = (si, contexte) => {
   }
 };
 
+// ── motifs ─────────────────────────────────────────────────────────────────
+
+const echappe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
+ * Une entrée devient une regex ancrée en début de mot, fin libre.
+ *
+ *   terrif      → \bterrif[a-z0-9]*      terrifie · terrifiée · terrifiant
+ *   pas envie   → \bpas envie[a-z0-9]*   et pas « pas trop envie »
+ *
+ * Le \b n'est posé que si l'entrée commence par une lettre : « 'aimerais
+ * bien » commence par une apostrophe, où \b ne veut rien dire.
+ *
+ * Le texte est normalisé avant, donc sans accents — ce qui compte, parce
+ * que \b de JavaScript ne reconnaît pas « é » comme une lettre.
+ */
+const motif = (cle) =>
+  new RegExp((/^[a-z0-9]/.test(cle) ? '\\b' : '') + echappe(cle) + '[a-z0-9]*', 'g');
+
 // ── mise à plat de la word bank ────────────────────────────────────────────
 
 /** Toutes les entrées d'un champ : celles de la question + celles qui valent partout. */
@@ -79,7 +99,7 @@ export function entreesPour(question, contexte = {}) {
           if (!cle) continue;
           const repli = normaliseFort(mot);
           const cles = repli === cle ? [cle] : [cle, repli];
-          plat.push({ champ, famille, niveau, mot, cle, cles });
+          plat.push({ champ, famille, niveau, mot, cle, motifs: cles.map(motif) });
         }
       }
     }
@@ -106,17 +126,18 @@ export function occurrences(texte, question, contexte = {}) {
   const trouves = [];
 
   for (const e of entreesPour(question, contexte)) {
-    for (const cle of e.cles) {
-      let i = t.indexOf(cle);
-      while (i !== -1) {
-        const fin = i + cle.length;
+    for (const re of e.motifs) {
+      re.lastIndex = 0;
+      let m;
+      while ((m = re.exec(t)) !== null) {
+        if (m[0] === '') { re.lastIndex++; continue; }
+        const [i, fin] = [m.index, m.index + m[0].length];
         let libre = true;
         for (let k = i; k < fin; k++) if (pris[k]) { libre = false; break; }
         if (libre) {
           for (let k = i; k < fin; k++) pris[k] = true;
-          trouves.push({ ...e, debut: i, fin });
+          trouves.push({ ...e, debut: i, fin, trouve: m[0] });
         }
-        i = t.indexOf(cle, i + 1);
       }
     }
   }
