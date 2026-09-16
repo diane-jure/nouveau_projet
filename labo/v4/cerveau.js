@@ -30,6 +30,18 @@ export const CONSTANTES = {
   // Seuils de classement. Provisoires : ils sortiront des tests en labo.
   X: 3,          // score >= X            → greatPath
   Z: 3,          // score <= -Z           → poorPath
+
+  /**
+   * Valeur d'un mot quand sa famille s'écarte de WEAK / STRONG.
+   *
+   * achievements est descendu à 1,5 : la famille n'a qu'un seul niveau, et
+   * les réponses Q2 sont des énumérations — « chill, joie, fun, détente »
+   * faisait 12 points à 3 le mot, quand une Q3 nuancée en vaut 1. L'axe qui
+   * devait peser le moins pesait quatre fois Q1 et seize fois Q3.
+   *
+   * L'écrasement s'applique à la famille entière, tous niveaux confondus.
+   */
+  POIDS: { achievements: 1.5 },
 };
 
 export const isHigh = (x, C = CONSTANTES) => x >= C.THRESHOLD;
@@ -67,9 +79,11 @@ function signe(o, question) {
   return 0;
 }
 
-const valeur = (o, C) =>
-  (o.niveau === 'strong' ? C.STRONG : o.niveau === 'weak' ? C.WEAK : 0) *
-  o.facteur * (o.inverse ? -1 : 1);
+const valeur = (o, C) => {
+  const base = C.POIDS?.[o.famille]
+    ?? (o.niveau === 'strong' ? C.STRONG : o.niveau === 'weak' ? C.WEAK : 0);
+  return base * o.facteur * (o.inverse ? -1 : 1);
+};
 
 /** Somme d'une famille précise, en valeur absolue de son axe (sans son signe). */
 const sommeFamille = (occ, famille, C) =>
