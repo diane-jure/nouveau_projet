@@ -1,0 +1,3251 @@
+{
+ "version": "v4.6.2 Quest Finder",
+ "exportDate": "2026-09-15T14:59:57.800Z",
+ "questFinderDrafts": [],
+ "questFinderPending": [
+  {
+   "id": "1789297529981",
+   "q0": "non",
+   "spoons": 5,
+   "status": 2,
+   "options": [
+    {
+     "id": "1",
+     "q1": "fun, mais ça me fait peur",
+     "q2": "un tube, j'aurais enfin fait quelque chose de ce hook que j'ai",
+     "q3": "je l'aurais toujours en tête ",
+     "cost": "0",
+     "name": "alice ça glisse",
+     "energyGain": "2"
+    },
+    {
+     "id": "2",
+     "q1": "mmh j'ai l'impression que ça peut être difficile mais cool",
+     "q2": "je peux l'envoyer à amir",
+     "q3": "je peux tjs le faire",
+     "cost": "0",
+     "name": "2 coups d'avance",
+     "energyGain": "1"
+    },
+    {
+     "id": "1789297537744",
+     "q1": "ouah ça a l'air vraiment dur",
+     "q2": "j'apprends à faire une instru disco",
+     "q3": "je peux tjs le faire",
+     "cost": "1",
+     "name": "Strong Enough",
+     "energyGain": "3"
+    }
+   ],
+   "timestamp": "2026-09-13T11:08:22.240Z",
+   "oracleResponse": {
+    "tags": [
+     "q0_low"
+    ],
+    "choix": "Pile ou face",
+    "caseType": "pileouface",
+    "isOffline": true,
+    "explication": "Ton futur moi s'en fout.\nChoisis la plus simple et avance."
+   }
+  }
+ ],
+ "questFinderCompleted": [
+  {
+   "id": "1789149479284",
+   "q0": "non",
+   "spoons": 3,
+   "status": 4,
+   "options": [
+    {
+     "id": "1",
+     "q1": "J’sais pas bof",
+     "q2": "Danser, simplement, être avec Lélé ",
+     "q3": "Osef",
+     "cost": "1",
+     "name": "Aller voir un concert",
+     "energyGain": "2"
+    },
+    {
+     "id": "2",
+     "q1": "Un peu flemme, mais j’aimerais bien y retourner ",
+     "q2": "Du bonheur dans mon ancien endroit préféré, le faire découvrir à Charlotte ",
+     "q3": "Mmh, un peu frustrée mais ça peut être un autre jour",
+     "cost": "3",
+     "name": "Faire dame damier à sing or die",
+     "energyGain": "3"
+    },
+    {
+     "id": "1789149617540",
+     "q1": "Un peu de peur",
+     "q2": "Je crée des trucs et je joue au steam deck",
+     "q3": "Rien",
+     "cost": "0",
+     "name": "Mettre un toz à tout le monde et rester chez moi",
+     "energyGain": "1"
+    }
+   ],
+   "feedback": {
+    "comment": "C’était cool de passer la soirée avec Léa, même si on n’a pas trop pu profiter de la musique. Et franchement c’était ambitieux de vouloir faire le dams vu comme j’étais fatiguée",
+    "chosenOption": "Aller voir un concert",
+    "feedbackDate": "2026-09-14T18:00:00.000Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-09-11T18:00:57.004Z",
+   "completedDate": "2026-09-14T18:00:00.000Z",
+   "oracleResponse": {
+    "tags": [
+     "q0_low"
+    ],
+    "choix": "Pile ou face",
+    "caseType": "pileouface",
+    "isOffline": true,
+    "explication": "Dans dix jours tu n'y penseras plus.\nPile ou face — et passe à autre chose."
+   }
+  },
+  {
+   "id": "1789115831384",
+   "q0": "oui",
+   "_idx": 0,
+   "spoons": 5,
+   "status": 4,
+   "_origin": "pending",
+   "options": [
+    {
+     "id": "1",
+     "q1": "Ahhh j’ai pas envie ça me fait peur",
+     "q2": "J’ai validé mes documents, soulagée ",
+     "q3": "Stress",
+     "cost": "3",
+     "name": "Faire l’admin sur mon ordi ",
+     "energyGain": "3"
+    },
+    {
+     "id": "2",
+     "q1": "C’est cool, j’ai peu l’occasion de le faire",
+     "q2": "Je m’amuse et j’avance sur ma musique",
+     "q3": "Je peux le faire ",
+     "cost": "0",
+     "name": "Jouer du synthé",
+     "energyGain": "3"
+    },
+    {
+     "id": "1789115913096",
+     "q1": "Moyen, j’suis pas hyper emballée par mon nouveau jeu",
+     "q2": "Je vois pas le temps passer",
+     "q3": "Je peux toujours le faire",
+     "cost": "0",
+     "name": "Jouer sur le steam deck ",
+     "energyGain": "0"
+    }
+   ],
+   "feedback": {
+    "comment": "Ça m’a permis de régler rapidement la question de la CMU, vérifier que mon contrat ES est bien régulé, et même faire une relance pour la facture bouygues !",
+    "chosenOption": "Faire l’admin sur mon ordi ",
+    "feedbackDate": "2026-09-11T11:33:20.990Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-09-11T08:39:57.882Z",
+   "decisionDate": "2026-09-11T11:32:21.795Z",
+   "completedDate": "2026-09-11T11:33:20.990Z",
+   "oracleResponse": {
+    "tags": [
+     "alerte_corporelle"
+    ],
+    "choix": "Jouer du synthé",
+    "caseType": "clear",
+    "isOffline": true,
+    "explication": "Faire l’admin sur mon ordi  te tire vers le bas. Jouer du synthé te fait lever la tête.\nÉcoute la différence."
+   }
+  },
+  {
+   "id": "quest_2026-08-31T16:16:33.644Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-08-31T16:16:33.644Z",
+     "q0": "Non",
+     "q1": "Flemme anxiete",
+     "q2": "Joie partage chant ",
+     "q3": "Maybe regret",
+     "cost": "2",
+     "name": "Aller a la chorale",
+     "energyGain": "3"
+    },
+    {
+     "id": "choice_2-2026-08-31T16:16:33.644Z",
+     "q0": "Non",
+     "q1": "Bof",
+     "q2": "Du repos, des rires, du jeu",
+     "q3": "Rien",
+     "cost": "0",
+     "name": "Rentrer chez maria ",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_3-2026-08-31T16:16:33.644Z",
+     "q0": "Non",
+     "q1": "Why not",
+     "q2": "De la sérénite, de l’activité ",
+     "q3": "Rien",
+     "cost": "0",
+     "name": "Aller marcher",
+     "energyGain": "2"
+    }
+   ],
+   "spoons": 2,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aller marcher",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "dilemma",
+     "scoreDiff": 4
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller marcher",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "curiosité / approche modérée"
+        },
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Non",
+       "q1": "Why not",
+       "q2": "De la sérénite, de l’activité ",
+       "q3": "Rien"
+      },
+      "totalScore": 0,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 2,
+       "netCost": -2,
+       "energyGain": 2,
+       "explanation": "coût 0 - gain +2 = -2 | dispo 2 = deficit -4",
+       "energyDeficit": -4
+      }
+     },
+     {
+      "option": "Aller a la chorale",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "inertie ignorable (flemme + envie forte)"
+        }
+       ],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Non",
+       "q1": "Flemme anxiete",
+       "q2": "Joie partage chant ",
+       "q3": "Maybe regret"
+      },
+      "totalScore": -2,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": -2,
+       "niveau3": 0
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 2,
+       "netCost": -1,
+       "energyGain": 3,
+       "explanation": "coût 2 - gain +3 = -1 | dispo 2 = deficit -3",
+       "energyDeficit": -3
+      }
+     },
+     {
+      "option": "Rentrer chez maria ",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        },
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Non",
+       "q1": "Bof",
+       "q2": "Du repos, des rires, du jeu",
+       "q3": "Rien"
+      },
+      "totalScore": -4,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": -4
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 2,
+       "netCost": 0,
+       "energyGain": 0,
+       "explanation": "coût 0 - gain +0 = 0 | dispo 2 = deficit -2",
+       "energyDeficit": -2
+      }
+     }
+    ],
+    "verdictExplication": "Aller marcher te coûte moins — mais Aller a la chorale peut t'apporter plus.\nÀ toi de voir ce qui compte aujourd'hui."
+   },
+   "feedback": {
+    "comment": "Probablement, j’ai pu bouger mais sans me forcer à avoir les interactions sociales de la chorale. Et j’ai parlé à Yoann c m’a fait du bien",
+    "chosenPath": "Aller marcher",
+    "chosenOption": "Aller marcher",
+    "feedbackDate": "2026-09-01T09:21:12.143Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-08-31T16:16:33.644Z",
+   "completedDate": "2026-09-01T09:21:12.145Z",
+   "oracleResponse": {
+    "tags": [
+     "curiosite",
+     "alerte_corporelle",
+     "regret_fort",
+     "flemme_inertie"
+    ],
+    "choix": "Aller marcher",
+    "isOffline": true,
+    "explication": "Aller marcher te coûte moins — mais Aller a la chorale peut t'apporter plus.\nÀ toi de voir ce qui compte aujourd'hui."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-08-31T16:16:33.644Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-08-31T16:16:33.644Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_3-2026-08-31T16:16:33.644Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-05-01T09:42:23.357Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-05-01T09:42:23.357Z",
+     "q0": "Maybe ",
+     "q1": "Ahhhh j’me sens coupable ",
+     "q2": "Rien",
+     "q3": "Rien",
+     "cost": "0",
+     "name": "Rester a l’interieur",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-05-01T09:42:23.357Z",
+     "q0": "Maybe",
+     "q1": "Ahhhh angoisse",
+     "q2": "Rencontres fierté amusement ",
+     "q3": "Regret",
+     "cost": "3",
+     "name": "Aller a la manif",
+     "energyGain": "1"
+    }
+   ],
+   "spoons": 2,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aller a la manif",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 6
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller a la manif",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "forte satisfaction anticipée Q2"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Maybe",
+       "q1": "Ahhhh angoisse",
+       "q2": "Rencontres fierté amusement ",
+       "q3": "Regret"
+      },
+      "totalScore": 4,
+      "categoryScores": {
+       "niveau1": 5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 2,
+       "netCost": 2,
+       "energyGain": 1,
+       "explanation": "coût 3 - gain +1 = 2 | dispo 2 = deficit 0",
+       "energyDeficit": 0
+      }
+     },
+     {
+      "option": "Rester a l’interieur",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Maybe ",
+       "q1": "Ahhhh j’me sens coupable ",
+       "q2": "Rien",
+       "q3": "Rien"
+      },
+      "totalScore": -2,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 2,
+       "netCost": 0,
+       "energyGain": 0,
+       "explanation": "coût 0 - gain +0 = 0 | dispo 2 = deficit -2",
+       "energyDeficit": -2
+      }
+     }
+    ],
+    "verdictExplication": "Dans dix jours, Aller a la manif sera peut-être oubliée.\nMais ce que tu ressentirais de ne pas l'avoir fait — ça, ça reste."
+   },
+   "feedback": {
+    "comment": "Je me suis juste sentie coupable, en plus le 1er mai ça n'a lieu qu'une fois par an. Leçon: mieux vaut essayer de faire quelque chose qui me donne bof envie que de regretter de pas l'avoir fait",
+    "chosenPath": "Rester a l’interieur",
+    "chosenOption": "Rester a l’interieur",
+    "feedbackDate": "2026-08-29T12:36:09.771Z",
+    "satisfaction": "bad",
+    "followedOracle": false
+   },
+   "timestamp": "2026-05-01T09:42:23.357Z",
+   "completedDate": "2026-08-29T12:36:09.771Z",
+   "oracleResponse": {
+    "tags": [
+     "alerte_corporelle",
+     "regret_fort"
+    ],
+    "choix": "Aller a la manif",
+    "isOffline": true,
+    "explication": "Dans dix jours, Aller a la manif sera peut-être oubliée.\nMais ce que tu ressentirais de ne pas l'avoir fait — ça, ça reste."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-05-01T09:42:23.357Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-05-01T09:42:23.357Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-03-31T09:37:57.146Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-03-31T09:37:57.146Z",
+     "q0": "Oui",
+     "q1": "Stress",
+     "q2": "Faire ce dont j’ai envie",
+     "q3": "Stress",
+     "cost": "3",
+     "name": "Envoyer le mail",
+     "energyGain": "4"
+    },
+    {
+     "id": "choice_2-2026-03-31T09:37:57.146Z",
+     "q0": "Oui",
+     "q1": "Culpabilité ",
+     "q2": "Je gagne du temps ",
+     "q3": "Libéré",
+     "cost": "0",
+     "name": "Ne pas envoyer le mail",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 5,
+   "status": 4,
+   "scoring": {
+    "verdict": "Ne pas envoyer le mail",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 5
+    },
+    "analysesDetailed": [
+     {
+      "option": "Ne pas envoyer le mail",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Oui",
+       "q1": "Culpabilité ",
+       "q2": "Je gagne du temps ",
+       "q3": "Libéré"
+      },
+      "totalScore": 0,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 5,
+       "netCost": 0,
+       "energyGain": 0,
+       "explanation": "coût 0 - gain +0 = 0 | dispo 5 = deficit -5",
+       "energyDeficit": -5
+      }
+     },
+     {
+      "option": "Envoyer le mail",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Oui",
+       "q1": "Stress",
+       "q2": "Faire ce dont j’ai envie",
+       "q3": "Stress"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 5,
+       "netCost": -1,
+       "energyGain": 4,
+       "explanation": "coût 3 - gain +4 = -1 | dispo 5 = deficit -6",
+       "energyDeficit": -6
+      }
+     }
+    ],
+    "verdictExplication": "Ton corps a dit non avant même que tu finisses de poser la question.\nNe pas envoyer le mail te laisse respirer — l'autre te comprime."
+   },
+   "feedback": {
+    "comment": "Il faut s’occuper des trucs stressants pour être débarassé et avancer.",
+    "chosenPath": "Envoyer le mail",
+    "chosenOption": "Envoyer le mail",
+    "feedbackDate": "2026-03-31T09:38:15.477Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-03-31T09:37:57.146Z",
+   "completedDate": "2026-03-31T09:38:15.479Z",
+   "oracleResponse": {
+    "tags": [
+     "alerte_corporelle"
+    ],
+    "choix": "Ne pas envoyer le mail",
+    "isOffline": true,
+    "explication": "Envoyer le mail te tire vers le bas. Ne pas envoyer le mail te fait lever la tête.\nÉcoute la différence."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-03-31T09:37:57.146Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-03-31T09:37:57.146Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-03-30T22:34:27.392Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-03-30T22:34:27.392Z",
+     "q0": "Non",
+     "q1": "Bof",
+     "q2": "Un moment avec Yoann, peut peut-être gagner des parties",
+     "q3": "J’aurai d’autres occasions",
+     "cost": "2",
+     "name": "FaiFaire le tournoi des Échecs",
+     "energyGain": "2"
+    },
+    {
+     "id": "choice_2-2026-03-30T22:34:27.392Z",
+     "q0": "Non",
+     "q1": "Enthousiasme",
+     "q2": "Passer un autre moment à chanter, découvrir",
+     "q3": "Peur de pas avoir l’occasion",
+     "cost": "3",
+     "name": "Aller à la Chorale boucan",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 7,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aller à la Chorale boucan",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 7
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller à la Chorale boucan",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "excitation forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Non",
+       "q1": "Enthousiasme",
+       "q2": "Passer un autre moment à chanter, découvrir",
+       "q3": "Peur de pas avoir l’occasion"
+      },
+      "totalScore": 5,
+      "categoryScores": {
+       "niveau1": 5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 7,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 7 = deficit -7",
+       "energyDeficit": -7
+      }
+     },
+     {
+      "option": "FaiFaire le tournoi des Échecs",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Non",
+       "q1": "Bof",
+       "q2": "Un moment avec Yoann, peut peut-être gagner des parties",
+       "q3": "J’aurai d’autres occasions"
+      },
+      "totalScore": -2,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 7,
+       "netCost": 0,
+       "energyGain": 2,
+       "explanation": "coût 2 - gain +2 = 0 | dispo 7 = deficit -7",
+       "energyDeficit": -7
+      }
+     }
+    ],
+    "verdictExplication": "Ton instinct est clair — Aller à la Chorale boucan te fait vibrer.\nFais-toi confiance."
+   },
+   "feedback": {
+    "comment": "Oui car je suis restée avec Yoann. Mais on était tous les deux malades donc il n'y avait pas de bonne activité",
+    "chosenPath": "FaiFaire le tournoi des Échecs",
+    "chosenOption": "FaiFaire le tournoi des Échecs",
+    "feedbackDate": "2026-04-20T15:31:25.798Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-03-30T22:34:27.392Z",
+   "completedDate": "2026-04-20T15:31:25.798Z",
+   "oracleResponse": {
+    "tags": [
+     "excitation"
+    ],
+    "choix": "Aller à la Chorale boucan",
+    "isOffline": true,
+    "explication": "Là où il y a de la vie, suis la vie.\nAller à la Chorale boucan t'appelle — le reste, c'est du bruit."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-03-30T22:34:27.392Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-03-30T22:34:27.392Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-03-30T19:22:14.580Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-03-30T19:22:14.580Z",
+     "q0": "Oui",
+     "q1": "Un peu flemme ",
+     "q2": "On va chanter et je vois des gens cools ",
+     "q3": "Regret, c’est une opportunité ",
+     "cost": "1",
+     "name": "Rester À l’apero",
+     "energyGain": "2"
+    },
+    {
+     "id": "choice_2-2026-03-30T19:22:14.580Z",
+     "q0": "Oui",
+     "q1": "Bof",
+     "q2": "Mes affaires ",
+     "q3": "Rien, je peux y aller demain",
+     "cost": "1",
+     "name": "Aller chez lea ",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 5,
+   "status": 4,
+   "scoring": {
+    "verdict": "Rester À l’apero",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 7
+    },
+    "analysesDetailed": [
+     {
+      "option": "Rester À l’apero",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "inertie ignorable (flemme + envie forte)"
+        }
+       ],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Oui",
+       "q1": "Un peu flemme ",
+       "q2": "On va chanter et je vois des gens cools ",
+       "q3": "Regret, c’est une opportunité "
+      },
+      "totalScore": 3,
+      "categoryScores": {
+       "niveau1": 5,
+       "niveau2": -2,
+       "niveau3": 0
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 1,
+       "spoons": 5,
+       "netCost": -1,
+       "energyGain": 2,
+       "explanation": "coût 1 - gain +2 = -1 | dispo 5 = deficit -6",
+       "energyDeficit": -6
+      }
+     },
+     {
+      "option": "Aller chez lea ",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        },
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q0": "Oui",
+       "q1": "Bof",
+       "q2": "Mes affaires ",
+       "q3": "Rien, je peux y aller demain"
+      },
+      "totalScore": -4,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": -4
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 1,
+       "spoons": 5,
+       "netCost": 1,
+       "energyGain": 0,
+       "explanation": "coût 1 - gain +0 = 1 | dispo 5 = deficit -4",
+       "energyDeficit": -4
+      }
+     }
+    ],
+    "verdictExplication": "Dans dix jours, Rester À l’apero sera peut-être oubliée.\nMais ce que tu ressentirais de ne pas l'avoir fait — ça, ça reste."
+   },
+   "feedback": {
+    "comment": "Grave chant après ! Juste je sais pas encore quand je recup mon sac",
+    "chosenPath": "Rester À l’apero",
+    "chosenOption": "Rester À l’apero",
+    "feedbackDate": "2026-03-30T22:28:18.644Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-03-30T19:22:14.580Z",
+   "completedDate": "2026-03-30T22:28:18.645Z",
+   "oracleResponse": {
+    "tags": [
+     "regret_fort",
+     "flemme_inertie"
+    ],
+    "choix": "Rester À l’apero",
+    "isOffline": true,
+    "explication": "Tes propres mots ont déjà répondu.\nCe regret que tu porterais — c'est la vérité de ce que tu veux."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-03-30T19:22:14.580Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-03-30T19:22:14.580Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-03-26T09:48:25.870Z",
+   "_idx": 16,
+   "paths": [
+    {
+     "id": "choice_1-2026-03-26T09:48:25.870Z",
+     "q1": "neutre, flemme,",
+     "q2": "satisfaction, stabilité",
+     "q3": "rien",
+     "cost": "0",
+     "name": "Guillemette",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-03-26T09:48:25.870Z",
+     "q1": "excitation et peur",
+     "q2": "trop cool, faire plein de trucs, rencontres, projets",
+     "q3": "rien / regrets, déception",
+     "cost": "3",
+     "name": "CAM",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 2,
+   "status": 4,
+   "_origin": "completed",
+   "scoring": {
+    "verdict": "CAM",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 9
+    },
+    "analysesDetailed": [
+     {
+      "option": "CAM",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "excitation forte Q1"
+        },
+        {
+         "type": "orange",
+         "value": -5,
+         "signal": "peur mêlée d'excitation Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "excitation et peur",
+       "q2": "trop cool, faire plein de trucs, rencontres, projets",
+       "q3": "rien / regrets, déception"
+      },
+      "totalScore": 5,
+      "categoryScores": {
+       "niveau1": 5,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 2,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 2 = deficit -2",
+       "energyDeficit": -2
+      }
+     },
+     {
+      "option": "Guillemette",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "flemme neutre"
+        }
+       ],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "neutre, flemme,",
+       "q2": "satisfaction, stabilité",
+       "q3": "rien"
+      },
+      "totalScore": -4,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": -2,
+       "niveau3": -2
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 2,
+       "netCost": 0,
+       "energyGain": 0,
+       "explanation": "coût 0 - gain +0 = 0 | dispo 2 = deficit -2",
+       "energyDeficit": -2
+      }
+     }
+    ],
+    "verdictExplication": "Dans dix jours, CAM sera peut-être oubliée.\nMais ce que tu ressentirais de ne pas l'avoir fait — ça, ça reste."
+   },
+   "feedback": {
+    "comment": "C'est ce que je voulais mais les autres ont décidé autrement.",
+    "chosenOption": "CAM",
+    "feedbackDate": "2026-09-15T14:59:57.797Z",
+    "satisfaction": "meh",
+    "followedOracle": true
+   },
+   "timestamp": "2026-03-26T09:48:25.870Z",
+   "completedDate": "2026-09-15T14:59:57.798Z",
+   "oracleResponse": {
+    "tags": [
+     "excitation",
+     "peur_excitation",
+     "regret_fort",
+     "flemme_neutre"
+    ],
+    "choix": "CAM",
+    "isOffline": true,
+    "explication": "Tes propres mots ont déjà répondu.\nCe regret que tu porterais — c'est la vérité de ce que tu veux."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-03-26T09:48:25.870Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-03-26T09:48:25.870Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "1789483278137",
+   "q0": "oui",
+   "paths": [
+    {
+     "id": "1",
+     "q1": "Ça m'apaise",
+     "q2": "Ça me recharge légèrement",
+     "q3": "Aucune idée — peut-être que j'arriverai dans de moins bonnes dispositions pour retrouver mon hôte",
+     "cost": "0",
+     "name": "S'asseoir sur un banc pour fumer",
+     "energyGain": "2"
+    },
+    {
+     "id": "2",
+     "q1": "Ça me stresse. Douleur.",
+     "q2": "Vite à la maison, j'ai envie de pisser. La chose logique à faire c'est de tracer.",
+     "q3": "J'en sais rien. Peut-être que je serais arrivée stressée et j'aurais vu mon hôte dans de mauvaises dispositions.",
+     "cost": "2",
+     "name": "Marcher direct",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 1,
+   "feedback": {
+    "comment": "je me suis posée sur le banc effectivement, et j'ai rejoint mon pote au bar on a joué aux échecs c'était cool.",
+    "chosenOption": "S'asseoir sur un banc pour fumer",
+    "feedbackDate": "2026-03-22T22:11:08.000Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-03-22T21:11:08.000Z",
+   "completedDate": "2026-03-22T22:11:08.000Z",
+   "oracleResponse": {
+    "tags": [
+     "alerte_corporelle",
+     "energie_critique"
+    ],
+    "choix": "S'asseoir sur un banc pour fumer",
+    "caseType": "clear",
+    "isOffline": true,
+    "explication": "Ton corps a dit non avant même que tu finisses de poser la question.\nS'asseoir sur un banc pour fumer te laisse respirer — l'autre te comprime."
+   }
+  },
+  {
+   "id": "quest_2026-02-10T11:02:54.814Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-02-10T11:02:54.814Z",
+     "q1": "mmmh, cool et stressée en même temps",
+     "q2": "joie de la voir, j'avance sur mon vélo, je vois rome",
+     "q3": "juste reporté, mais je la vois pas",
+     "cost": "3",
+     "name": "aller à bz et voir athenais",
+     "energyGain": "2"
+    },
+    {
+     "id": "choice_2-2026-02-10T11:02:54.814Z",
+     "q1": "soulagée et stressée en même temps",
+     "q2": "chill, joie, fun, détente",
+     "q3": "pas possible de reporter, occasion ratée",
+     "cost": "0",
+     "name": "rester à la maison jouer avec lola",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 6,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aucun des deux",
+    "comparison": {
+     "allWeak": true,
+     "caseType": "none",
+     "scoreDiff": 2
+    },
+    "analysesDetailed": [
+     {
+      "option": "aller à bz et voir athenais",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "mmmh, cool et stressée en même temps",
+       "q2": "joie de la voir, j'avance sur mon vélo, je vois rome",
+       "q3": "juste reporté, mais je la vois pas"
+      },
+      "totalScore": -7,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 6,
+       "netCost": 1,
+       "energyGain": 2,
+       "explanation": "coût 3 - gain +2 = 1 | dispo 6 = deficit -5",
+       "energyDeficit": -5
+      }
+     },
+     {
+      "option": "rester à la maison jouer avec lola",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        },
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "soulagée et stressée en même temps",
+       "q2": "chill, joie, fun, détente",
+       "q3": "pas possible de reporter, occasion ratée"
+      },
+      "totalScore": -9,
+      "categoryScores": {
+       "niveau1": -10,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 6,
+       "netCost": -3,
+       "energyGain": 3,
+       "explanation": "coût 0 - gain +3 = -3 | dispo 6 = deficit -9",
+       "energyDeficit": -9
+      }
+     }
+    ],
+    "verdictExplication": "Quand rien ne vibre, c'est que quelque chose d'autre attend d'être nommé.\nCes options ne sont peut-être pas les bonnes."
+   },
+   "feedback": {
+    "comment": "à l'époque j'avais trop de stress par rapport à athé, et c'était rare qu'on ait l'occasion de geeker avec lola",
+    "chosenPath": "rester à la maison jouer avec lola",
+    "chosenOption": "rester à la maison jouer avec lola",
+    "feedbackDate": "2026-08-29T12:35:17.849Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-02-10T11:02:54.814Z",
+   "completedDate": "2026-08-29T12:35:17.849Z",
+   "oracleResponse": {
+    "choix": "rester à la maison jouer avec lola",
+    "isOffline": true,
+    "explication": "Les deux options se valent.\nrester à la maison jouer avec lola te coûte moins — commence par là si tu hésites."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-02-10T11:02:54.814Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-02-10T11:02:54.814Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-21T16:14:35.262Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-21T16:14:35.262Z",
+     "q1": "ça me fait peur !!!",
+     "q2": "de la sérénité, elles sont au courant pour l'avenir",
+     "q3": "fatigue",
+     "cost": "3",
+     "name": "Aller me plaindre auprès des filles",
+     "energyGain": "3"
+    },
+    {
+     "id": "choice_2-2026-01-21T16:14:35.262Z",
+     "q1": "ça me fait peur",
+     "q2": "peut être qu'elles réfléchiront demain",
+     "q3": "je sais pas",
+     "cost": "4",
+     "name": "ne rien dire ce soir, en parler demain",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 4,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aucun des deux",
+    "comparison": {
+     "allWeak": true,
+     "caseType": "none",
+     "scoreDiff": 0
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller me plaindre auprès des filles",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "ça me fait peur !!!",
+       "q2": "de la sérénité, elles sont au courant pour l'avenir",
+       "q3": "fatigue"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 4,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 4 = deficit -4",
+       "energyDeficit": -4
+      }
+     },
+     {
+      "option": "ne rien dire ce soir, en parler demain",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "ça me fait peur",
+       "q2": "peut être qu'elles réfléchiront demain",
+       "q3": "je sais pas"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 4,
+       "spoons": 4,
+       "netCost": 4,
+       "energyGain": 0,
+       "explanation": "coût 4 - gain +0 = 4 | dispo 4 = deficit 0",
+       "energyDeficit": 0
+      }
+     }
+    ],
+    "verdictExplication": "Quand rien ne vibre, c'est que quelque chose d'autre attend d'être nommé.\nCes options ne sont peut-être pas les bonnes."
+   },
+   "feedback": {
+    "comment": "Elles auraient été compréhensives, j'ai souffert pour rien et ça m'a rendu parano",
+    "chosenPath": "ne rien dire ce soir, en parler demain",
+    "chosenOption": "ne rien dire ce soir, en parler demain",
+    "feedbackDate": "2026-08-29T12:34:43.455Z",
+    "satisfaction": "bad",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-21T16:14:35.262Z",
+   "completedDate": "2026-08-29T12:34:43.455Z",
+   "oracleResponse": {
+    "choix": "Ni l'un ni l'autre",
+    "isOffline": true,
+    "explication": "Aucune option ne t'appelle vraiment.\nC'est peut-être le signe que tu as besoin d'autre chose."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-21T16:14:35.262Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-21T16:14:35.262Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-21T14:34:42.772Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-21T14:34:42.772Z",
+     "q1": "mmh ça commence à faire beaucoup",
+     "q2": "un outil de plus en plus utile et efficace",
+     "q3": "je pourrais toujours reprendre",
+     "cost": "2",
+     "name": "COntinuer à travailler sur qf",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-01-21T14:34:42.772Z",
+     "q1": "aaaaaah pas envie",
+     "q2": "de la clarté, de la motivation",
+     "q3": "rebelote, culpabilité",
+     "cost": "3",
+     "name": "commencer à ranger ma chambre ou faire la lessive",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 7,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aucun des deux",
+    "comparison": {
+     "allWeak": true,
+     "caseType": "none",
+     "scoreDiff": 3
+    },
+    "analysesDetailed": [
+     {
+      "option": "COntinuer à travailler sur qf",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "mmh ça commence à faire beaucoup",
+       "q2": "un outil de plus en plus utile et efficace",
+       "q3": "je pourrais toujours reprendre"
+      },
+      "totalScore": -2,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 7,
+       "netCost": 2,
+       "energyGain": 0,
+       "explanation": "coût 2 - gain +0 = 2 | dispo 7 = deficit -5",
+       "energyDeficit": -5
+      }
+     },
+     {
+      "option": "commencer à ranger ma chambre ou faire la lessive",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [
+        {
+         "type": "red",
+         "value": -3,
+         "signal": "culpabilité (hameçon)"
+        }
+       ],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "pas envie"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "aaaaaah pas envie",
+       "q2": "de la clarté, de la motivation",
+       "q3": "rebelote, culpabilité"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": -3,
+       "niveau3": -2
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 7,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 7 = deficit -7",
+       "energyDeficit": -7
+      }
+     }
+    ],
+    "verdictExplication": "Ce que tu décris, c'est ce qu'on attend de toi — pas ce que tu veux.\nAucune des deux n'est la tienne."
+   },
+   "feedback": {
+    "comment": "Toujours le bordel, j'suis deg parce qu'un peu de propeté m'aiderait en général, et que QF est un projet qui progresse LEEEENTEMENT",
+    "chosenPath": "COntinuer à travailler sur qf",
+    "chosenOption": "COntinuer à travailler sur qf",
+    "feedbackDate": "2026-01-21T14:35:24.274Z",
+    "satisfaction": "bad",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-21T14:34:42.772Z",
+   "completedDate": "2026-01-21T14:35:24.274Z",
+   "oracleResponse": {
+    "choix": "commencer à ranger ma chambre ou faire la lessive",
+    "isOffline": true,
+    "explication": "Les deux options se valent.\ncommencer à ranger ma chambre ou faire la lessive te coûte moins — commence par là si tu hésites."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-21T14:34:42.772Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-21T14:34:42.772Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-19T23:32:57.359Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-19T23:32:57.359Z",
+     "q1": "Excitée mais aussi honteuse",
+     "q2": "Consolider un projet",
+     "q3": "Peur du regret",
+     "cost": "2",
+     "name": "Annuler l'Inde et recontacter Asturias Yoga",
+     "energyGain": "3"
+    },
+    {
+     "id": "choice_2-2026-01-19T23:32:57.359Z",
+     "q1": "Anxiété de fou, peur panique",
+     "q2": "Plus de temps pour réfléchir et trouver le meilleur, peut être plus tôt qu'en Espagne",
+     "q3": "Neutre ou angoissée",
+     "cost": "3",
+     "name": "Continuer à chercher pour l'Inde ou autre",
+     "energyGain": "2"
+    }
+   ],
+   "spoons": 5,
+   "status": 4,
+   "scoring": {
+    "verdict": "Annuler l'Inde et recontacter Asturias Yoga",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 14
+    },
+    "analysesDetailed": [
+     {
+      "option": "Annuler l'Inde et recontacter Asturias Yoga",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "excitation forte Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Excitée mais aussi honteuse",
+       "q2": "Consolider un projet",
+       "q3": "Peur du regret"
+      },
+      "totalScore": 9,
+      "categoryScores": {
+       "niveau1": 10,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 5,
+       "netCost": -1,
+       "energyGain": 3,
+       "explanation": "coût 2 - gain +3 = -1 | dispo 5 = deficit -6",
+       "energyDeficit": -6
+      }
+     },
+     {
+      "option": "Continuer à chercher pour l'Inde ou autre",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Anxiété de fou, peur panique",
+       "q2": "Plus de temps pour réfléchir et trouver le meilleur, peut être plus tôt qu'en Espagne",
+       "q3": "Neutre ou angoissée"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 5,
+       "netCost": 1,
+       "energyGain": 2,
+       "explanation": "coût 3 - gain +2 = 1 | dispo 5 = deficit -4",
+       "energyDeficit": -4
+      }
+     }
+    ],
+    "verdictExplication": "Tes propres mots ont déjà répondu.\nCe regret que tu porterais — c'est la vérité de ce que tu veux."
+   },
+   "feedback": {
+    "comment": "Même si c'était dur en Asturias, au moins j'ai profité d'une nature magnifique et je n'étais pas TROP LOIN de la France",
+    "chosenPath": "Annuler l'Inde et recontacter Asturias Yoga",
+    "chosenOption": "Annuler l'Inde et recontacter Asturias Yoga",
+    "feedbackDate": "2026-08-29T12:32:36.836Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-01-19T23:32:57.359Z",
+   "completedDate": "2026-08-29T12:32:36.836Z",
+   "oracleResponse": {
+    "choix": "Annuler l'Inde et recontacter Asturias Yoga",
+    "isOffline": true,
+    "explication": "Ton instinct est clair — Annuler l'Inde et recontacter Asturias Yoga te fait vibrer.\nContinuer à chercher pour l'Inde ou autre te tire vers le bas.\nFais-toi confiance."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-19T23:32:57.359Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-19T23:32:57.359Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "1789483604243",
+   "q0": "oui",
+   "paths": [
+    {
+     "id": "1",
+     "q1": "c'est ce que j'avai décidé de faire en plus j'suis confort sur le canapé",
+     "q2": "un peu de paix, d'avancer sur le truc de yoga",
+     "q3": "culpabilité, rebelote",
+     "cost": "3",
+     "name": "Rester chez Leonie écrire ma lettre",
+     "energyGain": "3"
+    },
+    {
+     "id": "2",
+     "q1": "mmmmmmh je sais pas, un peu d'anxiété ? FOMO ?",
+     "q2": "avoir enfin vu un film TPG, sortir ça a l'air cool",
+     "q3": "rien",
+     "cost": "3",
+     "name": "Aller voir le film avec Romane",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 6,
+   "feedback": {
+    "comment": "Je suis restée chez Leonie. c'était pas agréable mais au moins j'ai fini de l'écrire. et si mes souvenirs sont bons rome n'était même pas allé au ciné.",
+    "chosenOption": "Rester chez Leonie écrire ma lettre",
+    "feedbackDate": "2026-01-15T19:11:08.000Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-15T18:11:08.000Z",
+   "completedDate": "2026-01-15T19:11:08.000Z",
+   "oracleResponse": {
+    "tags": [
+     "culpabilite",
+     "alerte_corporelle"
+    ],
+    "choix": "Aucun des deux",
+    "caseType": "none",
+    "isOffline": true,
+    "explication": "Aucune de ces options ne t'appartient vraiment — elles viennent de l'extérieur.\nQu'est-ce que TOI tu voudrais, sans les regards ?"
+   }
+  },
+  {
+   "id": "quest_2026-01-14T10:54:44.576Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-14T10:54:44.576Z",
+     "q1": "mmh ça commence à faire beaucoup",
+     "q2": "un outil de plus en plus utile et efficace",
+     "q3": "je pourrais toujours reprendre",
+     "cost": "2",
+     "name": "COntinuer à travailler sur qf",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-01-14T10:54:44.576Z",
+     "q1": "aaaaaah pas envie",
+     "q2": "de la clarté, de la motivation",
+     "q3": "rebelote, culpabilité",
+     "cost": "3",
+     "name": "commencer à ranger ma chambre ou faire la lessive",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 7,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aucun des deux",
+    "comparison": {
+     "allWeak": true,
+     "caseType": "none",
+     "scoreDiff": 3
+    },
+    "analysesDetailed": [
+     {
+      "option": "COntinuer à travailler sur qf",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "mmh ça commence à faire beaucoup",
+       "q2": "un outil de plus en plus utile et efficace",
+       "q3": "je pourrais toujours reprendre"
+      },
+      "totalScore": -2,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 7,
+       "netCost": 2,
+       "energyGain": 0,
+       "explanation": "coût 2 - gain +0 = 2 | dispo 7 = deficit -5",
+       "energyDeficit": -5
+      }
+     },
+     {
+      "option": "commencer à ranger ma chambre ou faire la lessive",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [
+        {
+         "type": "red",
+         "value": -3,
+         "signal": "culpabilité (hameçon)"
+        }
+       ],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "pas envie"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "aaaaaah pas envie",
+       "q2": "de la clarté, de la motivation",
+       "q3": "rebelote, culpabilité"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": -3,
+       "niveau3": -2
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 7,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 7 = deficit -7",
+       "energyDeficit": -7
+      }
+     }
+    ],
+    "verdictExplication": "Ce que tu décris, c'est ce qu'on attend de toi — pas ce que tu veux.\nAucune des deux n'est la tienne."
+   },
+   "feedback": {
+    "comment": "Aucun souvenir",
+    "chosenPath": "COntinuer à travailler sur qf",
+    "chosenOption": "COntinuer à travailler sur qf",
+    "feedbackDate": "2026-03-30T22:30:39.457Z",
+    "satisfaction": "meh",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-14T10:54:44.576Z",
+   "completedDate": "2026-03-30T22:30:39.457Z",
+   "oracleResponse": {
+    "choix": "commencer à ranger ma chambre ou faire la lessive",
+    "isOffline": true,
+    "explication": "Les deux options se valent.\ncommencer à ranger ma chambre ou faire la lessive te coûte moins — commence par là si tu hésites."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-14T10:54:44.576Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-14T10:54:44.576Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "1789483830638",
+   "q0": "oui",
+   "paths": [
+    {
+     "id": "1",
+     "q1": "Stress mais aussi envie d'en finir",
+     "q2": "Avoir posé mes limites, trace écrite du handicap non-accommodé",
+     "q3": "Frustrée de pas avoir agi",
+     "cost": "3",
+     "name": "Répondre maintenant à Charlotte (mail)",
+     "energyGain": "1"
+    },
+    {
+     "id": "2",
+     "q1": "Soulagement court terme, anxiété de fond",
+     "q2": "Avoir le certificat médical d'abord, réponse plus complète",
+     "q3": "Anxiété qui continue de peser",
+     "cost": "0",
+     "name": "Attendre après le médecin vendredi",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 4,
+   "feedback": {
+    "comment": "Quitte à la faire attendre au moins ma situation était claire et justifiée.",
+    "chosenOption": "Attendre après le médecin vendredi",
+    "feedbackDate": "2026-01-14T11:27:07.860Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-14T10:27:07.860Z",
+   "completedDate": "2026-01-14T11:27:07.860Z",
+   "oracleResponse": {
+    "tags": [
+     "alerte_corporelle",
+     "regret_fort",
+     "soulagement"
+    ],
+    "choix": "Aucun des deux",
+    "caseType": "none",
+    "isOffline": true,
+    "explication": "Quand rien ne vibre, c'est que quelque chose d'autre attend d'être nommé.\nCes options ne sont peut-être pas les bonnes."
+   }
+  },
+  {
+   "id": "1789484218598",
+   "q0": "oui",
+   "paths": [
+    {
+     "id": "1",
+     "q1": "Angoisse mais aussi excitée",
+     "q2": "Peut-être une piste pour février/mars, ou au moins des contacts",
+     "q3": "Frustration d'avoir procrastiné encore",
+     "cost": "2",
+     "name": "Appeler Asturias Yoga maintenant",
+     "energyGain": "1"
+    },
+    {
+     "id": "2",
+     "q1": "Soulagement temporaire mais anxiété de fond",
+     "q2": "Pas de stress d'appel, mais ça traine",
+     "q3": "Neutre ou un peu frustrée",
+     "cost": "0",
+     "name": "Attendre qu'ils répondent par message",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 5,
+   "feedback": {
+    "comment": "Je les avais relancé et j'ai bien fait parce que c'était nécessaire de harceler Simon pour qu'il me réponde !! Aly m'a d'ailleurs dit qu'ils m'ont prise pour ma pérsévérance mdr",
+    "chosenOption": "Appeler Asturias Yoga maintenant",
+    "feedbackDate": "2026-01-14T11:21:07.860Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-01-14T10:21:07.860Z",
+   "completedDate": "2026-01-14T11:21:07.860Z",
+   "oracleResponse": {
+    "tags": [
+     "excitation",
+     "peur_excitation",
+     "regret_fort",
+     "alerte_corporelle",
+     "soulagement"
+    ],
+    "choix": "Appeler Asturias Yoga maintenant",
+    "caseType": "clear",
+    "isOffline": true,
+    "explication": "Dans dix jours, Appeler Asturias Yoga maintenant sera peut-être oubliée.\nMais ce que tu ressentirais de ne pas l'avoir fait — ça, ça reste."
+   }
+  },
+  {
+   "id": "quest_2026-01-13T09:27:07.860Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T09:27:07.860Z",
+     "q1": "Bof, elle est moins intelligente que moi",
+     "q2": "Respecter le rendez-vous, peut-être un truc utile",
+     "q3": "Un peu coupable de l'avoir posé un lapin",
+     "cost": "2",
+     "name": "Aller au rendez-vous avec ma conseillère",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-01-13T09:27:07.860Z",
+     "q1": "Soulagée, j'ai envie de créer",
+     "q2": "Avancer sur mes dessins, me reconnecter à ma passion",
+     "q3": "Un peu coupable mais surtout libre",
+     "cost": "0",
+     "name": "Annuler et dessiner chez moi",
+     "energyGain": "2"
+    }
+   ],
+   "spoons": 2,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aller au rendez-vous avec ma conseillère",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 6
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller au rendez-vous avec ma conseillère",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "regret modéré"
+        },
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Bof, elle est moins intelligente que moi",
+       "q2": "Respecter le rendez-vous, peut-être un truc utile",
+       "q3": "Un peu coupable de l'avoir posé un lapin"
+      },
+      "totalScore": 0,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 2,
+       "netCost": 2,
+       "energyGain": 0,
+       "explanation": "coût 2 - gain +0 = 2 | dispo 2 = deficit 0",
+       "energyDeficit": 0
+      }
+     },
+     {
+      "option": "Annuler et dessiner chez moi",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q1"
+        },
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "regret modéré"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Soulagée, j'ai envie de créer",
+       "q2": "Avancer sur mes dessins, me reconnecter à ma passion",
+       "q3": "Un peu coupable mais surtout libre"
+      },
+      "totalScore": -6,
+      "categoryScores": {
+       "niveau1": -10,
+       "niveau2": 0,
+       "niveau3": 2
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 2,
+       "netCost": -2,
+       "energyGain": 2,
+       "explanation": "coût 0 - gain +2 = -2 | dispo 2 = deficit -4",
+       "energyDeficit": -4
+      }
+     }
+    ],
+    "verdictExplication": "Ton corps a déjà choisi.\nAller au rendez-vous avec ma conseillère — et tu le sais."
+   },
+   "feedback": {
+    "comment": "cet exemple n'est pas tres adapte. biensur qu il faut honorer un rdv meme si on na pas envie",
+    "chosenPath": "Aller au rendez-vous avec ma conseillère",
+    "chosenOption": "Aller au rendez-vous avec ma conseillère",
+    "feedbackDate": "2026-01-13T09:28:21.259Z",
+    "satisfaction": "meh",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T09:27:07.860Z",
+   "completedDate": "2026-01-13T09:28:21.259Z",
+   "oracleResponse": {
+    "choix": "Ni l'un ni l'autre",
+    "isOffline": true,
+    "explication": "Aucune option ne t'appelle vraiment.\nC'est peut-être le signe que tu as besoin d'autre chose."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T09:27:07.860Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T09:27:07.860Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T09:24:35.224Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T09:24:35.224Z",
+     "q1": "Mmmmh why not",
+     "q2": "J'aurais appris des trucs sur les couleurs, et ça débloquera les deux autres vidéos qui font suite, ça fait longtemps que ça traîne",
+     "q3": "Change rien !",
+     "cost": "1",
+     "name": "Vidéos youtube couleurs",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-01-13T09:24:35.224Z",
+     "q1": "Flemme ! Peur de m'ennuyer",
+     "q2": "Être à fond dans l'univers du Jules Vernes, apprendre de la géographie",
+     "q3": "Un poil coupable, mais peux toujours le lire",
+     "cost": "3",
+     "name": "BD Tour du monde 80 jours",
+     "energyGain": "1"
+    }
+   ],
+   "spoons": 3,
+   "status": 4,
+   "scoring": {
+    "verdict": "Vidéos youtube couleurs",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "dilemma",
+     "scoreDiff": 2
+    },
+    "analysesDetailed": [
+     {
+      "option": "Vidéos youtube couleurs",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "forte satisfaction anticipée Q2"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "curiosité / approche modérée"
+        },
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        },
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "importance nulle Q3"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Mmmmh why not",
+       "q2": "J'aurais appris des trucs sur les couleurs, et ça débloquera les deux autres vidéos qui font suite, ça fait longtemps que ça traîne",
+       "q3": "Change rien !"
+      },
+      "totalScore": 3,
+      "categoryScores": {
+       "niveau1": 5,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 1,
+       "spoons": 3,
+       "netCost": 1,
+       "energyGain": 0,
+       "explanation": "coût 1 - gain +0 = 1 | dispo 3 = deficit -2",
+       "energyDeficit": -2
+      }
+     },
+     {
+      "option": "BD Tour du monde 80 jours",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "forte satisfaction anticipée Q2"
+        }
+       ],
+       "niveau2": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "inertie ignorable (flemme + envie forte)"
+        }
+       ],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "regret modéré"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Flemme ! Peur de m'ennuyer",
+       "q2": "Être à fond dans l'univers du Jules Vernes, apprendre de la géographie",
+       "q3": "Un poil coupable, mais peux toujours le lire"
+      },
+      "totalScore": 1,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": -2,
+       "niveau3": 2
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 3,
+       "netCost": 2,
+       "energyGain": 1,
+       "explanation": "coût 3 - gain +1 = 2 | dispo 3 = deficit -1",
+       "energyDeficit": -1
+      }
+     }
+    ],
+    "verdictExplication": "Vidéos youtube couleurs te coûte moins — mais BD Tour du monde 80 jours peut t'apporter plus.\nÀ toi de voir ce qui compte aujourd'hui."
+   },
+   "feedback": {
+    "comment": "ni l'un ni l'autre = la réponse de l'oracle = ce que j'ai fait. mais je dirais pas qu'aucune option m'appelle vraiment: il y a l'apprentissage (très important pour moi) et être à fond c'est la passion et risque de procrastination au long terme = peut être nommer ma peur d'être inactive.",
+    "chosenPath": "autre",
+    "chosenOption": "autre",
+    "feedbackDate": "2026-01-13T09:27:01.472Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T09:24:35.224Z",
+   "completedDate": "2026-01-13T09:27:01.472Z",
+   "oracleResponse": {
+    "choix": "Ni l'un ni l'autre",
+    "isOffline": true,
+    "explication": "Aucune option ne t'appelle vraiment.\nC'est peut-être le signe que tu as besoin d'autre chose."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T09:24:35.224Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T09:24:35.224Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T09:23:23.760Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T09:23:23.760Z",
+     "q1": "Pffff flemme",
+     "q2": "Rigoler et danser avec mes potes A et M, ptet rencontrer une meuf qui me plaît",
+     "q3": "Un peu dommage car ça fait longtemps qu'on se rate avec A",
+     "cost": "3",
+     "name": "Aller au Molo",
+     "energyGain": "3"
+    },
+    {
+     "id": "choice_2-2026-01-13T09:23:23.760Z",
+     "q1": "Angoisse",
+     "q2": "Rigoler ensemble",
+     "q3": "Un peu gênée parce qu'on va se revoir demain, mais de toutes façons j'avais dit non",
+     "cost": "2",
+     "name": "Aller au bar",
+     "energyGain": "0"
+    }
+   ],
+   "spoons": 1,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aller au Molo",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 11
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller au Molo",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "flemme neutre"
+        }
+       ],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "regret modéré"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Pffff flemme",
+       "q2": "Rigoler et danser avec mes potes A et M, ptet rencontrer une meuf qui me plaît",
+       "q3": "Un peu dommage car ça fait longtemps qu'on se rate avec A"
+      },
+      "totalScore": 0,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": -2,
+       "niveau3": 2
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 1,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 1 = deficit -1",
+       "energyDeficit": -1
+      }
+     },
+     {
+      "option": "Aller au bar",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [
+        {
+         "type": "red",
+         "value": -3,
+         "signal": "pression sociale (hameçon)"
+        }
+       ],
+       "niveau3": [],
+       "niveau4": [
+        {
+         "type": "red",
+         "signal": "dépassement 100%+ (1 cuillères)"
+        }
+       ]
+      },
+      "responses": {
+       "q1": "Angoisse",
+       "q2": "Rigoler ensemble",
+       "q3": "Un peu gênée parce qu'on va se revoir demain, mais de toutes façons j'avais dit non"
+      },
+      "totalScore": -11,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": -3,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 1,
+       "netCost": 2,
+       "energyGain": 0,
+       "explanation": "coût 2 - gain +0 = 2 | dispo 1 = deficit 1",
+       "energyDeficit": 1
+      }
+     }
+    ],
+    "verdictExplication": "Ce que tu listes pour Aller au bar — ce sont des dettes, pas des désirs.\nAller au Molo t'appartient vraiment."
+   },
+   "feedback": {
+    "comment": "Aucun des deux: finalement j'ai eu une invitation à l'improviste ailleurs.\nlà on voit qu'il y a osef et peu d'importance pour deux options qui coûtent plus que l'energie disponible",
+    "chosenPath": "autre",
+    "chosenOption": "autre",
+    "feedbackDate": "2026-01-13T09:24:28.066Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T09:23:23.760Z",
+   "completedDate": "2026-01-13T09:24:28.066Z",
+   "oracleResponse": {
+    "choix": "Aller au Molo",
+    "isOffline": true,
+    "explication": "Les deux options se valent.\nAller au Molo te coûte moins — commence par là si tu hésites."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T09:23:23.760Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T09:23:23.760Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T09:22:06.317Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T09:22:06.317Z",
+     "q1": "Mmmmmmmh oui mais non",
+     "q2": "Du repos mais bon je fais rien",
+     "q3": "Fière",
+     "cost": "0",
+     "name": "Rester au lit",
+     "energyGain": "7"
+    },
+    {
+     "id": "choice_2-2026-01-13T09:22:06.317Z",
+     "q1": "Aaaaaah c'est dur mais allez allez il faut y aller",
+     "q2": "Je suis mega fière de moi, on s'amuse de fou",
+     "q3": "Honteuse dégoûtée fâchée contre moi",
+     "cost": "3",
+     "name": "Aller au lac",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 3,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aller au lac",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 12
+    },
+    "analysesDetailed": [
+     {
+      "option": "Aller au lac",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "forte satisfaction anticipée Q2"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [
+        {
+         "type": "red",
+         "value": -3,
+         "signal": "obligation déguisée"
+        }
+       ],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Aaaaaah c'est dur mais allez allez il faut y aller",
+       "q2": "Je suis mega fière de moi, on s'amuse de fou",
+       "q3": "Honteuse dégoûtée fâchée contre moi"
+      },
+      "totalScore": 6,
+      "categoryScores": {
+       "niveau1": 10,
+       "niveau2": -3,
+       "niveau3": 0
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 3,
+       "netCost": 0,
+       "energyGain": 3,
+       "explanation": "coût 3 - gain +3 = 0 | dispo 3 = deficit -3",
+       "energyDeficit": -3
+      }
+     },
+     {
+      "option": "Rester au lit",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "orange",
+         "value": -2,
+         "signal": "résistance modérée"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Mmmmmmmh oui mais non",
+       "q2": "Du repos mais bon je fais rien",
+       "q3": "Fière"
+      },
+      "totalScore": -6,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": -2
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 3,
+       "netCost": -7,
+       "energyGain": 7,
+       "explanation": "coût 0 - gain +7 = -7 | dispo 3 = deficit -10",
+       "energyDeficit": -10
+      }
+     }
+    ],
+    "verdictExplication": "Ce que tu listes pour Rester au lit — ce sont des dettes, pas des désirs.\nAller au lac t'appartient vraiment."
+   },
+   "feedback": {
+    "comment": "Evidemment meilleure idee d'aller faire le truc gagne beaucoup qui est rare (autres occasions). et dans 10 jours j'aurais pas oublié",
+    "chosenPath": "Aller au lac",
+    "chosenOption": "Aller au lac",
+    "feedbackDate": "2026-01-13T09:23:03.538Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-01-13T09:22:06.317Z",
+   "completedDate": "2026-01-13T09:23:03.538Z",
+   "oracleResponse": {
+    "choix": "Aller au lac",
+    "isOffline": true,
+    "explication": "Ton instinct est clair — Aller au lac te fait vibrer.\nFais-toi confiance."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T09:22:06.317Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T09:22:06.317Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T09:18:52.828Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T09:18:52.828Z",
+     "q1": "Excitée mais aussi honteuse",
+     "q2": "Consolider un projet",
+     "q3": "Peur du regret",
+     "cost": "2",
+     "name": "Annuler l'Inde et recontacter Asturias Yoga",
+     "energyGain": "3"
+    },
+    {
+     "id": "choice_2-2026-01-13T09:18:52.828Z",
+     "q1": "Anxiété de fou, peur panique",
+     "q2": "Plus de temps pour réfléchir et trouver le meilleur, peut être plus tôt qu'en Espagne",
+     "q3": "Neutre ou angoissée",
+     "cost": "3",
+     "name": "Continuer à chercher pour l'Inde ou autre",
+     "energyGain": "2"
+    }
+   ],
+   "spoons": 5,
+   "status": 4,
+   "scoring": {
+    "verdict": "Annuler l'Inde et recontacter Asturias Yoga",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "clear",
+     "scoreDiff": 14
+    },
+    "analysesDetailed": [
+     {
+      "option": "Annuler l'Inde et recontacter Asturias Yoga",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "excitation forte Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "regret massif si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Excitée mais aussi honteuse",
+       "q2": "Consolider un projet",
+       "q3": "Peur du regret"
+      },
+      "totalScore": 9,
+      "categoryScores": {
+       "niveau1": 10,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Ce qu'elle veut vraiment : ce domaine est une vraie valeur",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 5,
+       "netCost": -1,
+       "energyGain": 3,
+       "explanation": "coût 2 - gain +3 = -1 | dispo 5 = deficit -6",
+       "energyDeficit": -6
+      }
+     },
+     {
+      "option": "Continuer à chercher pour l'Inde ou autre",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Anxiété de fou, peur panique",
+       "q2": "Plus de temps pour réfléchir et trouver le meilleur, peut être plus tôt qu'en Espagne",
+       "q3": "Neutre ou angoissée"
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 3,
+       "spoons": 5,
+       "netCost": 1,
+       "energyGain": 2,
+       "explanation": "coût 3 - gain +2 = 1 | dispo 5 = deficit -4",
+       "energyDeficit": -4
+      }
+     }
+    ],
+    "verdictExplication": "Tes propres mots ont déjà répondu.\nCe regret que tu porterais — c'est la vérité de ce que tu veux."
+   },
+   "feedback": {
+    "comment": "Pour l'instant je n'ai pas pris de décision ici et je ne sais quelle est la bonne. Dans un monde idéal l'oracle comprend qu'il s'agit d'une décision importante (mots projet, temps, réfléchir, et émotions fortes: de fou panique angoissée excitée). il nomme plus explicitement le dilemme même s'il me conseille l'option A",
+    "chosenPath": "Continuer à chercher pour l'Inde ou autre",
+    "chosenOption": "Continuer à chercher pour l'Inde ou autre",
+    "feedbackDate": "2026-01-13T09:21:58.886Z",
+    "satisfaction": "meh",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T09:18:52.828Z",
+   "completedDate": "2026-01-13T09:21:58.886Z",
+   "oracleResponse": {
+    "choix": "Annuler l'Inde et recontacter Asturias Yoga",
+    "isOffline": true,
+    "explication": "Ton instinct est clair — Annuler l'Inde et recontacter Asturias Yoga te fait vibrer.\nContinuer à chercher pour l'Inde ou autre te tire vers le bas.\nFais-toi confiance."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T09:18:52.828Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T09:18:52.828Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T01:23:38.859Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T01:23:38.859Z",
+     "q1": "Pffff l'impression de me trahir",
+     "q2": "Avoir de l'argent, rester à Strasbourg",
+     "q3": "Continue à me reposer",
+     "cost": "4",
+     "name": "Chercher job mi-temps maintenant",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-01-13T01:23:38.859Z",
+     "q1": "Peur de couler mais aussi... honnêtement soulagée",
+     "q2": "Me reposer vraiment, dessiner, préparer Asturias",
+     "q3": "En action",
+     "cost": "0",
+     "name": "Continuer le repos",
+     "energyGain": "3"
+    }
+   ],
+   "spoons": 6,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aucun des deux",
+    "comparison": {
+     "allWeak": true,
+     "caseType": "none",
+     "scoreDiff": 0
+    },
+    "analysesDetailed": [
+     {
+      "option": "Chercher job mi-temps maintenant",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Pffff l'impression de me trahir",
+       "q2": "Avoir de l'argent, rester à Strasbourg",
+       "q3": "Continue à me reposer"
+      },
+      "totalScore": -4,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 4,
+       "spoons": 6,
+       "netCost": 4,
+       "energyGain": 0,
+       "explanation": "coût 4 - gain +0 = 4 | dispo 6 = deficit -2",
+       "energyDeficit": -2
+      }
+     },
+     {
+      "option": "Continuer le repos",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        },
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "forte satisfaction anticipée Q2"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Peur de couler mais aussi... honnêtement soulagée",
+       "q2": "Me reposer vraiment, dessiner, préparer Asturias",
+       "q3": "En action"
+      },
+      "totalScore": -4,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 0,
+       "spoons": 6,
+       "netCost": -3,
+       "energyGain": 3,
+       "explanation": "coût 0 - gain +3 = -3 | dispo 6 = deficit -9",
+       "energyDeficit": -9
+      }
+     }
+    ],
+    "verdictExplication": "Quand rien ne vibre, c'est que quelque chose d'autre attend d'être nommé.\nCes options ne sont peut-être pas les bonnes."
+   },
+   "feedback": {
+    "comment": "Pas faux !! et là on arrive à un moment où il faudrait proposer d'ajouter une option C :)",
+    "chosenPath": "autre",
+    "chosenOption": "autre",
+    "feedbackDate": "2026-01-13T01:25:05.867Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T01:23:38.859Z",
+   "completedDate": "2026-01-13T01:25:05.867Z",
+   "oracleResponse": {
+    "choix": "Ni l'un ni l'autre",
+    "isOffline": true,
+    "explication": "Aucune option ne t'appelle vraiment.\nC'est peut-être le signe que tu as besoin d'autre chose."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T01:23:38.859Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T01:23:38.859Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T01:10:02.396Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T01:10:02.396Z",
+     "q1": "Sabrina me glace le sang",
+     "q2": "Continuer ma formation, investir les 2000€",
+     "q3": "Soulagée. Vraiment soulagée.",
+     "cost": "4",
+     "name": "Retourner à Lyon ce week-end",
+     "energyGain": "0"
+    },
+    {
+     "id": "choice_2-2026-01-13T01:10:02.396Z",
+     "q1": "Peur de perdre l'argent mais aussi soulagement",
+     "q2": "Me reposer, dessiner, rigoler avec mes colocs",
+     "q3": "Un peu coupable de l'argent, mais en paix",
+     "cost": "1",
+     "name": "Certificat médical et rester chez moi",
+     "energyGain": "2"
+    }
+   ],
+   "spoons": 3,
+   "status": 4,
+   "scoring": {
+    "verdict": "Aucun des deux",
+    "comparison": {
+     "allWeak": true,
+     "caseType": "none",
+     "scoreDiff": 1
+    },
+    "analysesDetailed": [
+     {
+      "option": "Retourner à Lyon ce week-end",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": [
+        {
+         "type": "orange",
+         "signal": "léger dépassement (1)"
+        }
+       ]
+      },
+      "responses": {
+       "q1": "Sabrina me glace le sang",
+       "q2": "Continuer ma formation, investir les 2000€",
+       "q3": "Soulagée. Vraiment soulagée."
+      },
+      "totalScore": -5,
+      "categoryScores": {
+       "niveau1": -5,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Hameçons détectés : obligation, culpabilité ou pression externe",
+      "energyCalculation": {
+       "cost": 4,
+       "spoons": 3,
+       "netCost": 4,
+       "energyGain": 0,
+       "explanation": "coût 4 - gain +0 = 4 | dispo 3 = deficit 1",
+       "energyDeficit": 1
+      }
+     },
+     {
+      "option": "Certificat médical et rester chez moi",
+      "signals": {
+       "niveau1": [
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "alerte corporelle forte Q1"
+        },
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q1"
+        },
+        {
+         "type": "green",
+         "value": 5,
+         "signal": "forte satisfaction anticipée Q2"
+        },
+        {
+         "type": "red",
+         "value": -5,
+         "signal": "soulagement si pas fait Q3"
+        }
+       ],
+       "niveau2": [],
+       "niveau3": [
+        {
+         "type": "green",
+         "value": 2,
+         "signal": "regret modéré"
+        }
+       ],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Peur de perdre l'argent mais aussi soulagement",
+       "q2": "Me reposer, dessiner, rigoler avec mes colocs",
+       "q3": "Un peu coupable de l'argent, mais en paix"
+      },
+      "totalScore": -6,
+      "categoryScores": {
+       "niveau1": -10,
+       "niveau2": 0,
+       "niveau3": 2
+      },
+      "interpretation": "Conflit : vraie envie VS obstacles (fatigue, coût, pression)",
+      "energyCalculation": {
+       "cost": 1,
+       "spoons": 3,
+       "netCost": -1,
+       "energyGain": 2,
+       "explanation": "coût 1 - gain +2 = -1 | dispo 3 = deficit -4",
+       "energyDeficit": -4
+      }
+     }
+    ],
+    "verdictExplication": "Quand rien ne vibre, c'est que quelque chose d'autre attend d'être nommé.\nCes options ne sont peut-être pas les bonnes."
+   },
+   "feedback": {
+    "comment": "cette réponse n'a pas de sens: il n'y avait pas d'autre possibilité (mais ça le bot ne le comprends pas), par contre on voit qu'il y a BEAUCOUP de négatif au week end, alors que le médecin c'est plutot neutre. le calcul n'est pas bon",
+    "chosenPath": "Certificat médical et rester chez moi",
+    "chosenOption": "Certificat médical et rester chez moi",
+    "feedbackDate": "2026-01-13T01:14:25.517Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T01:10:02.396Z",
+   "completedDate": "2026-01-13T01:14:25.517Z",
+   "oracleResponse": {
+    "choix": "Ni l'un ni l'autre",
+    "isOffline": true,
+    "explication": "Aucune option ne t'appelle vraiment.\nC'est peut-être le signe que tu as besoin d'autre chose."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T01:10:02.396Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T01:10:02.396Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "quest_2026-01-13T01:02:50.763Z",
+   "paths": [
+    {
+     "id": "choice_1-2026-01-13T01:02:50.763Z",
+     "q1": "Envie de calme et de repères",
+     "q2": "Me reposer et éviter la charge mentale",
+     "q3": "Avoir l'impression de tourner en rond",
+     "cost": "1",
+     "name": "Rester le week-end dans ma ville natale",
+     "energyGain": "3"
+    },
+    {
+     "id": "choice_2-2026-01-13T01:02:50.763Z",
+     "q1": "Envie modérée mais plus stimulant",
+     "q2": "Me sentir active, avancer",
+     "q3": "Fatigue et stress du trajet",
+     "cost": "2",
+     "name": "Repartir plus tôt",
+     "energyGain": "2"
+    }
+   ],
+   "spoons": 5,
+   "status": 4,
+   "scoring": {
+    "verdict": "Rester le week-end dans ma ville natale",
+    "comparison": {
+     "allWeak": false,
+     "caseType": "dilemma",
+     "scoreDiff": 0
+    },
+    "analysesDetailed": [
+     {
+      "option": "Rester le week-end dans ma ville natale",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Envie de calme et de repères",
+       "q2": "Me reposer et éviter la charge mentale",
+       "q3": "Avoir l'impression de tourner en rond"
+      },
+      "totalScore": 0,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 1,
+       "spoons": 5,
+       "netCost": -2,
+       "energyGain": 3,
+       "explanation": "coût 1 - gain +3 = -2 | dispo 5 = deficit -7",
+       "energyDeficit": -7
+      }
+     },
+     {
+      "option": "Repartir plus tôt",
+      "signals": {
+       "niveau1": [],
+       "niveau2": [],
+       "niveau3": [],
+       "niveau4": []
+      },
+      "responses": {
+       "q1": "Envie modérée mais plus stimulant",
+       "q2": "Me sentir active, avancer",
+       "q3": "Fatigue et stress du trajet"
+      },
+      "totalScore": 0,
+      "categoryScores": {
+       "niveau1": 0,
+       "niveau2": 0,
+       "niveau3": 0
+      },
+      "interpretation": "Faible attrait : ni vraie envie ni forte résistance",
+      "energyCalculation": {
+       "cost": 2,
+       "spoons": 5,
+       "netCost": 0,
+       "energyGain": 2,
+       "explanation": "coût 2 - gain +2 = 0 | dispo 5 = deficit -5",
+       "energyDeficit": -5
+      }
+     }
+    ],
+    "verdictExplication": "Rester le week-end dans ma ville natale te coûte moins et t'apporte plus — la question est déjà répondue.\nFais-toi confiance."
+   },
+   "feedback": {
+    "comment": "Là typiquement l'oracle a pas assez d'élements pour trancher",
+    "chosenPath": "Repartir plus tôt",
+    "chosenOption": "Repartir plus tôt",
+    "feedbackDate": "2026-01-13T01:09:52.395Z",
+    "satisfaction": "good",
+    "followedOracle": false
+   },
+   "timestamp": "2026-01-13T01:02:50.763Z",
+   "completedDate": "2026-01-13T01:09:52.395Z",
+   "oracleResponse": {
+    "choix": "Rester le week-end dans ma ville natale",
+    "isOffline": true,
+    "explication": "Les deux options se valent.\nRester le week-end dans ma ville natale te coûte moins — commence par là si tu hésites."
+   },
+   "revealedQuestions": {
+    "choice_1-2026-01-13T01:02:50.763Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ],
+    "choice_2-2026-01-13T01:02:50.763Z": [
+     "q1",
+     "q2",
+     "q3",
+     "q0"
+    ]
+   }
+  },
+  {
+   "id": "1789484272804",
+   "q0": "oui",
+   "paths": [
+    {
+     "id": "1",
+     "q1": "pffff rester toute seule à la maison",
+     "q2": "bien reposée et en forme pour le lac demain",
+     "q3": "Ça dépend, maybe épuisée deg dead pas capable de profiter du lac, maybe contente d'être sortie",
+     "cost": "0",
+     "name": "Rester chez moi tester le B52",
+     "energyGain": "0"
+    },
+    {
+     "id": "2",
+     "q1": "Curieuse et excitée",
+     "q2": "un nouveau pote dans mon quartier et qui aime sortir",
+     "q3": "soit regret d'avoir raté l'opportunité, soit rassurée de pas avoir fait une folie en allant chez un inconnu en pleine nuit",
+     "cost": "1",
+     "name": "Aller chez Sophiane",
+     "energyGain": "1"
+    }
+   ],
+   "spoons": 1,
+   "feedback": {
+    "comment": "C'est effectivement devenu un pote après, et je me souviens même pas c'est quoi le B52, du CBD ?",
+    "chosenOption": "Aller chez Sophiane",
+    "feedbackDate": "2026-01-13T00:23:00.000Z",
+    "satisfaction": "good",
+    "followedOracle": true
+   },
+   "timestamp": "2026-01-12T23:23:00.000Z",
+   "completedDate": "2026-01-13T00:23:00.000Z",
+   "oracleResponse": {
+    "tags": [
+     "excitation",
+     "regret_fort",
+     "curiosite",
+     "soulagement_q3"
+    ],
+    "choix": "Aller chez Sophiane",
+    "caseType": "clear",
+    "isOffline": true,
+    "explication": "Tes propres mots ont déjà répondu.\nCe regret que tu porterais — c'est la vérité de ce que tu veux."
+   }
+  }
+ ]
+}
