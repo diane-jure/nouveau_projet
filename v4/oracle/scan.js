@@ -149,7 +149,7 @@ export function occurrences(text, question, context = {}) {
 export function applyModifiers(found, { BOOST = 2, REDUCE = 0.5 } = {}) {
   const content = found.filter((o) => o.field !== 'modifiers')
     .map((o) => ({ ...o, factor: 1, inverted: false, modified: [] }));
-  const modifiers = found.filt er((o) => o.field === 'modifiers');
+  const modifiers = found.filter((o) => o.field === 'modifiers');
 
   for (const m of modifiers) {
     if (m.family === 'but') {
