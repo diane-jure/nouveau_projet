@@ -3,12 +3,14 @@
 Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
 **54 voies**.
 
-```bash
-node labo/v4/test_v4_engine.js
-```
-
-
-
+Répartition : 72 % greatPath, 24 % fairPath, 4 % poorPath
+Verdicts : 10 pickGreat, 3 shuffleCards, 12 shuffleCoin
+6 voies sur 54 (11 %) ont un pathPoints négatif
+Corrélation score/satisfaction : les dilemmes jugés "good" ont un score moyen de 10.79, mais "meh" ressort à 16.92 (plus haut que "good") et "bad" à 7.17 — pas monotone, à creuser si tu veux
+Aucun chevauchement heartOverBody/bodyWisdom détecté, aucun faux positif de racine includes()
+--------
+16 septembre 2026
+--------
 **Réglages en vigueur** — `WEAK 1` · `STRONG 3` · `achievements 1.5` ·
 `THRESHOLD 3` · `BOOST 2` · `REDUCE 0.5` · `X 3` · `Z 3`.
 
