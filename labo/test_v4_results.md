@@ -1,19 +1,16 @@
 # Oracle V4 — état des mesures et questions ouvertes
 
-Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.md`, soit
+Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
 **54 voies**.
 
 ```bash
-node labo/v4/genere_word_bank.js   # si oracle_detecte.md a changé
-node labo/v4/tests.js
+node labo/v4/logiciel_testv4.js
 ```
+
+
 
 **Réglages en vigueur** — `WEAK 1` · `STRONG 3` · `achievements 1.5` ·
 `THRESHOLD 3` · `BOOST 2` · `REDUCE 0.5` · `X 3` · `Z 3`.
-
-> Ce document remplace la version précédente plutôt que de s'y ajouter :
-> deux fichiers de chiffres divergent toujours, et c'est comme ça qu'on perd
-> des choses.
 
 ---
 
@@ -243,7 +240,7 @@ soit **54 voies**. **Seuils provisoires** : `X = 3`, `Z = 3`.
 
 ```bash
 node labo/v4/genere_word_bank.js   # si le MD a changé
-node labo/v4/tests.js
+node labo/v4/logiciel_testv4.js
 ```
 
 > Ces tests **décrivent**, ils ne règlent aucun poids. Ils existent pour que

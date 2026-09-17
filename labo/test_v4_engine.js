@@ -1,9 +1,9 @@
 /**
  * TESTS EN LABO — Oracle V4.
  *
- *   node labo/v4/tests.js
+ *   node labo/v4/logiciel_testv4.js
  *
- * Rejoue le cerveau sur les 25 dilemmes réels de labo/saves/sauvegardes.md
+ * Rejoue le cerveau sur les 25 dilemmes réels de labo/saves/sauvegardes.csv
  * et répond, dans l'ordre, aux questions de la liste « Tests en labo » de
  * QF_documentation/oracle_cerveau.md.
  *
@@ -17,7 +17,7 @@ import { normalize, occurrences } from './oracle/scan.js';
 
 // ── les dilemmes réels ─────────────────────────────────────────────────────
 
-const L = readFileSync('labo/saves/sauvegardes.md', 'utf-8')
+const L = readFileSync('./saves/sauvegardes.csv', 'utf-8')
   .split('\n').filter((l) => l.trim().startsWith('|'));
 const cells = (l) => l.trim().replace(/^\||\|$/g, '').split(/(?<!\\)\|/).map((c) => c.trim());
 const E = cells(L[0]);

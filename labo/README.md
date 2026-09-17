@@ -15,8 +15,7 @@ lancent depuis **la racine du dépôt**, jamais depuis `labo/`.
 > `Create codespace`. Node y est déjà installé.
 
 ```bash
-node labo/v4/tests.js          # l'Oracle V4 sur les 25 dilemmes réels
-node labo/v4/genere_word_bank.js   # régénère le lexique depuis le MD
+node labo/v4/logiciel_testv4.js          # l'Oracle V4 sur les 25 dilemmes réels
 ```
 
 Le second est à relancer **après chaque modification** de
@@ -29,10 +28,9 @@ Quatre fichiers, dans l'ordre où ils s'appellent :
 
 | fichier | rôle |
 |---|---|
-| `genere_word_bank.js` | lit le MD, écrit `word_bank.js`. Le MD est la source |
-| `detecte.js` | normalise, cherche en `includes()`, applique les modificateurs |
-| `cerveau.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
-| `tests.js` | répond aux questions de la liste « Tests en labo » |
+| `/labo/oracle/scan.js` | normalise, cherche en `includes()`, applique les modificateurs |
+| `/labo/oracle/brain.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
+| `/labo/logiciel_testv4.js` | répond aux questions de la liste « Tests en labo » |
 
 ## Lire le texte libre sans LLM
 
