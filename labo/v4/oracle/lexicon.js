@@ -68,7 +68,7 @@ export const LEXICON = {
       moderate: ["j'ai dit", "promis", "m'attend", "compte sur moi", "prévu", "rdv", "rendez-vous", "entretien", "honorer", "poser un lapin"],
     },
     "connections": {
-      moderate: ["être avec", "voir", "se voir", "ensemble pote", "ami", "famille", "frère père", "papa", "maman", "mère", "ensemble", "amour", "amitié", "affection", "relation", "complicité", "rapproch", "lien", "rencontres", "partage", "contact", "meuf", "hote", "appeler", "message"],
+      moderate: ["être avec", "voir", "se voir", "ensemble pote", "ami", "famille", "frère", "père", "papa", "maman", "mère", "ensemble", "amour", "amitié", "affection", "relation", "complicité", "rapproch", "lien", "rencontres", "partage", "contact", "meuf", "hote", "appeler", "message"],
     },
     "music": {
       moderate: ["musique", "chant", "chorale", "concert", "son", "morceau", "synth", "guitare", "loop"],
