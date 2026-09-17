@@ -25,7 +25,7 @@ export const LEXICON = {
   },
   "Q2": {
     "achievements": {
-      moderate: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
+      strong: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
     },
   },
   "Q3": {
@@ -62,43 +62,43 @@ export const LEXICON = {
   },
   "sparks": {
     "wellbeing": {
-      strong: ["besoin", "soin", "libre", "liber", "paix", "fier", "cool", "plaisir", "kiff", "rire", "joie", "agréable", "vivante", "dynamique", "énergi", "en forme", "heureu", "épanoui", "satisfai", "repos", "prendre des forces", "magnifique", "sérénité", "serein", "chill", "détent", "confort", "agréable"],
+      moderate: ["besoin", "soin", "libre", "liber", "paix", "fier", "cool", "plaisir", "kiff", "rire", "joie", "agréable", "vivante", "dynamique", "énergi", "en forme", "heureu", "épanoui", "satisfai", "repos", "prendre des forces", "magnifique", "sérénité", "serein", "chill", "détent", "confort", "agréable"],
     },
     "commitment": {
-      strong: ["j'ai dit", "promis", "m'attend", "compte sur moi", "prévu", "rdv", "rendez-vous", "entretien", "honorer", "poser un lapin"],
+      moderate: ["j'ai dit", "promis", "m'attend", "compte sur moi", "prévu", "rdv", "rendez-vous", "entretien", "honorer", "poser un lapin"],
     },
     "connections": {
-      strong: ["être avec", "voir", "se voir", "ensemble pote", "ami", "famille", "frère père", "papa", "maman", "mère", "ensemble", "amour", "amitié", "affection", "relation", "complicité", "rapproch", "lien", "rencontres", "partage", "contact", "meuf", "hote", "appeler", "message"],
+      moderate: ["être avec", "voir", "se voir", "ensemble pote", "ami", "famille", "frère père", "papa", "maman", "mère", "ensemble", "amour", "amitié", "affection", "relation", "complicité", "rapproch", "lien", "rencontres", "partage", "contact", "meuf", "hote", "appeler", "message"],
     },
     "music": {
-      strong: ["musique", "chant", "chorale", "concert", "son", "morceau", "synth", "guitare", "loop"],
+      moderate: ["musique", "chant", "chorale", "concert", "son", "morceau", "synth", "guitare", "loop"],
     },
     "move": {
-      strong: ["danser", "sauter", "courir", "pole dance", "salle", "cirque", "vélo", "bouger", "sport", "muscu", "stimulant", "activ", "actif", "yoga"],
+      moderate: ["danser", "sauter", "courir", "pole dance", "salle", "cirque", "vélo", "bouger", "sport", "muscu", "stimulant", "activ", "actif", "yoga"],
     },
     "outings": {
-      strong: ["plage", "vélo", "sorti", "soleil", "il fait beau", "voyage", "aventure", "ciné", "endroit", "lieu"],
+      moderate: ["plage", "vélo", "sorti", "soleil", "il fait beau", "voyage", "aventure", "ciné", "endroit", "lieu"],
     },
     "playful": {
-      strong: ["jeu", "jouer", "jeux vidéos", "amuse", "fun", "instru", "geeker", "rigoler"],
+      moderate: ["jeu", "jouer", "jeux vidéos", "amuse", "fun", "instru", "geeker", "rigoler"],
     },
     "create": {
-      strong: ["dessiner", "peindre", "imagin", "créatif", "créer", "créat", "art", "musée", "expo"],
+      moderate: ["dessiner", "peindre", "imagin", "créatif", "créer", "créat", "art", "musée", "expo"],
     },
     "work": {
-      strong: ["admin", "boss", "travail", "lettre", "taff", "écrire", "projet"],
+      moderate: ["admin", "boss", "travail", "lettre", "taff", "écrire", "projet"],
     },
     "selfcare": {
-      strong: ["propret", "hygiene", "lessive", "menage", "vaisselle", "ranger"],
+      moderate: ["propret", "hygiene", "lessive", "menage", "vaisselle", "ranger"],
     },
     "curiosity": {
-      strong: ["curieu", "curio", "tester", "essayer", "découvrir", "compr"],
+      moderate: ["curieu", "curio", "tester", "essayer", "découvrir", "compr"],
     },
     "passion": {
-      strong: ["complètement dedans", "pas le temps passer"],
+      moderate: ["complètement dedans", "pas le temps passer"],
     },
     "aligned": {
-      strong: ["vraiment moi", "ok avec moi-même", "digne", "respect", "dans mon élément", "passion", "accompli", "motivé", "capable", "reconnect"],
+      moderate: ["vraiment moi", "ok avec moi-même", "digne", "respect", "dans mon élément", "passion", "accompli", "motivé", "capable", "reconnect"],
     },
   },
   "hooks": {
