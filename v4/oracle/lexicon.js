@@ -3,29 +3,26 @@
  */
 
 export const LEXICON = {
-  "Q3": {
-    "regret": {
-      weak: ["dommage", "triste", "déçu", "decep", "coupable", "pas top", "j'aurais aimé", "j'aurais préféré", "j'aimerais quand même", "stress", "FOMO", "frustr", "pas content", "déçue", "je sais pas", "j'hésite", "saoule", "genee", "ça m'affecterait"],
-      strong: ["toujours en tête", "honte", "degout", "deg", "fâché", "en colère contre moi", "colère", "nul", "decue de moi", "pas fière", "pas fiere", "pas contente de moi", "regret", "regretter", "je regretterais", "j'aurais regretté", "j'aurais mieux fait", "mauvaise idée", "erreur", "connerie", "j'y pense encore", "rumin", "je m'en veux", "je m'en voudrais", "malaise", "après coup"],
+  
+  "Q0": {
+    "oui": {
+      flag: ["yes", "carrement", "completement", "oui"],
     },
-    "trivial": {
-      weak: ["osef", "pas grave", "au pire", "rien", "rien du tout", "que dalle", "change rien", "rien de spécial", "pareil", "même chose", "peu importe", "bah", "bah rien", "pf", "mh", "aucune importance", "ça compte pas", "j'aurais oublié", "oublié", "j'en sais rien", "je crois pas", "ça dépend", "peut-être", "ptet", "maybe"],
+    "maybe": {
+      flag: ["je crois pas", "pas vraiment", "peut-être", "un peu", "je sais pas", "aucune idée"],
+    },
+    "non": {
+      flag: ["non", "pas du tout", "osef"],
+    },
+  },
+  "sparks": {
+
+    "irreversible": {
+      flag: ["pas souvent l'occasion", "pas d'autre occasion", "jamais", "rater", "rare", "rareté", "unique", "maintenant ou jamais", "opportunit", "opportunité", "chance unique", "manqu", "trop tard", "peut pas"],
     },
     "relief": {
       strong: ["repos", "soulag", "ouf", "libre", "liber", "paix", "rassur", "ouf", "tranquille", "relax", "zen", "apaisé", "contente de pas", "contente de ne pas", "paix", "content", "heureu", "bien", "mieux", "mieux comme ça", "mieux sans", "repos", "libre", "libérée", "ça va mieux", "calme", "posé", "ok", "ça passe", "au moins c'est clair", "j'ai dit ce que j'avais à dire", "j'ai essayé", "j'assume", "j'avance", "fièr", "soulag", "liber", "paix", "rassur"],
     },
-    "irreversible": {
-      flag: ["pas souvent l'occasion", "pas d'autre occasion", "jamais", "rater", "rare", "rareté", "unique", "maintenant ou jamais", "opportunit", "opportunité", "chance unique", "manqu", "trop tard", "peut pas"],
-    },
-    "reversible": {
-      flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion", "pas avoir l'occasion"],
-    },
-    "recurrence": {
-      flag: ["tjs","toujours", "encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
-    },
-  },
-  
-  "sparks": {
    "achievements": {
       strong: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
     },
@@ -74,6 +71,18 @@ export const LEXICON = {
     },
   },
   "hooks": {
+
+
+    "reversible": {
+      flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion", "pas avoir l'occasion"],
+    },
+    "regret": {
+      weak: ["dommage", "triste", "déçu", "decep", "coupable", "pas top", "j'aurais aimé", "j'aurais préféré", "j'aimerais quand même", "stress", "FOMO", "frustr", "pas content", "déçue", "je sais pas", "j'hésite", "saoule", "genee", "ça m'affecterait"],
+      strong: ["toujours en tête", "honte", "degout", "deg", "fâché", "en colère contre moi", "colère", "nul", "decue de moi", "pas fière", "pas fiere", "pas contente de moi", "regret", "regretter", "je regretterais", "j'aurais regretté", "j'aurais mieux fait", "mauvaise idée", "erreur", "connerie", "j'y pense encore", "rumin", "je m'en veux", "je m'en voudrais", "malaise", "après coup"],
+    },
+    "trivial": {
+      weak: ["osef", "pas grave", "au pire", "rien", "rien du tout", "que dalle", "change rien", "rien de spécial", "pareil", "même chose", "peu importe", "bah", "bah rien", "pf", "mh", "aucune importance", "ça compte pas", "j'aurais oublié", "oublié", "j'en sais rien", "je crois pas", "ça dépend", "peut-être", "ptet", "maybe"],
+    },
       "indifference": {
       weak: ["bof", "dur", "pf", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
       strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { keyword: "flemme", condition: "HP>=3" }, "chiant"],
@@ -102,6 +111,9 @@ export const LEXICON = {
     },
   },
   "modifiers": {
+    "recurrence": {
+      flag: ["tjs","toujours", "encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
+    },
     "but": {
       flag: ["mais", "en même temps"],
     },
