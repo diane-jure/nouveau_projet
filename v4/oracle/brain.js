@@ -29,8 +29,8 @@ export const BOOST = 2;      // multiplie
 export const REDUCE = 0.5;   // divise
 
 // Seuils de classement. Provisoires : ils sortiront des tests en labo.
-export const X = 3;          // score >= X   → greatPath
-export const Z = 3;          // score <= -Z  → poorPath
+export const X = 12;          // score >= X   → greatPath
+export const Z = 8;          // score <= -Z  → poorPath
 
 /** Un TOTAL dépasse-t-il le seuil ? Rien à voir avec le niveau d'un keyword. */
 export const isHigh = (x) => x >= THRESHOLD;
@@ -113,12 +113,23 @@ export function evaluatePath(path, context = {}) {
   const [Q1, Q2, Q3] = fields;
   const all = fields.flatMap((c) => c.occurrences);
 
+  // ── ressources
+  //
+  // ⚠️ Cette ligne additionne des PV et des gemmes, et verse le résultat
+  // dans un total de points de vocabulaire. Trois devises. C'est le problème
+  // du loot, laissé intact ici pour que le renommage ne change aucun chiffre.
+  const drain = Number(path.drain) || 0;
+  const loot = Number(path.loot) || 0;
+
+  const pathPoints = Q1.points + Q2.points + q3Points + loot;
+
   // ── drapeaux et compteurs dont les règles ont besoin
   const flag = (family) => Q3.occurrences.some((o) => o.family === family);
   const irreversible = flag('irreversible');
   const reversible = flag('reversible');
   const recurrence = flag('recurrence');
-  const damage = all.some((o) => o.family === 'damage');
+  const damage = all.some((o) => o.family === 'damage'
+  && o.family === 'damage') || drain >= HP;
 
   const q1Fear = familySum(Q1.occurrences, 'fear');
   const q3Regret = familySum(Q3.occurrences, 'regret');
@@ -130,17 +141,6 @@ export function evaluatePath(path, context = {}) {
   let q3Points = Q3.points;
   if (scope === 'yes') q3Points = q3Points * BOOST;
   else if (scope === 'no') q3Points = q3Points * REDUCE;
-
-  // ── ressources
-  //
-  // ⚠️ Cette ligne additionne des PV et des gemmes, et verse le résultat
-  // dans un total de points de vocabulaire. Trois devises. C'est le problème
-  // du loot, laissé intact ici pour que le renommage ne change aucun chiffre.
-  const drain = Number(path.drain) || 0;
-  const loot = Number(path.loot) || 0;
-  const resources = (drain > HP ? -drain : 0) + loot;
-
-  const pathPoints = Q1.points + Q2.points + q3Points + resources;
 
   // ── règles : elles multiplient pathScore, jamais pathPoints
   let pathScore = pathPoints;
@@ -183,7 +183,7 @@ export function evaluatePath(path, context = {}) {
     detail: {
       Q1: Q1.points, Q2: Q2.points, Q3: Q3.points, q3Points,
       q1Fear, q3Regret, q3Relief,
-      drain, loot, resources,
+      drain, loot,
       irreversible, reversible, recurrence, damage, scope,
     },
     tags,
