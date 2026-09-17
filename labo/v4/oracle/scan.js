@@ -11,6 +11,10 @@
  *   répétitions   3 lettres identiques ou plus → une seule
  *                 « fleeemme » = « flemme », « mmmmmmmh » = « mh »
  *
+ * Les onomatopées du MD sont écrites sous leur forme déjà écrasée (« pf »,
+ * « mh ») : l'ancrage en début de mot avec la fin libre fait le reste, donc
+ * « pf » attrape pff, pfff, pffff. Pas besoin d'une seconde normalisation.
+ *
  * La recherche est une regex ancrée en DÉBUT DE MOT, la fin libre : la
  * racine « terrif » trouve terrifie, terrifiée, terrifiant — mais plus
  * « voir » dans « avoir », ni « art » dans « parties », ni « très » dans
@@ -32,21 +36,6 @@ export const normalize = (s) =>
     .replace(/[̀-ͯ]/g, '')
     .replace(/(.)\1{2,}/g, '$1')
     .toLowerCase();
-
-/**
- * Forme repli, pour les onomatopées.
- *
- * La règle ci-dessus n'écrase qu'à partir de trois lettres identiques, pour
- * ne pas abîmer « comme », « belle », « passer ». Mais l'entrée « pff » du
- * MD n'a que deux f : elle reste « pff », alors que « Pffff » tapé dans
- * l'app se dégonfle en « pf ». Les deux ne se rencontreraient jamais.
- *
- * On indexe donc chaque keyword sous ses deux formes.
- *
- * ⚠️ Cette fonction est en sursis : « pff » est le seul cas réel du lexique,
- * et écrire « pf » dans le MD la rendrait inutile.
- */
-export const normalizeDouble = (s) => normalize(s).replace(/(.)\1+/g, '$1');
 
 // ── conditions (« flemme (si HP>=3) ») ─────────────────────────────────────
 
@@ -99,9 +88,7 @@ export function keywordsFor(question, context = {}) {
           if (!isMet(condition, context)) continue;
           const key = normalize(keyword);
           if (!key) continue;
-          const fallback = normalizeDouble(keyword);
-          const keys = fallback === key ? [key] : [key, fallback];
-          flat.push({ field, family, level, keyword, key, patterns: keys.map(pattern) });
+          flat.push({ field, family, level, keyword, key, pattern: pattern(key) });
         }
       }
     }
@@ -128,18 +115,17 @@ export function occurrences(text, question, context = {}) {
   const found = [];
 
   for (const e of keywordsFor(question, context)) {
-    for (const re of e.patterns) {
-      re.lastIndex = 0;
-      let m;
-      while ((m = re.exec(t)) !== null) {
-        if (m[0] === '') { re.lastIndex++; continue; }
-        const [start, end] = [m.index, m.index + m[0].length];
-        let free = true;
-        for (let k = start; k < end; k++) if (claimed[k]) { free = false; break; }
-        if (free) {
-          for (let k = start; k < end; k++) claimed[k] = true;
-          found.push({ ...e, start, end, match: m[0] });
-        }
+    const re = e.pattern;
+    re.lastIndex = 0;
+    let m;
+    while ((m = re.exec(t)) !== null) {
+      if (m[0] === '') { re.lastIndex++; continue; }
+      const [start, end] = [m.index, m.index + m[0].length];
+      let free = true;
+      for (let k = start; k < end; k++) if (claimed[k]) { free = false; break; }
+      if (free) {
+        for (let k = start; k < end; k++) claimed[k] = true;
+        found.push({ ...e, start, end, match: m[0] });
       }
     }
   }

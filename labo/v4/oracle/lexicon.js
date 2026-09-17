@@ -15,7 +15,7 @@ export const LEXICON = {
       strong: ["excit", "allez", "joie", "hâte", "rêve", "kiff", "j'adore", "adore", "trop bien", "super", "génial", "incroyable", "fantastique", "tellement envie", "grave envie", "trop envie", "enthousi", "euphorie", "joyeu", "let's go", "goo", "chaud", "hyper envie", "important", "joie", "enthousiasme", "excitation", "magnifique", "décision importante", "aime sortir", "importance"],
     },
     "indifference": {
-      weak: ["bof", "dur", "pff", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
+      weak: ["bof", "dur", "pf", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
       strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { keyword: "flemme", condition: "HP>=3" }, "chiant"],
     },
     "fear": {
@@ -34,7 +34,7 @@ export const LEXICON = {
       strong: ["honte", "degout", "deg", "fâché", "en colère contre moi", "colère", "nul", "decue de moi", "pas fière", "pas fiere", "pas contente de moi", "regret", "regretter", "je regretterais", "j'aurais regretté", "j'aurais mieux fait", "mauvaise idée", "erreur", "connerie", "j'y pense encore", "rumin", "je m'en veux", "je m'en voudrais", "malaise", "après coup"],
     },
     "trivial": {
-      weak: ["osef", "pas grave", "au pire", "rien", "rien du tout", "que dalle", "change rien", "rien de spécial", "pareil", "même chose", "peu importe", "bah", "bah rien", "pff", "mh", "aucune importance", "ça compte pas", "j'aurais oublié", "oublié", "j'en sais rien", "je crois pas", "ça dépend", "peut-être", "ptet", "maybe"],
+      weak: ["osef", "pas grave", "au pire", "rien", "rien du tout", "que dalle", "change rien", "rien de spécial", "pareil", "même chose", "peu importe", "bah", "bah rien", "pf", "mh", "aucune importance", "ça compte pas", "j'aurais oublié", "oublié", "j'en sais rien", "je crois pas", "ça dépend", "peut-être", "ptet", "maybe"],
     },
     "relief": {
       strong: ["repos", "soulag", "ouf", "libre", "liber", "paix", "rassur", "ouf", "tranquille", "relax", "zen", "apaisé", "contente de pas", "contente de ne pas", "paix", "content", "heureu", "bien", "mieux", "mieux comme ça", "mieux sans", "repos", "libre", "libérée", "ça va mieux", "calme", "posé", "ok", "ça passe", "au moins c'est clair", "j'ai dit ce que j'avais à dire", "j'ai essayé", "j'assume", "j'avance", "fièr", "soulag", "liber", "paix", "rassur"],
