@@ -31,7 +31,7 @@ export const LEXICON = {
   "Q3": {
     "regret": {
       weak: ["dommage", "triste", "déçu", "decep", "coupable", "pas top", "j'aurais aimé", "j'aurais préféré", "j'aimerais quand même", "stress", "FOMO", "frustr", "pas content", "déçue", "je sais pas", "j'hésite", "saoule", "genee", "ça m'affecterait"],
-      strong: ["honte", "degout", "deg", "fâché", "en colère contre moi", "colère", "nul", "decue de moi", "pas fière", "pas fiere", "pas contente de moi", "regret", "regretter", "je regretterais", "j'aurais regretté", "j'aurais mieux fait", "mauvaise idée", "erreur", "connerie", "j'y pense encore", "rumin", "je m'en veux", "je m'en voudrais", "malaise", "après coup"],
+      strong: ["toujours en tête", "honte", "degout", "deg", "fâché", "en colère contre moi", "colère", "nul", "decue de moi", "pas fière", "pas fiere", "pas contente de moi", "regret", "regretter", "je regretterais", "j'aurais regretté", "j'aurais mieux fait", "mauvaise idée", "erreur", "connerie", "j'y pense encore", "rumin", "je m'en veux", "je m'en voudrais", "malaise", "après coup"],
     },
     "trivial": {
       weak: ["osef", "pas grave", "au pire", "rien", "rien du tout", "que dalle", "change rien", "rien de spécial", "pareil", "même chose", "peu importe", "bah", "bah rien", "pf", "mh", "aucune importance", "ça compte pas", "j'aurais oublié", "oublié", "j'en sais rien", "je crois pas", "ça dépend", "peut-être", "ptet", "maybe"],
@@ -43,10 +43,10 @@ export const LEXICON = {
       flag: ["pas d'autre occasion", "jamais", "rater", "rare", "rareté", "unique", "maintenant ou jamais", "opportunit", "opportunité", "chance unique", "manqu", "trop tard", "peut pas"],
     },
     "reversible": {
-      flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion"],
+      flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion", "pas avoir l'occasion"],
     },
     "recurrence": {
-      flag: ["encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
+      flag: ["tjs","toujours", "encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
     },
   },
   "Q0": {
@@ -118,7 +118,7 @@ export const LEXICON = {
       strong: ["coupable", "culpabili"],
     },
     "unpleasant": {
-      strong: ["chiant", "désagréable", "j'aime pas", "ça me saoule", "ça me fait chier", "ça m'emmerde", "envie de rien"],
+      strong: ["ouin","chiant", "désagréable", "j'aime pas", "ça me saoule", "ça me fait chier", "ça m'emmerde", "envie de rien"],
     },
   },
   "modifiers": {
