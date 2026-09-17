@@ -35,6 +35,7 @@ import { LEXICON } from './lexicon.js';
 
 export const normalize = (s) =>
   (s ?? '')
+    .replace(/['']/g, "'")
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .replace(/(.)\1{2,}/g, '$1')
@@ -338,7 +339,7 @@ export function evaluatePath(path, context = {}) {
   if (reversible) fireRule('reversible', REDUCE, familyWords(Q3.occurrences, 'reversible'));
 
   // ── classement
-  const pathRank = pathScore >= X ? 'greatPath' : pathScore <= -Z ? 'poorPath' : 'fairPath';
+  const pathRank = pathScore >= X ? 'greatPath' : pathScore <= Z ? 'poorPath' : 'fairPath';
 
   // ── tags de vocabulaire, pour la parole : chacun porte son keyword déclencheur
   const keywordTags = all.map((o) => ({

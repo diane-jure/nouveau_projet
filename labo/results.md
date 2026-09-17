@@ -1,5 +1,53 @@
 # Oracle V4 — état des mesures et questions ouvertes
 
+Elle a déjà poussé le fix elle-même. Je récupère et je lance.
+
+Presque, un doublon simple (l'ancienne ligne `Q1/Q2/Q3` + `all` n'a pas été supprimée, mon bloc l'a rajoutée juste après). Je corrige ce point précis et je relance.
+
+Ça tourne enfin. J'ai poussé le fix (juste la suppression du doublon, commit `e8023b9`). Voici les résultats complets que tu voulais.
+
+Ça tourne, et voici tout ce que tu as demandé (commit `e8023b9`, avec `X=12`/`Z=8`) :
+
+**pathScore / pathPoints / scores par question**
+| variable | min | max | médiane | moyenne |
+|---|---|---|---|---|
+| Q1 points | -4 | 7 | 0.38 | 0.98 |
+| Q2 points | -1 | 9 | 3 | 3.14 |
+| Q3 points (brut) | -3.5 | 9 | 1 | 1.23 |
+| Q3 points (portée) | -6 | 9 | 1 | 1.16 |
+| pathPoints | -2.5 | 22.5 | 6.75 | 6.9 |
+| pathScore | -2.5 | **66** | 4.75 | 8.39 |
+
+**Règles déclenchées, par fréquence**
+| règle | voies | % |
+|---|---|---|
+| reversible | 7 | 13% |
+| bodyWisdom | 5 | 9% |
+| protectiveFear | 5 | 9% |
+| avoidanceFear | 3 | 6% |
+| heartOverBody | **3** | 6% |
+| irreversible | 2 | 4% |
+
+`heartOverBody` est passé de **0 à 3** — le fix a marché, y compris sur "Aller au lac" j'imagine (je peux revérifier ce cas précis si tu veux).
+
+**Origine de `damage`** (17 voies sur 54, 31%)
+| source | voies |
+|---|---|
+| mot-clé seul | 5 |
+| `drain >= HP` seul | 9 |
+| les deux | 3 |
+| aucun | 37 |
+
+Le déclencheur `drain >= HP` fait plus que doubler la fréquence de `damage` (5 → 17).
+
+**Répartition des rangs** (avec `X=12`, `Z=8`)
+- greatPath : 12 voies (22%)
+- fairPath : 42 voies (78%)
+- poorPath : 0 voies (0%)
+
+Gros changement par rapport à avant (72/24/4%) — logique, tu as remonté X de 3 à 12.
+
+**Un détail cosmétique** : le tableau de `test_v4_engine.js` affiche `ressources NaN` — le script liste encore un champ `resources` que `detail` ne renvoie plus (tu l'as retiré à raison, seuls `drain`/`loot` restent). Pas grave, juste à nettoyer dans le script si ça te gêne visuellement.
 
 # Oracle V4 — test complet 
 
