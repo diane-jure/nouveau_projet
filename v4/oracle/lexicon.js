@@ -21,13 +21,13 @@ export const LEXICON = {
       flag: ["pas avoir l'occasion", "pas souvent l'occasion", "pas d'autre occasion", "jamais", "rater", "rare", "rareté", "unique", "maintenant ou jamais", "opportunit", "opportunité", "chance unique", "manqu", "trop tard", "peut pas"],
     },
     "relief": {
-      strong: ["repos", "soulag", "ouf", "libre", "liber", "paix", "rassur", "ouf", "tranquille", "relax", "zen", "apaisé", "contente de pas", "contente de ne pas", "paix", "content", "heureu", "mieux", "mieux comme ça", "mieux sans", "repos", "libre", "libérée", "ça va mieux", "calme", "posé", "ok", "ça passe", "au moins c'est clair", "j'ai dit ce que j'avais à dire", "j'ai essayé", "j'assume", "j'avance", "fièr", "soulag", "liber", "paix", "rassur"],
+      strong: ["recharge", "repos", "soulag", "ouf", "libre", "liber", "paix", "rassur", "ouf", "tranquille", "relax", "zen", "apaisé", "contente de pas", "contente de ne pas", "paix", "content", "heureu", "mieux", "mieux comme ça", "mieux sans", "repos", "libre", "libérée", "ça va mieux", "calme", "posé", "ok", "ça passe", "au moins c'est clair", "j'ai dit ce que j'avais à dire", "j'ai essayé", "j'assume", "j'avance", "fièr", "soulag", "liber", "paix", "rassur"],
     },
    "achievements": {
       strong: ["efficace", "prépar", "c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
     },
     "desire": {
-      weak: ["why not", "fun", "envie", "je veux", "j'aimerais bien", "tente", "curieu", "curi", "intéress", "sympa", "pas dégueu", "pourquoi pas", "j'ai du temps", "j'ai le temps", "dispo", "envie", "partant", "cool", "fun", "fun", "cool", "cools", "trop cool", "why not", "envie", "'aimerais bien", "plaît", "énergie disponible", "ça me plaît"],
+      weak: ["why not", "fun", "envie", "je veux", "j'aimerais bien", "tente", "curieu", "curi", "intéress", "sympa", "pas dégueu", "pourquoi pas", "j'ai du temps", "j'ai le temps", "envie", "partant", "cool", "fun", "fun", "cool", "cools", "trop cool", "why not", "envie", "'aimerais bien", "plaît", "énergie disponible", "ça me plaît"],
       strong: ["préféré", "excit", "allez", "joie", "hâte", "rêve", "kiff", "j'adore", "adore", "trop bien", "super", "génial", "incroyable", "fantastique", "tellement envie", "grave envie", "trop envie", "enthousi", "euphorie", "joyeu", "let's go", "goo", "chaud", "hyper envie", "important", "joie", "enthousiasme", "excitation", "magnifique", "décision importante", "aime sortir", "importance"],
     },
     "wellbeing": {
@@ -58,7 +58,7 @@ export const LEXICON = {
       moderate: ["admin", "boss", "travail", "lettre", "taff", "écrire", "projet"],
     },
     "selfcare": {
-      moderate: ["propret", "hygiene", "lessive", "menage", "vaisselle", "ranger"],
+      moderate: ["propret", "hygiene", "douche", "lessive", "menage", "vaisselle", "ranger"],
     },
     "curiosity": {
       moderate: ["curieu", "curio", "tester", "essayer", "découvrir", "compr"],
@@ -77,7 +77,7 @@ export const LEXICON = {
       flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion"],
     },
     "regret": {
-      weak: ["FOMO", "dommage", "triste", "déçu", "decep", "coupable", "pas top", "j'aurais aimé", "j'aurais préféré", "j'aimerais quand même", "stress", "FOMO", "frustr", "pas content", "déçue", "je sais pas", "j'hésite", "saoule", "genee", "ça m'affecterait"],
+      weak: ["moins bon", "FOMO", "dommage", "triste", "déçu", "decep", "coupable", "pas top", "j'aurais aimé", "j'aurais préféré", "j'aimerais quand même", "stress", "FOMO", "frustr", "pas content", "déçue", "je sais pas", "j'hésite", "saoule", "genee", "ça m'affecterait"],
       strong: ["toujours en tête", "honte", "degout", "deg", "fâché", "en colère contre moi", "colère", "nul", "decue de moi", "pas fière", "pas fiere", "pas contente de moi", "regret", "regretter", "je regretterais", "j'aurais regretté", "j'aurais mieux fait", "mauvaise idée", "erreur", "connerie", "j'y pense encore", "rumin", "je m'en veux", "je m'en voudrais", "malaise", "après coup"],
     },
     "trivial": {
@@ -116,7 +116,7 @@ export const LEXICON = {
       flag: ["tjs","toujours", "encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
     },
     "indifference": {
-      weak: ["bof", "dur", "pf", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
+      weak: ["Aucune idée", "bof", "dur", "pf", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
       strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { keyword: "flemme", condition: "HP>=3" }, "chiant"],
     },
   },
