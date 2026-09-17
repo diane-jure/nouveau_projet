@@ -288,9 +288,6 @@ export function evaluatePath(path, context = {}) {
   const [Q1, Q2, Q3] = fields;
   const all = fields.flatMap((c) => c.occurrences);
 
-  const [Q1, Q2, Q3] = fields;
-  const all = fields.flatMap((c) => c.occurrences);
-
   // ── drapeaux et compteurs dont les règles ont besoin
   const flag = (family) => Q3.occurrences.some((o) => o.family === family);
   const irreversible = flag('irreversible');
