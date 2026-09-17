@@ -126,13 +126,17 @@ export function occurrences(text, question, context = {}) {
       if (m[0] === '') { re.lastIndex++; continue; }
       const [start, end] = [m.index, m.index + m[0].length];
       let free = true;
-      for (let k = start; k < end; k++) if (claimed[k]) { free = false; break; }
-      if (free) {
+for (let k = start; k < end; k++) if (claimed[k]) { free = false; break; }
+if (!free && found.some((f) => f.start === start && f.end === end)) free = true;
+if (free) {
         for (let k = start; k < end; k++) claimed[k] = true;
         found.push({ ...e, start, end, match: m[0] });
       }
+      
     }
+    
   }
+  
   return found.sort((a, b) => a.start - b.start);
 }
 
@@ -170,6 +174,9 @@ export function applyModifiers(found, { BOOST = 2, REDUCE = 0.5 } = {}) {
     else if (m.family === 'more') { target.factor *= BOOST; }
     target.modified.push(m.family);
   }
+  const counts = {};
+for (const o of content) counts[o.key] = (counts[o.key] || 0) + 1;
+for (const o of content) if (counts[o.key] > 1) o.factor *= BOOST;
   return { content, modifiers };
 }
 
@@ -267,8 +274,13 @@ const familyWords = (occ, family) =>
 
 function questionPoints(text, q, context) {
   const { content } = scan(text, q, context, { BOOST, REDUCE });
-  const points = content.reduce((s, o) => s + sign(o, q) * value(o), 0);
-  return { q, text, occurrences: content, points };
+  const seen = new Set();
+const points = content.reduce((s, o) => {
+  const key = `${o.start}:${o.end}`;
+  if (seen.has(key)) return s;
+  seen.add(key);
+  return s + sign(o, q) * value(o);
+}, 0);
 }
 
 // ── une voie ───────────────────────────────────────────────────────────────
@@ -280,9 +292,9 @@ function questionPoints(text, q, context) {
 export function evaluatePath(path, context = {}) {
   const HP = context.HP ?? 3;
   const ctx = { HP };
-
+  const prefix = path.name ? normalize(path.name + ' . ') : '';
   const fields = [
-    questionPoints([path.name, path.q1].filter(Boolean).join(' . '), 'Q1', ctx),
+    questionPoints([path.name, path.q1].filter(Boolean).join(' . '), 'Q1', ctx, prefix.length),
     questionPoints(path.q2, 'Q2', ctx),
     questionPoints(path.q3, 'Q3', ctx),
   ];
