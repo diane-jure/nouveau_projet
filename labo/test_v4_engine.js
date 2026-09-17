@@ -17,27 +17,40 @@ import { normalize, occurrences } from '../v4/oracle/scan.js';
 
 // ── les dilemmes réels ─────────────────────────────────────────────────────
 
-const L = readFileSync('./saves/sauvegardes.csv', 'utf-8')
-  .split('\n').filter((l) => l.trim().startsWith('|'));
-const cells = (l) => l.trim().replace(/^\||\|$/g, '').split(/(?<!\\)\|/).map((c) => c.trim());
-const E = cells(L[0]);
+function parseCSV(text) {
+  const rows = [];
+  let row = [], field = '', inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else inQuotes = false; }
+      else field += c;
+    } else if (c === '"') inQuotes = true;
+    else if (c === ',') { row.push(field.trim()); field = ''; }
+    else if (c === '\r') { /* ignore */ }
+    else if (c === '\n') { row.push(field.trim()); rows.push(row); row = []; field = ''; }
+    else field += c;
+  }
+  if (field || row.length) { row.push(field.trim()); rows.push(row); }
+  return rows.filter((r) => r.some((c) => c !== ''));
+}
+
+const rows = parseCSV(readFileSync('./saves/sauvegardes.csv', 'utf-8'));
+const E = rows[0];
 const I = Object.fromEntries(E.map((n, i) => [n, i]));
 
-const DILEMMAS = L.slice(2).filter((l) => l.replace(/[|\-\s]/g, '')).map((l) => {
-  const c = cells(l);
-  return {
-    id: (c[I.id] || '').slice(0, 10),
-    HP: Number(c[I.Energie]) || 3,
-    q0: c[I.Q0],
-    satisfaction: c[I.Satisfaction],
-    paths: ['A', 'B', 'C'].map((x) => ({
-      letter: x,
-      name: c[I[`Voie ${x}`]],
-      q1: c[I[`Q1 (${x})`]], q2: c[I[`Q2 (${x})`]], q3: c[I[`Q3 (${x})`]],
-      drain: c[I[`Coût (${x})`]], loot: c[I[`Gain (${x})`]],
-    })).filter((p) => p.name),
-  };
-}).filter((d) => d.paths.length >= 2);
+const DILEMMAS = rows.slice(1).map((c) => ({
+  id: (c[I.id] || '').slice(0, 10),
+  HP: Number(c[I.Energie]) || 3,
+  q0: c[I.Q0],
+  satisfaction: c[I.Satisfaction],
+  paths: ['A', 'B', 'C'].map((x) => ({
+    letter: x,
+    name: c[I[`Voie ${x}`]],
+    q1: c[I[`Q1 (${x})`]], q2: c[I[`Q2 (${x})`]], q3: c[I[`Q3 (${x})`]],
+    drain: c[I[`Coût (${x})`]], loot: c[I[`Gain (${x})`]],
+  })).filter((p) => p.name),
+})).filter((d) => d.paths.length >= 2);
 
 // ── outils ─────────────────────────────────────────────────────────────────
 
