@@ -1,5 +1,105 @@
 # Oracle V4 — état des mesures et questions ouvertes
 
+
+# Oracle V4 — test complet 
+
+Mesuré sur les **25 dilemmes réels** de `saves/sauvegardes.csv` (commit `d8556cf`,
+branche `edits`), avec le lexique réorganisé et le `sign()` corrigé.
+
+## 1. Résultats du test complet (`labo/test_v4_engine.js`)
+
+```
+25 dilemmes · 54 voies évaluées
+
+1 · 5 · 6. Score min et max — par variable, par question, et pathScore
+──────────────────────────────────────────────────────────────────
+variable              min     max   médiane   moyenne
+Q1 points              -4       7      0.13      0.75
+Q2 points              -1       9         3      2.92
+Q3 points (brut)       -3       9         1      1.35
+Q3 points (portée)     -6       9         1      1.28
+q1Fear                  0      10         0      1.15
+q3Regret                0       9         0      0.86
+q3Relief                0       3         0      0.39
+ressources             -2       4         2      1.37
+pathPoints           -4.5      22      6.25      6.33
+pathScore            -4.5      27      5.56      6.45
+
+
+7. Quels pathPoints sont négatifs ?
+──────────────────────────────────────────────────────────────────
+6 voies sur 54 (11 %)
+
+2026-05-01      -1 →   -0.5   Rester a l'intérieur
+2026-03-26      -3 →     -3   Guillemette
+2026-03-22    -4.5 →   -4.5   Marcher direct
+2026-01-21   -1.75 →  -1.75   Continuer à travailler sur QF
+2026-01-15    -2.5 →   -2.5   Chercher job mi-temps maintenant
+2026-01-13   -1.75 →  -0.87   BD Tour du monde 80 jours
+
+dont 0 qu'un boost a enfoncées davantage (le piège du signe)
+
+
+3. Les boosts s'enchaînent-ils jusqu'à l'absurde ?
+──────────────────────────────────────────────────────────────────
+règles déclenchées   voies   facteur total observé
+     0                36   de ×1 à ×1
+     1                18   de ×0.5 à ×2
+
+maximum de règles sur une même voie : 1
+
+
+8. heartOverBody et bodyWisdom se superposent-ils ?
+──────────────────────────────────────────────────────────────────
+heartOverBody seul : 0
+bodyWisdom seul    : 1
+LES DEUX           : 0   ← ×2 puis ×0,5, effet net nul et silencieux
+
+
+4. Zone morte entre avoidanceFear et protectiveFear
+──────────────────────────────────────────────────────────────────
+voies avec une peur forte : 11
+dont dans la zone morte   : 3  (q3Regret entre 1 et 2)
+   2026-09-11  fear 6 · regret 1   Faire l'admin sur mon ordi
+   2026-01-20  fear 3 · regret 1   ne rien dire ce soir, en parler dema
+   2026-01-12  fear 3 · regret 0.25   Aller au bar
+
+
+9. Quels mots ne devraient pas passer avec includes() ?
+──────────────────────────────────────────────────────────────────
+Une racine trouvée AU MILIEU d'un mot : includes() ne s'ancre nulle part.
+
+aucun
+
+
+12. Distribution des pathScore et position du zéro
+──────────────────────────────────────────────────────────────────
+min -4.5 · q1 1.25 · médiane 5.5 · q3 9.5 · max 27
+sous zéro : 6 · à zéro : 3 · au-dessus : 45
+
+Avec X et Z à 3 :
+   greatPath    38 voies (70 %)
+   fairPath     14 voies (26 %)
+   poorPath     2 voies (4 %)
+
+
+2. Types de verdict produits
+──────────────────────────────────────────────────────────────────
+   shuffleCoin    11
+   pickGreat      11
+   shuffleCards   3
+
+
+11. Corrélation du score avec la satisfaction
+──────────────────────────────────────────────────────────────────
+(le seul test qui ouvre la colonne Satisfaction)
+
+   good   16 dilemmes · score moyen de la voie recommandée 10.79
+   bad     3 dilemmes · score moyen de la voie recommandée 7.17
+   meh     3 dilemmes · score moyen de la voie recommandée 16.92
+```
+
+
 Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
 **54 voies**.
 
