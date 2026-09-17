@@ -31,8 +31,6 @@ import { LEXICON } from './lexicon.js';
  * ailleurs dans la même phrase.
  */
 
-import { LEXICON } from './lexicon.js';
-
 // ── normalisation ──────────────────────────────────────────────────────────
 
 export const normalize = (s) =>
