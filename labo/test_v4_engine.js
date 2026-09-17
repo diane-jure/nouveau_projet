@@ -1,7 +1,7 @@
 /**
  * TESTS EN LABO — Oracle V4.
  *
- *   node labo/v4/logiciel_testv4.js
+ *   node labo/v4/test_v4_engine.js
  *
  * Rejoue le cerveau sur les 25 dilemmes réels de labo/saves/sauvegardes.csv
  * et répond, dans l'ordre, aux questions de la liste « Tests en labo » de
@@ -12,7 +12,7 @@
  */
 
 import { readFileSync } from 'node:fs';
-import { askOracle, isHigh, THRESHOLD, X } from './oracle/brain.js';
+import { askOracle, isHigh, THRESHOLD, X } from '/v4/oracle/brain.js';
 import { normalize, occurrences } from './oracle/scan.js';
 
 // ── les dilemmes réels ─────────────────────────────────────────────────────

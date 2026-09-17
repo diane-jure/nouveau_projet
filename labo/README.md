@@ -15,7 +15,7 @@ lancent depuis **la racine du dépôt**, jamais depuis `labo/`.
 > `Create codespace`. Node y est déjà installé.
 
 ```bash
-node labo/v4/logiciel_testv4.js          # l'Oracle V4 sur les 25 dilemmes réels
+node labo/v4/test_v4_engine.js          # l'Oracle V4 sur les 25 dilemmes réels
 ```
 
 Le second est à relancer **après chaque modification** de
@@ -29,8 +29,8 @@ Quatre fichiers, dans l'ordre où ils s'appellent :
 | fichier | rôle |
 |---|---|
 | `/labo/oracle/scan.js` | normalise, cherche en `includes()`, applique les modificateurs |
-| `/labo/oracle/brain.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
-| `/labo/logiciel_testv4.js` | répond aux questions de la liste « Tests en labo » |
+| `/v4/oracle/brain.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
+| `/labo/test_v4_engine.js` | répond aux questions de la liste « Tests en labo » |
 
 ## Lire le texte libre sans LLM
 

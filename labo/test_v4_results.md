@@ -4,7 +4,7 @@ Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
 **54 voies**.
 
 ```bash
-node labo/v4/logiciel_testv4.js
+node labo/v4/test_v4_engine.js
 ```
 
 
@@ -240,7 +240,7 @@ soit **54 voies**. **Seuils provisoires** : `X = 3`, `Z = 3`.
 
 ```bash
 node labo/v4/genere_word_bank.js   # si le MD a changé
-node labo/v4/logiciel_testv4.js
+node labo/v4/test_v4_engine.js
 ```
 
 > Ces tests **décrivent**, ils ne règlent aucun poids. Ils existent pour que
