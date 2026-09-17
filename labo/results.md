@@ -1,14 +1,164 @@
 # Oracle V4 — état des mesures et questions ouvertes
 
-Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
-**54 voies**.
+Elle a déjà poussé le fix elle-même. Je récupère et je lance.
 
-```bash
-node labo/v4/test_v4_engine.js
+Presque, un doublon simple (l'ancienne ligne `Q1/Q2/Q3` + `all` n'a pas été supprimée, mon bloc l'a rajoutée juste après). Je corrige ce point précis et je relance.
+
+Ça tourne enfin. J'ai poussé le fix (juste la suppression du doublon, commit `e8023b9`). Voici les résultats complets que tu voulais.
+
+Ça tourne, et voici tout ce que tu as demandé (commit `e8023b9`, avec `X=12`/`Z=8`) :
+
+**pathScore / pathPoints / scores par question**
+| variable | min | max | médiane | moyenne |
+|---|---|---|---|---|
+| Q1 points | -4 | 7 | 0.38 | 0.98 |
+| Q2 points | -1 | 9 | 3 | 3.14 |
+| Q3 points (brut) | -3.5 | 9 | 1 | 1.23 |
+| Q3 points (portée) | -6 | 9 | 1 | 1.16 |
+| pathPoints | -2.5 | 22.5 | 6.75 | 6.9 |
+| pathScore | -2.5 | **66** | 4.75 | 8.39 |
+
+**Règles déclenchées, par fréquence**
+| règle | voies | % |
+|---|---|---|
+| reversible | 7 | 13% |
+| bodyWisdom | 5 | 9% |
+| protectiveFear | 5 | 9% |
+| avoidanceFear | 3 | 6% |
+| heartOverBody | **3** | 6% |
+| irreversible | 2 | 4% |
+
+`heartOverBody` est passé de **0 à 3** — le fix a marché, y compris sur "Aller au lac" j'imagine (je peux revérifier ce cas précis si tu veux).
+
+**Origine de `damage`** (17 voies sur 54, 31%)
+| source | voies |
+|---|---|
+| mot-clé seul | 5 |
+| `drain >= HP` seul | 9 |
+| les deux | 3 |
+| aucun | 37 |
+
+Le déclencheur `drain >= HP` fait plus que doubler la fréquence de `damage` (5 → 17).
+
+**Répartition des rangs** (avec `X=12`, `Z=8`)
+- greatPath : 12 voies (22%)
+- fairPath : 42 voies (78%)
+- poorPath : 0 voies (0%)
+
+Gros changement par rapport à avant (72/24/4%) — logique, tu as remonté X de 3 à 12.
+
+**Un détail cosmétique** : le tableau de `test_v4_engine.js` affiche `ressources NaN` — le script liste encore un champ `resources` que `detail` ne renvoie plus (tu l'as retiré à raison, seuls `drain`/`loot` restent). Pas grave, juste à nettoyer dans le script si ça te gêne visuellement.
+
+# Oracle V4 — test complet 
+
+Mesuré sur les **25 dilemmes réels** de `saves/sauvegardes.csv` (commit `d8556cf`,
+branche `edits`), avec le lexique réorganisé et le `sign()` corrigé.
+
+## 1. Résultats du test complet (`labo/test_v4_engine.js`)
+
+```
+25 dilemmes · 54 voies évaluées
+
+1 · 5 · 6. Score min et max — par variable, par question, et pathScore
+──────────────────────────────────────────────────────────────────
+variable              min     max   médiane   moyenne
+Q1 points              -4       7      0.13      0.75
+Q2 points              -1       9         3      2.92
+Q3 points (brut)       -3       9         1      1.35
+Q3 points (portée)     -6       9         1      1.28
+q1Fear                  0      10         0      1.15
+q3Regret                0       9         0      0.86
+q3Relief                0       3         0      0.39
+ressources             -2       4         2      1.37
+pathPoints           -4.5      22      6.25      6.33
+pathScore            -4.5      27      5.56      6.45
+
+
+7. Quels pathPoints sont négatifs ?
+──────────────────────────────────────────────────────────────────
+6 voies sur 54 (11 %)
+
+2026-05-01      -1 →   -0.5   Rester a l'intérieur
+2026-03-26      -3 →     -3   Guillemette
+2026-03-22    -4.5 →   -4.5   Marcher direct
+2026-01-21   -1.75 →  -1.75   Continuer à travailler sur QF
+2026-01-15    -2.5 →   -2.5   Chercher job mi-temps maintenant
+2026-01-13   -1.75 →  -0.87   BD Tour du monde 80 jours
+
+dont 0 qu'un boost a enfoncées davantage (le piège du signe)
+
+
+3. Les boosts s'enchaînent-ils jusqu'à l'absurde ?
+──────────────────────────────────────────────────────────────────
+règles déclenchées   voies   facteur total observé
+     0                36   de ×1 à ×1
+     1                18   de ×0.5 à ×2
+
+maximum de règles sur une même voie : 1
+
+
+8. heartOverBody et bodyWisdom se superposent-ils ?
+──────────────────────────────────────────────────────────────────
+heartOverBody seul : 0
+bodyWisdom seul    : 1
+LES DEUX           : 0   ← ×2 puis ×0,5, effet net nul et silencieux
+
+
+4. Zone morte entre avoidanceFear et protectiveFear
+──────────────────────────────────────────────────────────────────
+voies avec une peur forte : 11
+dont dans la zone morte   : 3  (q3Regret entre 1 et 2)
+   2026-09-11  fear 6 · regret 1   Faire l'admin sur mon ordi
+   2026-01-20  fear 3 · regret 1   ne rien dire ce soir, en parler dema
+   2026-01-12  fear 3 · regret 0.25   Aller au bar
+
+
+9. Quels mots ne devraient pas passer avec includes() ?
+──────────────────────────────────────────────────────────────────
+Une racine trouvée AU MILIEU d'un mot : includes() ne s'ancre nulle part.
+
+aucun
+
+
+12. Distribution des pathScore et position du zéro
+──────────────────────────────────────────────────────────────────
+min -4.5 · q1 1.25 · médiane 5.5 · q3 9.5 · max 27
+sous zéro : 6 · à zéro : 3 · au-dessus : 45
+
+Avec X et Z à 3 :
+   greatPath    38 voies (70 %)
+   fairPath     14 voies (26 %)
+   poorPath     2 voies (4 %)
+
+
+2. Types de verdict produits
+──────────────────────────────────────────────────────────────────
+   shuffleCoin    11
+   pickGreat      11
+   shuffleCards   3
+
+
+11. Corrélation du score avec la satisfaction
+──────────────────────────────────────────────────────────────────
+(le seul test qui ouvre la colonne Satisfaction)
+
+   good   16 dilemmes · score moyen de la voie recommandée 10.79
+   bad     3 dilemmes · score moyen de la voie recommandée 7.17
+   meh     3 dilemmes · score moyen de la voie recommandée 16.92
 ```
 
 
+Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
+**54 voies**.
 
+Répartition : 72 % greatPath, 24 % fairPath, 4 % poorPath
+Verdicts : 10 pickGreat, 3 shuffleCards, 12 shuffleCoin
+6 voies sur 54 (11 %) ont un pathPoints négatif
+Corrélation score/satisfaction : les dilemmes jugés "good" ont un score moyen de 10.79, mais "meh" ressort à 16.92 (plus haut que "good") et "bad" à 7.17 — pas monotone, à creuser si tu veux
+Aucun chevauchement heartOverBody/bodyWisdom détecté, aucun faux positif de racine includes()
+--------
+16 septembre 2026
+--------
 **Réglages en vigueur** — `WEAK 1` · `STRONG 3` · `achievements 1.5` ·
 `THRESHOLD 3` · `BOOST 2` · `REDUCE 0.5` · `X 3` · `Z 3`.
 
