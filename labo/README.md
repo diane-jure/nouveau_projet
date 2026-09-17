@@ -15,12 +15,12 @@ lancent depuis **la racine du dépôt**, jamais depuis `labo/`.
 > `Create codespace`. Node y est déjà installé.
 
 ```bash
-node labo/v4/test_v4_engine.js          # l'Oracle V4 sur les 25 dilemmes réels
+node labo/test_v4_engine.js          # l'Oracle V4 sur les 25 dilemmes réels
 ```
 
-Le second est à relancer **après chaque modification** de
-`QF_documentation/oracle_detecte.md` : sans lui, les tests tournent encore
-sur l'ancien vocabulaire.
+`v4/oracle/lexicon.js` est aujourd'hui tenu **à la main**. Il n'est plus
+régénéré depuis `QF_documentation/oracle_detecte.md` : le MD reste la
+référence écrite, mais c'est le `.js` qui fait foi pour le moteur.
 
 ## Oracle V4
 
@@ -28,9 +28,10 @@ Quatre fichiers, dans l'ordre où ils s'appellent :
 
 | fichier | rôle |
 |---|---|
-| `/labo/oracle/scan.js` | normalise, cherche en `includes()`, applique les modificateurs |
-| `/v4/oracle/brain.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
-| `/labo/test_v4_engine.js` | répond aux questions de la liste « Tests en labo » |
+| `v4/oracle/lexicon.js` | les keywords, par champ / famille / niveau |
+| `v4/oracle/scan.js` | normalise, cherche en **regex ancrée**, applique les modificateurs |
+| `v4/oracle/brain.js` | `pathPoints` → `pathScore` → verdict. Aucun texte |
+| `labo/test_v4_engine.js` | répond aux questions de la liste « Tests en labo » |
 
 ## Lire le texte libre sans LLM
 
@@ -41,7 +42,7 @@ mêlés) qui propose un cran d'échelle à partir d'une réponse rédigée.
 de l'historique, en comparant au cran assigné à la main.
 
 ```
-node labo/experience.js
+node labo/old_exp/experience.js
 ```
 
 ### Résultat (session de conception initiale)
@@ -85,7 +86,7 @@ surapprentissage sur un échantillon minuscule.
 où l'oracle hésitait déjà ?
 
 ```
-node labo/experience2.js
+node labo/old_exp/experience2.js
 ```
 
 ### Résultat
@@ -136,15 +137,15 @@ mises en garde, pas pour sauver le verdict.**
 ## Expérience 3 — duel des deux oracles
 
 `duel.js` — l'oracle v2.5 (celui des prototypes précédents) contre le
-moteur de ce dépôt, sur les **25 dilemmes réels de `docs/sauvegardes.md`**,
-jugés avec le critère défini par l'autrice dans `docs/oracle_cerveau.md` :
+moteur de ce dépôt, sur les **25 dilemmes réels de `saves/sauvegardes.csv`**,
+jugés avec le critère défini par l'autrice dans `QF_documentation/oracle_cerveau.md` :
 
 > `OracleWasRight` = vrai si la recommandation a été suivie et la
 > satisfaction est bonne, OU si elle n'a pas été suivie et la satisfaction
 > est mauvaise ou mitigée.
 
 ```
-node labo/duel.js
+node labo/old_exp/duel.js
 ```
 
 ### Résultat brut (trompeur)
@@ -193,11 +194,11 @@ résultat, c'est une absence de mesure.
 ## Expérience 4 — V2 contre V2.5
 
 `v2_vs_v25.js` — reconstruction des deux moteurs depuis
-`docs/oracle_version/`, exécutés sur les 25 dilemmes de
-`docs/sauvegardes.md`, jugés au critère `OracleWasRight`.
+`labo/old_exp/oracle_versions/`, exécutés sur les 25 dilemmes de
+`saves/sauvegardes.csv`, jugés au critère `OracleWasRight`.
 
 ```
-node labo/v2_vs_v25.js
+node labo/old_exp/v2_vs_v25.js
 ```
 
 ### Résultat
