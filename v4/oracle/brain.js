@@ -288,18 +288,20 @@ export function evaluatePath(path, context = {}) {
   const [Q1, Q2, Q3] = fields;
   const all = fields.flatMap((c) => c.occurrences);
 
+  const [Q1, Q2, Q3] = fields;
+  const all = fields.flatMap((c) => c.occurrences);
 
-
-  // ── ressources
-  //
-  // ⚠️ Cette ligne additionne des PV et des gemmes, et verse le résultat
-  // dans un total de points de vocabulaire. Trois devises. C'est le problème
-  // du loot, laissé intact ici pour que le renommage ne change aucun chiffre.
+  // ── drapeaux et compteurs dont les règles ont besoin
+  const flag = (family) => Q3.occurrences.some((o) => o.family === family);
+  const irreversible = flag('irreversible');
+  const reversible = flag('reversible');
+  const recurrence = flag('recurrence');
   const drain = Number(path.drain) || 0;
-  const loot = Number(path.loot) || 0;
+  const damage = all.some((o) => o.family === 'damage') || drain >= HP;
 
-  const pathPoints = Q1.points + Q2.points + q3Points + loot;
-
+  const q1Fear = familySum(Q1.occurrences, 'fear');
+  const q3Regret = familySum(Q3.occurrences, 'regret');
+  const q3Relief = familySum(Q3.occurrences, 'relief');
 
   // ── portée : elle agit sur Q3 AVANT la somme, sinon elle arrive trop tard
   let scope = context.scope ?? 'maybe';
@@ -308,19 +310,12 @@ export function evaluatePath(path, context = {}) {
   if (scope === 'yes') q3Points = q3Points * BOOST;
   else if (scope === 'no') q3Points = q3Points * REDUCE;
 
-
-  // ── drapeaux et compteurs dont les règles ont besoin
-  const flag = (family) => Q3.occurrences.some((o) => o.family === family);
-  const irreversible = flag('irreversible');
-  const reversible = flag('reversible');
-  const recurrence = flag('recurrence');
-  const damage = all.some((o) => o.family === 'damage'
-  && o.family === 'damage') || drain >= HP;
-
-  const q1Fear = familySum(Q1.occurrences, 'fear');
-  const q3Regret = familySum(Q3.occurrences, 'regret');
-  const q3Relief = familySum(Q3.occurrences, 'relief');
-
+  // ── ressources
+  //
+  // drain ne touche plus pathPoints : il ne sert qu'à déclencher damage,
+  // plus haut. Seul loot reste un gain de points.
+  const loot = Number(path.loot) || 0;
+  const pathPoints = Q1.points + Q2.points + q3Points + loot;
   // ── règles : elles multiplient pathScore, jamais pathPoints
   let pathScore = pathPoints;
   const tags = [];
