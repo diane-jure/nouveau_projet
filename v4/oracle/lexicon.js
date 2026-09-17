@@ -1,11 +1,5 @@
 /**
  * LEXICON — Oracle V4.
- *
- * FICHIER GÉNÉRÉ. Ne pas éditer à la main : la source est
- * QF_documentation/oracle_detecte.md, et toute modification faite ici
- * disparaîtra à la prochaine génération.
- *
- *   node labo/v4/build_lexicon.js
  */
 
 export const LEXICON = {
