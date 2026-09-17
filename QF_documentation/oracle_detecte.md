@@ -1,4 +1,4 @@
-word_bank.js
+lexicon.js
 
 ## qDependant
 ### Q1
@@ -22,7 +22,7 @@ ah, angoiss, peur, terrif, paniqu, oppresse, ventre, coupable, inact, flipp
 
 
 ### Q2
-**achievements**
+**achievements (moderate)**
 c'est fait, j'avance, utile, avance, progres, debloqu, ça peut aider, aide, m'occupe, gagne, évit, soulag, débarrass, libér, réglé, plus à y penser, stimulant, excit, projet, enfin, excit, reprendre, en action, en fini, finir, consolider
 
 ### Q3

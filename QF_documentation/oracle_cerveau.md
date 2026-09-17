@@ -226,11 +226,11 @@ if pickGreat & several greatPath & scope = YES alors shuffleCards (between every
 
 if pickGreat & several greatPath & scope = NO alors shuffleCoin (between every greatPath)
 
-fairPath vs poorPath = pickFair
+fairPath vs poorPath = pickNotPoor
 
-if pickFair & several fairPath & scope = YES alors shuffleCards (between every fairPath)
+if pickNotPoor & several fairPath & scope = YES alors shuffleCards (between every fairPath)
 
-if pickFair & several fairPath & scope = NO alors shuffleCoin (between every fairPath)
+if pickNotPoor & several fairPath & scope = NO alors shuffleCoin (between every fairPath)
 
 if scope = no & several greatPath alors shuffleCoin (between every greatPath)
 

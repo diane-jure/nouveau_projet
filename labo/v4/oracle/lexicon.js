@@ -1,14 +1,14 @@
 /**
- * WORD BANK — Oracle V4.
+ * LEXICON — Oracle V4.
  *
  * FICHIER GÉNÉRÉ. Ne pas éditer à la main : la source est
  * QF_documentation/oracle_detecte.md, et toute modification faite ici
  * disparaîtra à la prochaine génération.
  *
- *   node labo/v4/genere_word_bank.js
+ *   node labo/v4/build_lexicon.js
  */
 
-export const WORD_BANK = {
+export const LEXICON = {
   "Q1": {
     "desire": {
       weak: ["why not", "fun", "envie", "je veux", "j'aimerais bien", "tente", "curieu", "curi", "intéress", "sympa", "pas dégueu", "pourquoi pas", "j'ai du temps", "j'ai le temps", "dispo", "envie", "partant", "cool", "fun", "fun", "cool", "cools", "trop cool", "why not", "envie", "'aimerais bien", "plaît", "énergie disponible", "ça me plaît"],
@@ -16,7 +16,7 @@ export const WORD_BANK = {
     },
     "indifference": {
       weak: ["bof", "dur", "pff", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
-      strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { mot: "flemme", si: "HP>=3" }, "chiant"],
+      strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { keyword: "flemme", condition: "HP>=3" }, "chiant"],
     },
     "fear": {
       weak: ["stress", "inquièt", "tendu", "anxi", "j'ose pas", "peur de m'ennuyer"],
@@ -25,7 +25,7 @@ export const WORD_BANK = {
   },
   "Q2": {
     "achievements": {
-      strong: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
+      moderate: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
     },
   },
   "Q3": {
@@ -103,7 +103,7 @@ export const WORD_BANK = {
   },
   "hooks": {
     "damage": {
-      strong: ["douleur", "mal", "fatigu", "épuis", { mot: "flemme", si: "HP=<2" }, "trop mal", "au fond du trou", "dead", "malade", "charge mentale"],
+      strong: ["douleur", "mal", "fatigu", "épuis", { keyword: "flemme", condition: "HP=<2" }, "trop mal", "au fond du trou", "dead", "malade", "charge mentale"],
     },
     "injunctions": {
       strong: ["il faut", "je dois", "je devrais", "normal de", "on est censé", "raisonnable", "vont penser", "vont se dire", "jugée", "vex", "bless", "décevoir", "oblig", "si je le fais pas", "contrain", "forc", "résign", "raisonnable", "me forc", "suis forc"],
