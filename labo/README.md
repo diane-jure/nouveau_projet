@@ -8,6 +8,8 @@ Rien ici n'est destiné à être livré tel quel.
 Il faut un **terminal** et **Node** (v18 ou plus). Toutes les commandes se
 lancent depuis **la racine du dépôt**, jamais depuis `labo/`.
 
+t
+
 > ⚠️ `github.dev` — l'éditeur qui s'ouvre quand on tape `.` sur un dépôt
 > GitHub — n'a **pas de terminal**. On peut y lire et y écrire, pas y
 > exécuter. Pour faire tourner le labo il faut un **Codespace** :

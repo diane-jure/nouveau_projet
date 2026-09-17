@@ -206,7 +206,7 @@ export const REDUCE = 0.5;   // divise
 
 // Seuils de classement. Provisoires : ils sortiront des tests en labo.
 export const X = 12;          // score >= X   → greatPath
-export const Z = 8;          // score <= -Z  → poorPath
+export const Z = 8;          // score <= Z  → poorPath
 
 /** Un TOTAL dépasse-t-il le seuil ? Rien à voir avec le niveau d'un keyword. */
 export const isHigh = (x) => x >= THRESHOLD;
