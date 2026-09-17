@@ -159,7 +159,7 @@ export function evaluatePath(path, context = {}) {
   if (damage && isHigh(Q1.points) && (isHigh(q3Regret) || irreversible)) {
     fireRule('heartOverBody', BOOST, familyWords(all, 'damage'));
   }
-  if (damage && isHigh(Q1.points) && (isHigh(q3Relief) || reversible)) {
+  if (damage && !isHigh(Q1.points) && (isHigh(q3Relief) || reversible)) {
     fireRule('bodyWisdom', REDUCE, familyWords(all, 'damage'));
   }
   if (irreversible) fireRule('irreversible', BOOST, familyWords(Q3.occurrences, 'irreversible'));

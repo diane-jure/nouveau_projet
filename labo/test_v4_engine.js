@@ -12,8 +12,8 @@
  */
 
 import { readFileSync } from 'node:fs';
-import { askOracle, isHigh, THRESHOLD, X } from '/v4/oracle/brain.js';
-import { normalize, occurrences } from './oracle/scan.js';
+import { askOracle, isHigh, THRESHOLD, X } from '../v4/oracle/brain.js';
+import { normalize, occurrences } from '../v4/oracle/scan.js';
 
 // ── les dilemmes réels ─────────────────────────────────────────────────────
 

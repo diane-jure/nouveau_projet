@@ -159,7 +159,7 @@ export function applyModifiers(found, { BOOST = 2, REDUCE = 0.5 } = {}) {
       continue;
     }
     const after = content.find((c) => c.start >= m.end);
-    const target = after ?? [...content].reverse().find((c) => c.end <= m.start);
+    const target = content.find((c) => c.start >= m.end);
     if (!target) continue;
     if (m.family === 'not') { target.inverted = !target.inverted; }
     else if (m.family === 'less') { target.factor *= REDUCE; }
