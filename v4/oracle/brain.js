@@ -46,22 +46,25 @@ export const isHigh = (x) => x >= THRESHOLD;
  * injonction est la seule exception : elle reste un malus partout.
  */
 function sign(o, question) {
+
+  if (question === 'Q1') {
+    if (family === 'desire') return +1;
+    if (family === 'indifference') return -1;
+    if (family === 'fear') return 0; 
+    return 0;                                   // fear : règles seulement
+  }
+  if (question === 'Q2') return +1;
+  
+  if (question === 'Q3') {
+    if (family === 'regret') return +1;
+    if (family === 'relief' || family === 'trivial') return -1;
+    return 0;                                   // irreversible, reversible, recurrence
+  }
   const { field, family } = o;
   if (field === 'sparks') return question === 'Q3' ? -1 : +1;
   if (field === 'hooks') {
     if (family === 'injunctions') return -1;
     return question === 'Q3' ? +1 : -1;
-  }
-  if (question === 'Q1') {
-    if (family === 'desire') return +1;
-    if (family === 'indifference') return -1;
-    return 0;                                   // fear : règles seulement
-  }
-  if (question === 'Q2') return +1;
-  if (question === 'Q3') {
-    if (family === 'regret') return +1;
-    if (family === 'relief' || family === 'trivial') return -1;
-    return 0;                                   // irreversible, reversible, recurrence
   }
   return 0;
 }
@@ -117,7 +120,7 @@ export function evaluatePath(path, context = {}) {
   const irreversible = flag('irreversible');
   const reversible = flag('reversible');
   const recurrence = flag('recurrence');
-  const damage = all.some((o) => o.field === 'hooks' && o.family === 'damage');
+  const damage = all.some((o) => o.family === 'damage');
 
   const q1Fear = familySum(Q1.occurrences, 'fear');
   const q3Regret = familySum(Q3.occurrences, 'regret');

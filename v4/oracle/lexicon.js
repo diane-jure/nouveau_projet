@@ -71,8 +71,7 @@ export const LEXICON = {
     },
   },
   "hooks": {
-
-
+    
     "reversible": {
       flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion", "pas avoir l'occasion"],
     },
@@ -110,10 +109,15 @@ export const LEXICON = {
       strong: ["ouin","chiant", "désagréable", "j'aime pas", "ça me saoule", "ça me fait chier", "ça m'emmerde", "envie de rien"],
     },
   },
-  "modifiers": {
-    "recurrence": {
+
+
+  "exception": {
+   "recurrence": {
       flag: ["tjs","toujours", "encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
     },
+  },
+
+  "modifiers": {
     "but": {
       flag: ["mais", "en même temps"],
     },
