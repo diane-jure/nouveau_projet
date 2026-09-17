@@ -40,7 +40,7 @@ export const LEXICON = {
       strong: ["repos", "soulag", "ouf", "libre", "liber", "paix", "rassur", "ouf", "tranquille", "relax", "zen", "apaisé", "contente de pas", "contente de ne pas", "paix", "content", "heureu", "bien", "mieux", "mieux comme ça", "mieux sans", "repos", "libre", "libérée", "ça va mieux", "calme", "posé", "ok", "ça passe", "au moins c'est clair", "j'ai dit ce que j'avais à dire", "j'ai essayé", "j'assume", "j'avance", "fièr", "soulag", "liber", "paix", "rassur"],
     },
     "irreversible": {
-      flag: ["pas d'autre occasion", "jamais", "rater", "rare", "rareté", "unique", "maintenant ou jamais", "opportunit", "opportunité", "chance unique", "manqu", "trop tard", "peut pas"],
+      flag: ["pas souvent l'occasion", "pas d'autre occasion", "jamais", "rater", "rare", "rareté", "unique", "maintenant ou jamais", "opportunit", "opportunité", "chance unique", "manqu", "trop tard", "peut pas"],
     },
     "reversible": {
       flag: ["peux toujours", "au pire", "autre jour", "autre fois", "autre jour", "on verra", "réversible", "peut", "reverr", "revoir", "retourner", "report", "autre occasion", "pas avoir l'occasion"],
@@ -132,7 +132,7 @@ export const LEXICON = {
       flag: ["un peu", "un poil", "un peu de", "pas vraiment", "moyen", "bof", "pas très", "plus", "a l'air", "j'ai l'impression que"],
     },
     "more": {
-      flag: ["très", "trop", "mega vachement", "de fou", "à fond", "énormément", "grav", "complètement", "carrément", "beaucoup", "clairement", "vraiment"],
+      flag: ["très", "trop", "mega", "vachement", "de fou", "à fond", "énormément", "grav", "complètement", "carrément", "beaucoup", "clairement", "vraiment"],
     },
   },
 };
