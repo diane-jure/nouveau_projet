@@ -288,6 +288,8 @@ export function evaluatePath(path, context = {}) {
   const [Q1, Q2, Q3] = fields;
   const all = fields.flatMap((c) => c.occurrences);
 
+
+
   // ── ressources
   //
   // ⚠️ Cette ligne additionne des PV et des gemmes, et verse le résultat
@@ -297,6 +299,15 @@ export function evaluatePath(path, context = {}) {
   const loot = Number(path.loot) || 0;
 
   const pathPoints = Q1.points + Q2.points + q3Points + loot;
+
+
+  // ── portée : elle agit sur Q3 AVANT la somme, sinon elle arrive trop tard
+  let scope = context.scope ?? 'maybe';
+  if (recurrence) scope = 'yes';
+  let q3Points = Q3.points;
+  if (scope === 'yes') q3Points = q3Points * BOOST;
+  else if (scope === 'no') q3Points = q3Points * REDUCE;
+
 
   // ── drapeaux et compteurs dont les règles ont besoin
   const flag = (family) => Q3.occurrences.some((o) => o.family === family);
@@ -309,13 +320,6 @@ export function evaluatePath(path, context = {}) {
   const q1Fear = familySum(Q1.occurrences, 'fear');
   const q3Regret = familySum(Q3.occurrences, 'regret');
   const q3Relief = familySum(Q3.occurrences, 'relief');
-
-  // ── portée : elle agit sur Q3 AVANT la somme, sinon elle arrive trop tard
-  let scope = context.scope ?? 'maybe';
-  if (recurrence) scope = 'yes';
-  let q3Points = Q3.points;
-  if (scope === 'yes') q3Points = q3Points * BOOST;
-  else if (scope === 'no') q3Points = q3Points * REDUCE;
 
   // ── règles : elles multiplient pathScore, jamais pathPoints
   let pathScore = pathPoints;
