@@ -3,25 +3,6 @@
  */
 
 export const LEXICON = {
-  "Q1": {
-    "desire": {
-      weak: ["why not", "fun", "envie", "je veux", "j'aimerais bien", "tente", "curieu", "curi", "intéress", "sympa", "pas dégueu", "pourquoi pas", "j'ai du temps", "j'ai le temps", "dispo", "envie", "partant", "cool", "fun", "fun", "cool", "cools", "trop cool", "why not", "envie", "'aimerais bien", "plaît", "énergie disponible", "ça me plaît"],
-      strong: ["excit", "allez", "joie", "hâte", "rêve", "kiff", "j'adore", "adore", "trop bien", "super", "génial", "incroyable", "fantastique", "tellement envie", "grave envie", "trop envie", "enthousi", "euphorie", "joyeu", "let's go", "goo", "chaud", "hyper envie", "important", "joie", "enthousiasme", "excitation", "magnifique", "décision importante", "aime sortir", "importance"],
-    },
-    "indifference": {
-      weak: ["bof", "dur", "pf", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
-      strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { keyword: "flemme", condition: "HP>=3" }, "chiant"],
-    },
-    "fear": {
-      weak: ["stress", "inquièt", "tendu", "anxi", "j'ose pas", "peur de m'ennuyer"],
-      strong: ["ah", "angoiss", "peur", "terrif", "paniqu", "oppresse", "ventre", "coupable", "inact", "flipp"],
-    },
-  },
-  "Q2": {
-    "achievements": {
-      strong: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
-    },
-  },
   "Q3": {
     "regret": {
       weak: ["dommage", "triste", "déçu", "decep", "coupable", "pas top", "j'aurais aimé", "j'aurais préféré", "j'aimerais quand même", "stress", "FOMO", "frustr", "pas content", "déçue", "je sais pas", "j'hésite", "saoule", "genee", "ça m'affecterait"],
@@ -43,18 +24,15 @@ export const LEXICON = {
       flag: ["tjs","toujours", "encore", "procrastin", "procrastination", "procrastiner", "lentement", "longtemps", "jamais", "chaque fois", "comme d'hab", "rebelote", "ça traîne", "ca traine", "trainer", "encore trainer", "traîne depuis", "depuis longtemps", "atten", "chaque fois", "enfin"],
     },
   },
-  "Q0": {
-    "oui": {
-      flag: ["yes", "carrement", "completement", "oui"],
-    },
-    "maybe": {
-      flag: ["je crois pas", "pas vraiment", "peut-être", "un peu", "je sais pas", "aucune idée"],
-    },
-    "non": {
-      flag: ["non", "pas du tout", "osef"],
-    },
-  },
+  
   "sparks": {
+   "achievements": {
+      strong: ["c'est fait", "j'avance", "utile", "avance", "progres", "debloqu", "ça peut aider", "aide", "m'occupe", "gagne", "évit", "soulag", "débarrass", "libér", "réglé", "plus à y penser", "stimulant", "excit", "projet", "enfin", "excit", "reprendre", "en action", "en fini", "finir", "consolider"],
+    },
+    "desire": {
+      weak: ["why not", "fun", "envie", "je veux", "j'aimerais bien", "tente", "curieu", "curi", "intéress", "sympa", "pas dégueu", "pourquoi pas", "j'ai du temps", "j'ai le temps", "dispo", "envie", "partant", "cool", "fun", "fun", "cool", "cools", "trop cool", "why not", "envie", "'aimerais bien", "plaît", "énergie disponible", "ça me plaît"],
+      strong: ["excit", "allez", "joie", "hâte", "rêve", "kiff", "j'adore", "adore", "trop bien", "super", "génial", "incroyable", "fantastique", "tellement envie", "grave envie", "trop envie", "enthousi", "euphorie", "joyeu", "let's go", "goo", "chaud", "hyper envie", "important", "joie", "enthousiasme", "excitation", "magnifique", "décision importante", "aime sortir", "importance"],
+    },
     "wellbeing": {
       moderate: ["besoin", "soin", "libre", "liber", "paix", "fier", "cool", "plaisir", "kiff", "rire", "joie", "agréable", "vivante", "dynamique", "énergi", "en forme", "heureu", "épanoui", "satisfai", "repos", "prendre des forces", "magnifique", "sérénité", "serein", "chill", "détent", "confort", "agréable"],
     },
@@ -96,6 +74,14 @@ export const LEXICON = {
     },
   },
   "hooks": {
+      "indifference": {
+      weak: ["bof", "dur", "pf", "ennui", "mh", "hm", "je sais pas", "mouais", "meh", "moyen", "pas convaincue", "sceptique", "pas terrible", "pas ouf", "pas dingue", "démotiv", "difficile", "dur", "j'sais pas", "bof", "moyen", "pas hyper emballée", "neutre", "aucune idée", "mmh", "mmmh"],
+      strong: ["osef", "pas envie", "pas envie du tout", "pas vraiment envie", "pas trop envie", "zéro envie", "je le sens pas", "je veux pas", "m'en fous", "m'en fiche", { keyword: "flemme", condition: "HP>=3" }, "chiant"],
+    },
+    "fear": {
+      weak: ["stress", "inquièt", "tendu", "anxi", "j'ose pas", "peur de m'ennuyer"],
+      strong: ["ah", "angoiss", "peur", "terrif", "paniqu", "oppresse", "ventre", "coupable", "inact", "flipp"],
+    },
     "damage": {
       strong: ["douleur", "mal", "fatigu", "épuis", { keyword: "flemme", condition: "HP=<2" }, "trop mal", "au fond du trou", "dead", "malade", "charge mentale"],
     },
