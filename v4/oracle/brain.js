@@ -272,15 +272,35 @@ const familyWords = (occ, family) =>
 
 // ── lecture d'une question ─────────────────────────────────────────────────
 
+function sumPoints(content, q) {
+  const seen = new Set();
+  return content.reduce((s, o) => {
+    const key = `${o.start}:${o.end}`;
+    if (seen.has(key)) return s;
+    seen.add(key);
+    return s + sign(o, q) * value(o);
+  }, 0);
+}
+
 function questionPoints(text, q, context) {
   const { content } = scan(text, q, context, { BOOST, REDUCE });
-  const seen = new Set();
-const points = content.reduce((s, o) => {
-  const key = `${o.start}:${o.end}`;
-  if (seen.has(key)) return s;
-  seen.add(key);
-  return s + sign(o, q) * value(o);
-}, 0);
+  return { q, text, occurrences: content, points: sumPoints(content, q) };
+}
+
+/**
+ * Q1 scanne le nom de la voie et la réponse séparément, puis fusionne —
+ * ainsi un « mais » dans la réponse ne peut pas remonter jusqu'au nom.
+ */
+function questionPointsQ1(name, q1, context) {
+  const nameContent = name ? scan(name, 'Q1', context, { BOOST, REDUCE }).content : [];
+  const q1Content = scan(q1, 'Q1', context, { BOOST, REDUCE }).content;
+  const points = sumPoints(nameContent, 'Q1') + sumPoints(q1Content, 'Q1');
+  return {
+    q: 'Q1',
+    text: [name, q1].filter(Boolean).join(' . '),
+    occurrences: [...nameContent, ...q1Content],
+    points,
+  };
 }
 
 // ── une voie ───────────────────────────────────────────────────────────────
@@ -292,9 +312,8 @@ const points = content.reduce((s, o) => {
 export function evaluatePath(path, context = {}) {
   const HP = context.HP ?? 3;
   const ctx = { HP };
-  const prefix = path.name ? normalize(path.name + ' . ') : '';
   const fields = [
-    questionPoints([path.name, path.q1].filter(Boolean).join(' . '), 'Q1', ctx, prefix.length),
+    questionPointsQ1(path.name, path.q1, ctx),
     questionPoints(path.q2, 'Q2', ctx),
     questionPoints(path.q3, 'Q3', ctx),
   ];
