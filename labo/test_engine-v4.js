@@ -3,7 +3,7 @@
  *
  *   node labo/v4/test_v4_engine.js
  *
- * Rejoue le cerveau sur les 25 dilemmes réels de labo/saves/sauvegardes.csv
+ * Rejoue le cerveau sur les 25 dilemmes réels de archives/saves/sauvegardes.csv
  * et répond, dans l'ordre, aux questions de la liste « Tests en labo » de
  * QF_documentation/oracle_cerveau.md.
  *
@@ -34,9 +34,9 @@ function parseCSV(text) {
   return rows.filter((r) => r.some((c) => c !== ''));
 }
 
-const rows = parseCSV(readFileSync('./saves/sauvegardes.csv', 'utf-8'));
+const rows = parseCSV(readFileSync('./saves/', 'utf-8'));
 const E = rows[0];
-const I = Object.fromEntries(E.map((n, i) => [n, i]));
+const I = Object.fromEntriessauvegardes.csv(E.map((n, i) => [n, i]));
 
 const DILEMMAS = rows.slice(1).map((c) => ({
   id: (c[I.id] || '').slice(0, 10),

@@ -12,7 +12,7 @@
 import { readFileSync } from 'node:fs';
 import { analyzeWithOracleV2_5 as vrai } from './oracle_versions/oracle_v2.5.1.js';
 
-const lignes = readFileSync('labo/saves/sauvegardes.md', 'utf-8')
+const lignes = readFileSync('archives/savessauvegardes.md', 'utf-8')
   .split('\n').filter((l) => l.trim().startsWith('|'));
 const E = lignes[0].replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
 const I = Object.fromEntries(E.map((n, i) => [n, i]));

@@ -148,7 +148,7 @@ Avec X et Z à 3 :
 ```
 
 
-Mesuré sur les **25 dilemmes réels** de `labo/saves/sauvegardes.csv, soit
+Mesuré sur les **25 dilemmes réels** de `archives/saves/sauvegardes.csv, soit
 **54 voies**.
 
 Répartition : 72 % greatPath, 24 % fairPath, 4 % poorPath
@@ -385,7 +385,7 @@ version de 2026 09 26 23h
 Réponses aux questions de la liste **« Tests en labo »** en tête de
 `QF_documentation/oracle_cerveau.md`.
 
-**Mesuré sur** les 25 dilemmes réels de `labo/saves/sauvegardes.md`,
+**Mesuré sur** les 25 dilemmes réels de `archives/savessauvegardes.md`,
 soit **54 voies**. **Seuils provisoires** : `X = 3`, `Z = 3`.
 
 ```bash

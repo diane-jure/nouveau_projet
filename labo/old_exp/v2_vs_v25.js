@@ -185,7 +185,7 @@ function oracleV25(options, spoons, q0texte) {
 }
 
 /* --------------------------- Jeu de données --------------------------- */
-const lignes = readFileSync('labo/saves/sauvegardes.md', 'utf-8').split('\n').filter((l) => l.trim().startsWith('|'));
+const lignes = readFileSync('archives/savessauvegardes.md', 'utf-8').split('\n').filter((l) => l.trim().startsWith('|'));
 const E = lignes[0].replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
 const I = Object.fromEntries(E.map((n, i) => [n, i]));
 const corps = lignes.slice(2).filter((l) => l.replace(/[|\-\s]/g, ''));

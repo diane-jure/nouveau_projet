@@ -19,7 +19,7 @@ import { LECTEURS } from './lecture.js';
 import { consulter } from '../v.QCM/js/oracle.js';
 
 /* --- Lecture du tableau --- */
-const lignes = readFileSync('labo/saves/sauvegardes.md', 'utf-8')
+const lignes = readFileSync('archives/savessauvegardes.md', 'utf-8')
   .split('\n').filter((l) => l.trim().startsWith('|'));
 const E = lignes[0].replace(/^\||\|$/g, '').split('|').map((c) => c.trim());
 const I = Object.fromEntries(E.map((n, i) => [n, i]));

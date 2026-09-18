@@ -1,7 +1,7 @@
 /**
  * Convertit le tableau Markdown des sauvegardes en CSV.
  *
- *   node labo/md2csv.js labo/saves/sauvegardes.md labo/saves/sauvegardes.csv
+ *   node labo/md2csv.js archives/savessauvegardes.md archives/saves/sauvegardes.csv
  *
  * Deux particularités du fichier source, gérées ici :
  *   - une ligne trop longue peut être coupée en deux dans le MD ; on recolle
@@ -12,8 +12,8 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const src = process.argv[2] ?? 'labo/saves/sauvegardes.md';
-const dst = process.argv[3] ?? 'labo/saves/sauvegardes.csv';
+const src = process.argv[2] ?? 'archives/savessauvegardes.md';
+const dst = process.argv[3] ?? 'archives/saves/sauvegardes.csv';
 
 const brutes = readFileSync(src, 'utf-8').split('\n');
 const lignes = [];
