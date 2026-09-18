@@ -3,7 +3,7 @@
  *
  *   node labo/v4/test_v4_engine.js
  *
- * Rejoue le cerveau sur les 25 dilemmes réels de archives/saves/sauvegardes.csv
+ * Rejoue le cerveau sur les 25 dilemmes réels de .archives/saves/sauvegardes.csv
  * et répond, dans l'ordre, aux questions de la liste « Tests en labo » de
  * QF_documentation/oracle_cerveau.md.
  *

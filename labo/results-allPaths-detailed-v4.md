@@ -1,4 +1,6 @@
 
+
+
 # Oracle V4 — voies poorPath et fairPath, détail complet
 
 Mesuré sur les 25 dilemmes réels de `saves/sauvegardes.csv`.
